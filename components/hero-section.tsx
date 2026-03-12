@@ -55,7 +55,7 @@ export function HeroSection() {
                 src="/images/pedro-hero.jpg"
                 alt="Pedro Olivos violinista posando con su violin"
                 fill
-                className="object-cover rounded-full shadow-2xl"
+                className="object-cover object-top rounded-full shadow-2xl"
                 priority
               />
               {/* Mic icon overlay */}
