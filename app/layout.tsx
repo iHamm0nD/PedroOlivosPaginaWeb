@@ -1,5 +1,5 @@
 import type { Metadata } from 'next'
-import { Nunito, Quicksand, Playfair_Display } from 'next/font/google'
+import { Nunito, Quicksand, Playfair_Display, Great_Vibes } from 'next/font/google'
 import { Analytics } from '@vercel/analytics/next'
 import './globals.css'
 
@@ -22,6 +22,12 @@ const playfair = Playfair_Display({
   style: ['normal', 'italic'],
 });
 
+const greatVibes = Great_Vibes({
+  subsets: ["latin"],
+  variable: '--font-great-vibes',
+  weight: ['400'],
+});
+
 export const metadata: Metadata = {
   title: 'Pedro Olivos | Oficial Web Site',
   description: 'Aprende a tocar violin con Pedro Olivos',
@@ -34,7 +40,7 @@ export default function RootLayout({
 }>) {
   return (
     <html lang="en">
-      <body className={`${nunito.variable} ${quicksand.variable} ${playfair.variable} font-sans antialiased`}>
+      <body className={`${nunito.variable} ${quicksand.variable} ${playfair.variable} ${greatVibes.variable} font-sans antialiased`}>
         {children}
         <Analytics />
       </body>
