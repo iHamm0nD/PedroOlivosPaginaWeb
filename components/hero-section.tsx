@@ -39,15 +39,12 @@ export function HeroSection() {
 
               {/* Name */}
               <div>
-                <h1 className="font-black leading-[0.85] tracking-tight font-sans">
-                  <span className="block text-cream text-5xl sm:text-7xl lg:text-8xl xl:text-[7rem] drop-shadow-lg">
-                    PEDRO
+                <h1 className="leading-[0.9] tracking-tight font-serif">
+                  <span className="block text-cream font-bold text-5xl sm:text-7xl lg:text-8xl xl:text-[7rem] drop-shadow-lg">
+                    Pedro
                   </span>
-                  <span
-                    className="block text-5xl sm:text-7xl lg:text-8xl xl:text-[7rem] drop-shadow-lg"
-                    style={{ WebkitTextStroke: "2px #DDA15E", color: "transparent" }}
-                  >
-                    OLIVOS
+                  <span className="block text-pink font-bold italic text-5xl sm:text-7xl lg:text-8xl xl:text-[7rem] drop-shadow-lg">
+                    Olivos
                   </span>
                 </h1>
               </div>

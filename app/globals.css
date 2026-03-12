@@ -78,6 +78,7 @@
 @theme inline {
   --font-sans: var(--font-nunito), 'Nunito', sans-serif;
   --font-mono: var(--font-quicksand), 'Quicksand', sans-serif;
+  --font-serif: var(--font-playfair), 'Playfair Display', serif;
   
   /* Brand Colors - Earth Tone Palette */
   --color-olive: #606C38;
