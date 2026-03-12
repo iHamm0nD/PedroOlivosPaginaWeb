@@ -60,44 +60,20 @@ export function HeroSection() {
               {/* CTAs */}
               <div className="flex flex-wrap gap-3 mt-2">
                 <Link
-                  href="#partituras"
+                  href="#sobre-mi"
                   className="inline-flex items-center gap-2 bg-pink text-olive-dark font-bold text-xs tracking-widest uppercase px-6 py-3 rounded-full hover:bg-[#BC6C25] transition-colors duration-300 font-sans"
                 >
-                  Ver Partituras
+                  Sobre Mi
                 </Link>
                 <Link
-                  href="#contacto"
+                  href="https://wa.me/51999999999"
+                  target="_blank"
+                  rel="noopener noreferrer"
                   className="inline-flex items-center gap-2 border border-cream/50 text-cream font-bold text-xs tracking-widest uppercase px-6 py-3 rounded-full hover:bg-cream/10 transition-colors duration-300 font-sans"
                 >
                   Contratar
                 </Link>
               </div>
-            </div>
-
-            {/* Right — stats column */}
-            <div className="flex md:flex-col gap-6 md:gap-5 md:items-end">
-
-              <div className="text-right">
-                <p className="text-3xl font-black text-cream font-sans leading-none">10+</p>
-                <p className="text-[10px] text-cream/50 uppercase tracking-[0.2em] font-sans mt-1">Años de<br className="hidden md:block" /> experiencia</p>
-              </div>
-
-              <div className="w-px bg-cream/20 hidden md:block self-stretch" />
-              <div className="h-px w-8 bg-cream/20 md:hidden self-center" />
-
-              <div className="text-right">
-                <p className="text-3xl font-black text-cream font-sans leading-none">500+</p>
-                <p className="text-[10px] text-cream/50 uppercase tracking-[0.2em] font-sans mt-1">Presentaciones<br className="hidden md:block" /> en vivo</p>
-              </div>
-
-              <div className="w-px bg-cream/20 hidden md:block self-stretch" />
-              <div className="h-px w-8 bg-cream/20 md:hidden self-center" />
-
-              <div className="text-right">
-                <p className="text-3xl font-black text-cream font-sans leading-none">100+</p>
-                <p className="text-[10px] text-cream/50 uppercase tracking-[0.2em] font-sans mt-1">Partituras<br className="hidden md:block" /> publicadas</p>
-              </div>
-
             </div>
           </div>
         </div>

@@ -1,6 +1,5 @@
 "use client"
 
-import { useState } from "react"
 import Link from "next/link"
 
 function TikTokIcon({ className }: { className?: string }) {
@@ -43,63 +42,57 @@ const socialLinks = [
 ]
 
 export function NewsletterSection() {
-  const [email, setEmail] = useState("")
-
-  const handleSubmit = (e: React.FormEvent) => {
-    e.preventDefault()
-    // Handle form submission
-    console.log("Subscribing:", email)
-    setEmail("")
-  }
-
   return (
-    <section id="subscribe" className="bg-pink py-16 md:py-24">
+    <section id="subscribe" className="bg-pink py-16 md:py-20">
       <div className="max-w-[1200px] mx-auto px-4 sm:px-6 lg:px-8">
-        <div className="max-w-2xl mx-auto">
-          {/* Newsletter Card */}
-          <div className="bg-white rounded-3xl p-8 md:p-12 shadow-xl">
-            <div className="text-center space-y-6">
-              <h2 className="text-xl md:text-2xl font-bold text-gray-800 text-balance">
-                SUSCRÍBETE PARA RECIBIR CONTENIDO EXCLUSIVO...
-              </h2>
+        <div className="max-w-lg mx-auto text-center space-y-8">
 
-              <form onSubmit={handleSubmit} className="space-y-4">
-                <input
-                  type="email"
-                  value={email}
-                  onChange={(e) => setEmail(e.target.value)}
-                  placeholder="Tu mejor correo electrónico..."
-                  className="w-full px-6 py-4 rounded-full border-2 border-gray-200 focus:border-pink focus:outline-none text-gray-700 placeholder:text-gray-400 transition-colors"
-                  required
-                />
-                <button
-                  type="submit"
-                  className="w-full bg-olive hover:bg-olive-dark text-white font-bold text-lg px-8 py-4 rounded-full shadow-lg transition-all duration-300 hover:scale-105 hover:shadow-xl"
+          {/* Label */}
+          <div className="flex items-center justify-center gap-3">
+            <div className="w-8 h-px bg-olive-dark/40" />
+            <span className="text-olive-dark text-xs font-bold tracking-[0.3em] uppercase font-sans">
+              Comunidad
+            </span>
+            <div className="w-8 h-px bg-olive-dark/40" />
+          </div>
+
+          <div className="space-y-3">
+            <h2 className="text-2xl md:text-3xl font-black text-olive-dark font-sans text-balance">
+              Únete al Grupo VIP
+            </h2>
+            <p className="text-olive-dark/70 font-sans text-sm leading-relaxed">
+              Sé parte de la comunidad exclusiva de Pedro Olivos. Contenido anticipado, lives privados y acceso directo al artista.
+            </p>
+          </div>
+
+          <Link
+            href="https://wa.me/51999999999"
+            target="_blank"
+            rel="noopener noreferrer"
+            className="inline-flex items-center gap-2 bg-olive-dark hover:bg-olive text-cream font-bold text-sm tracking-widest uppercase px-8 py-4 rounded-full shadow-lg transition-all duration-300 hover:scale-105 hover:shadow-xl font-sans"
+          >
+            Unirme al Grupo VIP
+          </Link>
+
+          {/* Social Links */}
+          <div className="pt-4 space-y-4">
+            <p className="text-olive-dark/80 font-sans text-sm font-semibold">Sigueme en todas mis redes</p>
+            <div className="flex justify-center gap-4">
+              {socialLinks.map((social) => (
+                <Link
+                  key={social.name}
+                  href={social.href}
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  className="w-12 h-12 bg-white/30 hover:bg-olive-dark rounded-full flex items-center justify-center transition-all duration-300 hover:scale-110 group border border-white/20"
+                  aria-label={social.name}
                 >
-                  Unirse a la lista de correo
-                </button>
-              </form>
-
-              {/* Social Links */}
-              <div className="pt-6">
-                <p className="text-gray-600 mb-4">Sígueme en todas mis redes</p>
-                <div className="flex justify-center gap-4">
-                  {socialLinks.map((social) => (
-                    <Link
-                      key={social.name}
-                      href={social.href}
-                      target="_blank"
-                      rel="noopener noreferrer"
-                      className="w-12 h-12 bg-gray-100 hover:bg-pink rounded-full flex items-center justify-center transition-all duration-300 hover:scale-110 group"
-                      aria-label={social.name}
-                    >
-                      <social.icon className="w-5 h-5 text-gray-600 group-hover:text-white transition-colors" />
-                    </Link>
-                  ))}
-                </div>
-              </div>
+                  <social.icon className="w-5 h-5 text-olive-dark group-hover:text-cream transition-colors" />
+                </Link>
+              ))}
             </div>
           </div>
+
         </div>
       </div>
     </section>
