@@ -49,15 +49,21 @@ export function HeroSection() {
           {/* Main hero content */}
           <div className="relative z-10 flex flex-col items-center">
             {/* Hero image */}
-            <div className="relative w-64 h-64 md:w-80 md:h-80 lg:w-96 lg:h-96 mb-8">
-              <div className="absolute inset-0 bg-gradient-to-b from-white/20 to-transparent rounded-full" />
-              <Image
-                src="/images/pedro-hero.jpg"
-                alt="Pedro Olivos violinista posando con su violin"
-                fill
-                className="object-cover object-top rounded-full shadow-2xl"
-                priority
-              />
+            <div className="relative mb-8">
+              {/* Outer decorative ring */}
+              <div className="absolute -inset-3 rounded-[2.5rem] bg-white/25 blur-sm" />
+              <div className="absolute -inset-1.5 rounded-[2.5rem] border-2 border-white/40" />
+              <div className="relative w-56 h-72 md:w-72 md:h-96 lg:w-80 lg:h-[440px] rounded-[2.5rem] overflow-hidden shadow-2xl border-4 border-white/30">
+                <Image
+                  src="/images/pedro-hero.jpg"
+                  alt="Pedro Olivos violinista posando con su violin"
+                  fill
+                  className="object-cover object-[center_15%]"
+                  priority
+                />
+                {/* Bottom fade to blend with page background */}
+                <div className="absolute bottom-0 left-0 right-0 h-16 bg-gradient-to-t from-[#DDA15E]/60 to-transparent" />
+              </div>
               {/* Mic icon overlay */}
               <div className="absolute -bottom-2 -right-2 bg-white rounded-full p-3 shadow-lg animate-pulse-soft">
                 <Mic2 className="w-6 h-6 text-pink" />
