@@ -58,8 +58,8 @@ export function AboutSection() {
             {/* Main circular image */}
             <div className="absolute top-0 right-0 md:right-8 w-48 h-48 md:w-64 md:h-64 rounded-full overflow-hidden shadow-xl border-4 border-white z-10">
               <Image
-                src="/images/luna-about-1.jpg"
-                alt="Luna Rivera en concierto en vivo"
+                src="/images/pedro-about-1.jpg"
+                alt="Pedro Olivos posando con su violin en el parque"
                 fill
                 className="object-cover"
               />
@@ -68,8 +68,8 @@ export function AboutSection() {
             {/* Second circular image */}
             <div className="absolute top-32 md:top-40 left-0 md:left-4 w-40 h-40 md:w-52 md:h-52 rounded-full overflow-hidden shadow-xl border-4 border-white z-20">
               <Image
-                src="/images/luna-about-2.jpg"
-                alt="Luna Rivera en sesion de estudio"
+                src="/images/pedro-about-2.jpg"
+                alt="Pedro Olivos tocando violin en el parque"
                 fill
                 className="object-cover"
               />
@@ -78,8 +78,8 @@ export function AboutSection() {
             {/* Third circular image */}
             <div className="absolute bottom-0 right-4 md:right-16 w-36 h-36 md:w-44 md:h-44 rounded-full overflow-hidden shadow-xl border-4 border-white z-10">
               <Image
-                src="/images/luna-about-3.jpg"
-                alt="Luna Rivera tocando guitarra"
+                src="/images/pedro-about-3.jpg"
+                alt="Pedro Olivos ejecutando violin en parque con flores"
                 fill
                 className="object-cover"
               />

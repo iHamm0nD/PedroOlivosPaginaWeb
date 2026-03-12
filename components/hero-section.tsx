@@ -52,8 +52,8 @@ export function HeroSection() {
             <div className="relative w-64 h-64 md:w-80 md:h-80 lg:w-96 lg:h-96 mb-8">
               <div className="absolute inset-0 bg-gradient-to-b from-white/20 to-transparent rounded-full" />
               <Image
-                src="/images/luna-hero.jpg"
-                alt="Luna Rivera cantando con microfono en concierto"
+                src="/images/pedro-hero.jpg"
+                alt="Pedro Olivos violinista posando con su violin"
                 fill
                 className="object-cover rounded-full shadow-2xl"
                 priority
