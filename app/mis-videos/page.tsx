@@ -1,8 +1,8 @@
-import { Navbar } from "@/components/navbar"
-import { VideoCard } from "@/components/video-card"
-import { ChannelPreview } from "@/components/channel-preview"
-import { NewsletterSection } from "@/components/newsletter-section"
-import { Footer } from "@/components/footer"
+import { Navegacion } from "@/components/01-navegacion"
+import { TarjetaVideo } from "@/components/tarjeta-video"
+import { VistaPreviaCanal } from "@/components/vista-previa-canal"
+import { SeccionBoletin } from "@/components/05-seccion-boletin"
+import { PieDePagina } from "@/components/06-pie-de-pagina"
 
 // Para añadir nuevos videos agregamos la ID del video y su nombre automaticamente aparece de cualquier video
 // Ejemplo: https://youtu.be/fBE_2sHDt4E?list=RDGMEMQ1dJ7wXfLlqCjwV0xfSNbAVMfBE_2sHDt4E
@@ -48,9 +48,9 @@ export default async function MisVideosPage() {
 
   return (
     <main className="min-h-screen">
-      <Navbar />
+      <Navegacion />
 
-      {/* Video Section */}
+      {/* Sección de Videos */}
       <section className="bg-cream py-16 md:py-24">
         <div className="max-w-[1200px] mx-auto px-4 sm:px-6 lg:px-8">
           {/* Page Header */}
@@ -63,9 +63,9 @@ export default async function MisVideosPage() {
             </p>
           </div>
 
-          {/* Channel Preview */}
+          {/* Vista Previa del Canal */}
           <div className="mb-12">
-            <ChannelPreview
+            <VistaPreviaCanal
               channelName="Pedro Olivos Música"
               channelUrl="https://www.youtube.com/@pedroolivosmusica"
               avatarUrl="/images/foto_perfil_PedroOlivos.jpg"
@@ -73,10 +73,10 @@ export default async function MisVideosPage() {
             />
           </div>
 
-          {/* Video Grid */}
+          {/* Cuadrícula de Videos */}
           <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-8">
             {videos.map((video) => (
-              <VideoCard
+              <TarjetaVideo
                 key={video.videoId}
                 videoId={video.videoId}
                 title={video.title}
@@ -86,11 +86,11 @@ export default async function MisVideosPage() {
         </div>
       </section>
 
-      {/* Newsletter */}
-      <NewsletterSection />
+      {/* Boletín */}
+      <SeccionBoletin />
 
-      {/* Footer */}
-      <Footer />
+      {/* Pie de Página */}
+      <PieDePagina />
     </main>
   )
 }

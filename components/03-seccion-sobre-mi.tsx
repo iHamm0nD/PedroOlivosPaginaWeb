@@ -22,7 +22,7 @@ const highlights = [
   },
 ]
 
-export function AboutSection() {
+export function SeccionSobreMi() {
   return (
     <section id="sobre-mi" className="bg-cream py-20 md:py-28">
       <div className="max-w-[1200px] mx-auto px-4 sm:px-6 lg:px-8">

@@ -1,8 +1,7 @@
-import { Navbar } from "@/components/navbar"
-import { ProductCard } from "@/components/product-card"
-import { SectionDivider } from "@/components/section-divider"
-import { NewsletterSection } from "@/components/newsletter-section"
-import { Footer } from "@/components/footer"
+import { Navegacion } from "@/components/01-navegacion"
+import { TarjetaProducto } from "@/components/tarjeta-producto"
+import { SeccionBoletin } from "@/components/05-seccion-boletin"
+import { PieDePagina } from "@/components/06-pie-de-pagina"
 
 const products = [
   {
@@ -35,9 +34,9 @@ const products = [
 export default function TiendaPage() {
   return (
     <main className="min-h-screen">
-      <Navbar />
+      <Navegacion />
 
-      {/* Product List Section */}
+      {/* Lista de Productos */}
       <section className="bg-cream py-16 md:py-24">
         <div className="max-w-[1200px] mx-auto px-4 sm:px-6 lg:px-8">
           <h2 className="text-3xl md:text-4xl font-black text-gray-800 mb-12 md:mb-16">
@@ -47,7 +46,7 @@ export default function TiendaPage() {
           {/* Product Grid */}
           <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-8">
             {products.map((product, index) => (
-              <ProductCard
+              <TarjetaProducto
                 key={index}
                 image={product.image}
                 title={product.title}
@@ -58,11 +57,11 @@ export default function TiendaPage() {
         </div>
       </section>
 
-      {/* Newsletter */}
-      <NewsletterSection />
+      {/* Boletín */}
+      <SeccionBoletin />
 
-      {/* Footer */}
-      <Footer />
+      {/* Pie de Página */}
+      <PieDePagina />
     </main>
   )
 }

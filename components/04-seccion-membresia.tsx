@@ -10,7 +10,7 @@ function WhatsAppIcon({ className }: { className?: string }) {
   )
 }
 
-export function MembershipSection() {
+export function SeccionMembresia() {
   return (
     <section id="servicios" className="bg-olive-dark py-16 md:py-24">
       <div className="max-w-[1200px] mx-auto px-4 sm:px-6 lg:px-8">

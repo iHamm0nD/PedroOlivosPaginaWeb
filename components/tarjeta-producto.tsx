@@ -8,7 +8,7 @@ interface ProductCardProps {
   href?: string
 }
 
-export function ProductCard({ image, title, price, href = "#" }: ProductCardProps) {
+export function TarjetaProducto({ image, title, price, href = "#" }: ProductCardProps) {
   return (
     <div className="group bg-white rounded-3xl overflow-hidden shadow-md hover:shadow-xl transition-all duration-300 hover:-translate-y-1">
       {/* Product Image */}

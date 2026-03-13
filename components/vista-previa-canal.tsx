@@ -8,7 +8,7 @@ interface ChannelPreviewProps {
   description?: string
 }
 
-export function ChannelPreview({ channelName, channelUrl, avatarUrl, description }: ChannelPreviewProps) {
+export function VistaPreviaCanal({ channelName, channelUrl, avatarUrl, description }: ChannelPreviewProps) {
   return (
     <div className="bg-white rounded-3xl p-6 md:p-8 shadow-md max-w-2xl mx-auto">
       <div className="flex flex-col sm:flex-row items-center gap-5">

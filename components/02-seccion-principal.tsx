@@ -1,7 +1,7 @@
 import Image from "next/image"
 import Link from "next/link"
 
-export function HeroSection() {
+export function SeccionPrincipal() {
   return (
     <section className="relative overflow-hidden min-h-[calc(100vh-64px)]">
 

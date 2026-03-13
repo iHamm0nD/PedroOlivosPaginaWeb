@@ -41,7 +41,7 @@ const socialLinks = [
   { name: "YouTube", icon: YouTubeIcon, href: "https://www.youtube.com/@pedroolivosmusica" },
 ]
 
-export function NewsletterSection() {
+export function SeccionBoletin() {
   return (
     <section id="subscribe" className="bg-pink py-16 md:py-20">
       <div className="max-w-[1200px] mx-auto px-4 sm:px-6 lg:px-8">

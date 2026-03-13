@@ -7,7 +7,7 @@ interface VideoCardProps {
   title: string
 }
 
-export function VideoCard({ videoId, title }: VideoCardProps) {
+export function TarjetaVideo({ videoId, title }: VideoCardProps) {
   const thumbnailUrl = `https://img.youtube.com/vi/${videoId}/maxresdefault.jpg`
   const videoUrl = `https://www.youtube.com/watch?v=${videoId}`
 

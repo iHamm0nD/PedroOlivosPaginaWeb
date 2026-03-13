@@ -13,7 +13,7 @@ const navItems = [
   { name: "CONTACTO", href: "#subscribe" },
 ]
 
-export function Navbar() {
+export function Navegacion() {
   const [mobileMenuOpen, setMobileMenuOpen] = useState(false)
   const pathname = usePathname()
 
