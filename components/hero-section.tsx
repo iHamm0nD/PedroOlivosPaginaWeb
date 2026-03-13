@@ -14,11 +14,11 @@ export function HeroSection() {
           className="object-cover object-[center_20%]"
           priority
         />
-        {/* Dark vignette — corners and bottom */}
-        <div className="absolute inset-0 bg-gradient-to-t from-[#283618]/90 via-[#283618]/30 to-transparent" />
-        <div className="absolute inset-0 bg-gradient-to-r from-[#283618]/70 via-transparent to-[#283618]/50" />
-        {/* Warm amber tint overlay — subtle, ties to palette */}
-        <div className="absolute inset-0 bg-[#DDA15E]/10 mix-blend-multiply" />
+        {/* Dark vignette — corners and bottom, warm neutral tones */}
+        <div className="absolute inset-0 bg-gradient-to-t from-[#1a1208]/90 via-[#1a1208]/35 to-[#1a1208]/10" />
+        <div className="absolute inset-0 bg-gradient-to-r from-[#1a1208]/65 via-transparent to-[#1a1208]/40" />
+        {/* Warm amber tint overlay — ties to palette */}
+        <div className="absolute inset-0 bg-[#DDA15E]/08 mix-blend-multiply" />
       </div>
 
       {/* Content */}
