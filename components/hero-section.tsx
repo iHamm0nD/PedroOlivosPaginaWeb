@@ -43,16 +43,10 @@ export function HeroSection() {
                   className="leading-[1.1] drop-shadow-2xl"
                   style={{ fontFamily: "var(--font-great-vibes), 'Great Vibes', cursive" }}
                 >
-                  <span
-                    className="block text-7xl sm:text-9xl lg:text-[9rem] xl:text-[11rem]"
-                    style={{ color: "#F5D9B0" }}
-                  >
+                  <span className="block text-cream text-7xl sm:text-9xl lg:text-[9rem] xl:text-[11rem]">
                     Pedro
                   </span>
-                  <span
-                    className="block text-7xl sm:text-9xl lg:text-[9rem] xl:text-[11rem] -mt-4"
-                    style={{ color: "#DDA15E" }}
-                  >
+                  <span className="block text-pink text-7xl sm:text-9xl lg:text-[9rem] xl:text-[11rem] -mt-4">
                     Olivos
                   </span>
                 </h1>
