@@ -73,17 +73,17 @@ export default async function MisVideosPage() {
 
             {/* Info */}
             <div className="flex-1 text-center md:text-left">
-              <p className="text-pink-dark text-sm font-semibold tracking-[0.3em] uppercase mb-2"
+              <p className="text-olive text-sm font-semibold tracking-[0.3em] uppercase mb-2"
                 style={{ fontFamily: "var(--font-cormorant), 'Cormorant Garamond', serif" }}>
                 Canal de YouTube
               </p>
               <h1
-                className="text-pink-dark text-4xl md:text-5xl font-light mb-2"
+                className="text-olive-dark text-4xl md:text-5xl font-light mb-2"
                 style={{ fontFamily: "var(--font-cormorant), 'Cormorant Garamond', serif" }}
               >
                 Pedro Olivos Música
               </h1>
-              <p className="text-pink-dark/60 text-base">
+              <p className="text-olive/70 text-base">
                 Tutoriales de violín, covers y música en vivo
               </p>
             </div>
@@ -116,7 +116,7 @@ export default async function MisVideosPage() {
                     Videos cortos
                   </p>
                   <h2
-                    className="text-pink-dark text-3xl md:text-4xl font-light"
+                    className="text-olive-dark text-3xl md:text-4xl font-light"
                     style={{ fontFamily: "var(--font-cormorant), 'Cormorant Garamond', serif" }}
                   >
                     Shorts
@@ -127,7 +127,7 @@ export default async function MisVideosPage() {
                 href="https://www.youtube.com/@pedroolivosmusica/shorts"
                 target="_blank"
                 rel="noopener noreferrer"
-                className="hidden md:flex items-center gap-2 text-pink-dark hover:text-pink text-sm font-semibold transition-colors duration-300 group"
+                className="hidden md:flex items-center gap-2 text-olive-dark hover:text-olive text-sm font-semibold transition-colors duration-300 group"
               >
                 Ver todos
                 <span className="group-hover:translate-x-1 transition-transform duration-300">→</span>
@@ -183,7 +183,7 @@ export default async function MisVideosPage() {
                 href="https://www.youtube.com/@pedroolivosmusica/shorts"
                 target="_blank"
                 rel="noopener noreferrer"
-                className="inline-flex items-center gap-2 border border-pink/40 text-pink-dark font-semibold text-sm px-6 py-2.5 rounded-full hover:bg-pink/10 transition-all duration-300"
+                className="inline-flex items-center gap-2 border border-olive/30 text-olive-dark font-semibold text-sm px-6 py-2.5 rounded-full hover:bg-olive/10 transition-all duration-300"
               >
                 Ver todos los Shorts →
               </Link>
@@ -204,19 +204,19 @@ export default async function MisVideosPage() {
                   style={{ fontFamily: "var(--font-cormorant), 'Cormorant Garamond', serif" }}>
                   Toda la colección
                 </p>
-                <h2
-                  className="text-pink-dark text-3xl md:text-4xl font-light"
-                  style={{ fontFamily: "var(--font-cormorant), 'Cormorant Garamond', serif" }}
-                >
-                  Mis Videos
-                </h2>
+                  <h2
+                    className="text-olive-dark text-3xl md:text-4xl font-light"
+                    style={{ fontFamily: "var(--font-cormorant), 'Cormorant Garamond', serif" }}
+                  >
+                    Mis Videos
+                  </h2>
+                </div>
               </div>
-            </div>
-            <Link
-              href="https://www.youtube.com/@pedroolivosmusica/videos"
-              target="_blank"
-              rel="noopener noreferrer"
-              className="hidden md:flex items-center gap-2 text-pink-dark hover:text-pink text-sm font-semibold transition-colors duration-300 group"
+              <Link
+                href="https://www.youtube.com/@pedroolivosmusica/videos"
+                target="_blank"
+                rel="noopener noreferrer"
+                className="hidden md:flex items-center gap-2 text-olive-dark hover:text-olive text-sm font-semibold transition-colors duration-300 group"
             >
               Ver canal completo
               <span className="group-hover:translate-x-1 transition-transform duration-300">→</span>
@@ -261,9 +261,9 @@ export default async function MisVideosPage() {
               href="https://www.youtube.com/@pedroolivosmusica/videos"
               target="_blank"
               rel="noopener noreferrer"
-              className="inline-flex items-center gap-2 border border-pink/40 text-pink-dark font-semibold text-sm px-6 py-2.5 rounded-full hover:bg-pink/10 transition-all duration-300"
-            >
-              Ver canal completo →
+                className="inline-flex items-center gap-2 border border-olive/30 text-olive-dark font-semibold text-sm px-6 py-2.5 rounded-full hover:bg-olive/10 transition-all duration-300"
+              >
+                Ver canal completo →
             </Link>
           </div>
         </div>

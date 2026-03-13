@@ -106,12 +106,12 @@ export async function UltimoVideo() {
         {/* Content — altura fija al fondo */}
         <div className="flex-shrink-0 p-6 md:p-7">
           {date && (
-            <p className="text-pink text-xs font-semibold tracking-widest uppercase mb-2">{date}</p>
+            <p className="text-olive text-xs font-semibold tracking-widest uppercase mb-2">{date}</p>
           )}
-          <h3 className="text-lg md:text-xl font-bold text-pink-dark leading-snug line-clamp-3 group-hover:text-pink transition-colors duration-300 mb-2">
+          <h3 className="text-lg md:text-xl font-bold text-olive-dark leading-snug line-clamp-3 group-hover:text-olive transition-colors duration-300 mb-2">
             {video.title}
           </h3>
-          <p className="text-pink-dark/60 text-sm">
+          <p className="text-olive/60 text-sm">
             Video más reciente
           </p>
         </div>

@@ -44,10 +44,10 @@ export function TarjetaVideo({ videoId, title, index = 0 }: VideoCardProps) {
 
       {/* Content */}
       <div className="p-4 bg-white">
-        <h3 className="text-sm font-bold text-pink-dark leading-snug line-clamp-2 group-hover:text-pink transition-colors duration-300">
+        <h3 className="text-sm font-bold text-olive-dark leading-snug line-clamp-2 group-hover:text-olive transition-colors duration-300">
           {title}
         </h3>
-        <div className="mt-3 flex items-center gap-1.5 text-xs text-pink-dark/50 font-medium">
+        <div className="mt-3 flex items-center gap-1.5 text-xs text-olive/50 font-medium">
           <Play className="w-3 h-3" />
           <span>Ver en YouTube</span>
         </div>
