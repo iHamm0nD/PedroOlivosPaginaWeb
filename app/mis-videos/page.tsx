@@ -8,10 +8,8 @@ import Image from "next/image"
 import Link from "next/link"
 import { Play, Youtube } from "lucide-react"
 
-// ─── Channel ID del canal de Pedro Olivos ─────────────────────────────────
 const CHANNEL_ID = "UCmBnbGTuQslnr2YfzJ3sPyQ"
 
-// ─── IDs de videos largos ────────────────────────────────────────────────────
 const videoIds = [
   "byIoQPP2Koc",
   "S7u0P-arDwM",
@@ -50,22 +48,22 @@ export default async function MisVideosPage() {
   ])
 
   return (
-    <main className="min-h-screen bg-cream">
+    <main className="min-h-screen" style={{ backgroundColor: "#FAF7F2" }}>
       <Navegacion />
 
       {/* ── Hero del canal ─────────────────────────────────────────── */}
-      <section className="bg-olive py-14 md:py-20">
-        <div className="max-w-[1200px] mx-auto px-4 sm:px-6 lg:px-8">
-          <div className="flex flex-col md:flex-row items-center gap-8 md:gap-12">
+      <section className="pt-28 pb-16 md:pt-36 md:pb-20" style={{ backgroundColor: "#FAF7F2" }}>
+        <div className="max-w-[1100px] mx-auto px-4 sm:px-6 lg:px-8">
+          <div className="flex flex-col md:flex-row items-center md:items-end gap-8 md:gap-14 border-b pb-12" style={{ borderColor: "#E8E0D4" }}>
             {/* Avatar */}
             <div className="relative flex-shrink-0">
-              <div className="absolute -inset-1.5 rounded-full bg-pink/40 blur-sm" />
-              <div className="relative w-24 h-24 md:w-28 md:h-28 rounded-full overflow-hidden ring-4 ring-pink/50 shadow-2xl">
+              <div className="w-24 h-24 md:w-28 md:h-28 rounded-full overflow-hidden ring-2 shadow-lg" style={{ ringColor: "#DDA15E" }}>
                 <Image
                   src="/images/foto_perfil_PedroOlivos.jpg"
                   alt="Pedro Olivos"
-                  fill
-                  className="object-cover"
+                  width={112}
+                  height={112}
+                  className="object-cover w-full h-full"
                   unoptimized
                 />
               </div>
@@ -73,18 +71,20 @@ export default async function MisVideosPage() {
 
             {/* Info */}
             <div className="flex-1 text-center md:text-left">
-              <p className="text-pink text-sm font-semibold tracking-[0.3em] uppercase mb-2"
-                style={{ fontFamily: "var(--font-cormorant), 'Cormorant Garamond', serif" }}>
+              <p
+                className="text-xs font-semibold tracking-[0.35em] uppercase mb-3"
+                style={{ color: "#DDA15E", fontFamily: "var(--font-cormorant), 'Cormorant Garamond', serif" }}
+              >
                 Canal de YouTube
               </p>
               <h1
-                className="text-cream text-4xl md:text-5xl font-light mb-2"
-                style={{ fontFamily: "var(--font-cormorant), 'Cormorant Garamond', serif" }}
+                className="text-5xl md:text-6xl font-light leading-none mb-3"
+                style={{ color: "#1C1917", fontFamily: "var(--font-cormorant), 'Cormorant Garamond', serif" }}
               >
-                Pedro Olivos Música
+                Pedro Olivos
               </h1>
-              <p className="text-cream/60 text-base">
-                Tutoriales de violín, covers y música en vivo
+              <p className="text-sm leading-relaxed" style={{ color: "#78716C" }}>
+                Tutoriales de violín · Covers · Música en vivo
               </p>
             </div>
 
@@ -93,7 +93,8 @@ export default async function MisVideosPage() {
               href="https://www.youtube.com/@pedroolivosmusica?sub_confirmation=1"
               target="_blank"
               rel="noopener noreferrer"
-              className="flex-shrink-0 inline-flex items-center gap-2.5 bg-pink hover:bg-pink-dark text-white font-bold text-sm px-7 py-3.5 rounded-full shadow-lg transition-all duration-300 hover:scale-105"
+              className="flex-shrink-0 inline-flex items-center gap-2.5 font-bold text-sm px-7 py-3.5 rounded-full transition-all duration-300 hover:scale-105 hover:shadow-md"
+              style={{ backgroundColor: "#1C1917", color: "#FAF7F2" }}
             >
               <Youtube className="w-4 h-4" />
               Suscribirse
@@ -102,51 +103,49 @@ export default async function MisVideosPage() {
         </div>
       </section>
 
-      {/* ── Último video (auto-actualizable) ────────────────────────── */}
+      {/* ── Último video ────────────────────────────────────────────── */}
       <UltimoVideo />
 
-      {/* ── Shorts (solo se muestra si YOUTUBE_API_KEY está configurada) ──── */}
+      {/* ── Shorts ──────────────────────────────────────────────────── */}
       {shorts.length > 0 && (
-        <section className="bg-cream py-16 md:py-20">
-          <div className="max-w-[1200px] mx-auto px-4 sm:px-6 lg:px-8">
-            {/* Header */}
-            <div className="flex items-center justify-between mb-10">
-              <div className="flex items-center gap-4">
-                <div className="w-10 h-px bg-pink" />
-                <div>
-                  <p className="text-pink text-xs font-semibold tracking-[0.3em] uppercase mb-0.5"
-                    style={{ fontFamily: "var(--font-cormorant), 'Cormorant Garamond', serif" }}>
-                    Videos cortos
-                  </p>
-                  <h2
-                    className="text-olive-dark text-3xl md:text-4xl font-light"
-                    style={{ fontFamily: "var(--font-cormorant), 'Cormorant Garamond', serif" }}
-                  >
-                    Shorts
-                  </h2>
-                </div>
+        <section className="py-16 md:py-20" style={{ backgroundColor: "#F2EDE5" }}>
+          <div className="max-w-[1100px] mx-auto px-4 sm:px-6 lg:px-8">
+            <div className="flex items-end justify-between mb-10">
+              <div>
+                <p
+                  className="text-xs font-semibold tracking-[0.35em] uppercase mb-2"
+                  style={{ color: "#DDA15E", fontFamily: "var(--font-cormorant), 'Cormorant Garamond', serif" }}
+                >
+                  Videos cortos
+                </p>
+                <h2
+                  className="text-3xl md:text-4xl font-light"
+                  style={{ color: "#1C1917", fontFamily: "var(--font-cormorant), 'Cormorant Garamond', serif" }}
+                >
+                  Shorts
+                </h2>
               </div>
               <Link
                 href="https://www.youtube.com/@pedroolivosmusica/shorts"
                 target="_blank"
                 rel="noopener noreferrer"
-                className="hidden md:flex items-center gap-2 text-olive text-sm font-semibold hover:text-pink transition-colors duration-300 group"
+                className="hidden md:flex items-center gap-2 text-sm font-semibold transition-colors duration-300 group"
+                style={{ color: "#78716C" }}
               >
                 Ver todos
                 <span className="group-hover:translate-x-1 transition-transform duration-300">→</span>
               </Link>
             </div>
 
-            {/* Shorts grid — formato vertical 9:16 */}
-            <div className="grid grid-cols-2 sm:grid-cols-3 lg:grid-cols-4 gap-4 md:gap-5">
+            <div className="grid grid-cols-2 sm:grid-cols-3 lg:grid-cols-4 gap-3 md:gap-4">
               {shorts.map((short) => (
                 <Link
                   key={short.videoId}
                   href={`https://www.youtube.com/shorts/${short.videoId}`}
                   target="_blank"
                   rel="noopener noreferrer"
-                  className="group relative block rounded-2xl overflow-hidden shadow-md hover:shadow-xl transition-all duration-300 hover:-translate-y-1.5 bg-olive-dark"
-                  style={{ aspectRatio: "9/16" }}
+                  className="group relative block rounded-xl overflow-hidden shadow-sm hover:shadow-lg transition-all duration-300 hover:-translate-y-1"
+                  style={{ aspectRatio: "9/16", backgroundColor: "#1C1917" }}
                 >
                   <Image
                     src={short.thumbnail}
@@ -155,24 +154,28 @@ export default async function MisVideosPage() {
                     className="object-cover transition-transform duration-500 group-hover:scale-105"
                     unoptimized
                   />
-                  {/* Gradient */}
-                  <div className="absolute inset-0 bg-gradient-to-t from-black/80 via-black/20 to-transparent" />
+                  <div className="absolute inset-0 bg-gradient-to-t from-black/75 via-black/10 to-transparent" />
 
                   {/* Short badge */}
-                  <div className="absolute top-3 right-3 bg-pink text-white text-xs font-bold px-2.5 py-1 rounded-full tracking-wider uppercase shadow">
+                  <div
+                    className="absolute top-2.5 right-2.5 text-xs font-bold px-2 py-0.5 rounded-full tracking-widest uppercase"
+                    style={{ backgroundColor: "#DDA15E", color: "#FAF7F2" }}
+                  >
                     Short
                   </div>
 
                   {/* Play */}
                   <div className="absolute inset-0 flex items-center justify-center opacity-0 group-hover:opacity-100 transition-opacity duration-300">
-                    <div className="w-12 h-12 bg-pink/90 rounded-full flex items-center justify-center shadow-lg">
-                      <Play className="w-5 h-5 text-white ml-0.5" fill="currentColor" />
+                    <div
+                      className="w-11 h-11 rounded-full flex items-center justify-center shadow-lg"
+                      style={{ backgroundColor: "#DDA15E" }}
+                    >
+                      <Play className="w-4 h-4 ml-0.5" fill="#FAF7F2" color="#FAF7F2" />
                     </div>
                   </div>
 
-                  {/* Title */}
                   <div className="absolute bottom-0 left-0 right-0 p-3">
-                    <p className="text-white text-xs font-semibold leading-snug line-clamp-2">
+                    <p className="text-white text-xs font-medium leading-snug line-clamp-2">
                       {short.title}
                     </p>
                   </div>
@@ -180,13 +183,13 @@ export default async function MisVideosPage() {
               ))}
             </div>
 
-            {/* Mobile ver todos */}
             <div className="mt-6 flex md:hidden justify-center">
               <Link
                 href="https://www.youtube.com/@pedroolivosmusica/shorts"
                 target="_blank"
                 rel="noopener noreferrer"
-                className="inline-flex items-center gap-2 border border-olive/30 text-olive font-semibold text-sm px-6 py-2.5 rounded-full hover:bg-olive/5 transition-all duration-300"
+                className="inline-flex items-center gap-2 text-sm font-semibold px-6 py-2.5 rounded-full border transition-all duration-300"
+                style={{ borderColor: "#C8BFB4", color: "#78716C" }}
               >
                 Ver todos los Shorts →
               </Link>
@@ -195,38 +198,36 @@ export default async function MisVideosPage() {
         </section>
       )}
 
-      {/* ── Todos los videos ────────────────────────────────────────── */}
-      <section className="bg-olive/8 py-16 md:py-20 border-t border-olive/10">
-        <div className="max-w-[1200px] mx-auto px-4 sm:px-6 lg:px-8">
-          {/* Header */}
-          <div className="flex items-center justify-between mb-10">
-            <div className="flex items-center gap-4">
-              <div className="w-10 h-px bg-pink" />
-              <div>
-                <p className="text-pink text-xs font-semibold tracking-[0.3em] uppercase mb-0.5"
-                  style={{ fontFamily: "var(--font-cormorant), 'Cormorant Garamond', serif" }}>
-                  Toda la colección
-                </p>
-                <h2
-                  className="text-olive-dark text-3xl md:text-4xl font-light"
-                  style={{ fontFamily: "var(--font-cormorant), 'Cormorant Garamond', serif" }}
-                >
-                  Mis Videos
-                </h2>
-              </div>
+      {/* ── Todos los videos ─────────────────────────────────────────── */}
+      <section className="py-16 md:py-24" style={{ backgroundColor: "#FAF7F2" }}>
+        <div className="max-w-[1100px] mx-auto px-4 sm:px-6 lg:px-8">
+          <div className="flex items-end justify-between mb-12 border-b pb-8" style={{ borderColor: "#E8E0D4" }}>
+            <div>
+              <p
+                className="text-xs font-semibold tracking-[0.35em] uppercase mb-2"
+                style={{ color: "#DDA15E", fontFamily: "var(--font-cormorant), 'Cormorant Garamond', serif" }}
+              >
+                Toda la colección
+              </p>
+              <h2
+                className="text-3xl md:text-4xl font-light"
+                style={{ color: "#1C1917", fontFamily: "var(--font-cormorant), 'Cormorant Garamond', serif" }}
+              >
+                Mis Videos
+              </h2>
             </div>
             <Link
               href="https://www.youtube.com/@pedroolivosmusica/videos"
               target="_blank"
               rel="noopener noreferrer"
-              className="hidden md:flex items-center gap-2 text-olive text-sm font-semibold hover:text-pink transition-colors duration-300 group"
+              className="hidden md:flex items-center gap-2 text-sm font-semibold transition-colors duration-300 group"
+              style={{ color: "#78716C" }}
             >
               Ver canal completo
               <span className="group-hover:translate-x-1 transition-transform duration-300">→</span>
             </Link>
           </div>
 
-          {/* Videos grid */}
           <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-5 md:gap-6">
             {videos.map((video, i) => (
               <TarjetaVideo
@@ -238,13 +239,13 @@ export default async function MisVideosPage() {
             ))}
           </div>
 
-          {/* Mobile ver canal */}
-          <div className="mt-8 flex md:hidden justify-center">
+          <div className="mt-10 flex md:hidden justify-center">
             <Link
               href="https://www.youtube.com/@pedroolivosmusica/videos"
               target="_blank"
               rel="noopener noreferrer"
-              className="inline-flex items-center gap-2 border border-olive/30 text-olive font-semibold text-sm px-6 py-2.5 rounded-full hover:bg-olive/5 transition-all duration-300"
+              className="inline-flex items-center gap-2 text-sm font-semibold px-6 py-2.5 rounded-full border transition-all duration-300"
+              style={{ borderColor: "#C8BFB4", color: "#78716C" }}
             >
               Ver canal completo →
             </Link>
@@ -252,10 +253,7 @@ export default async function MisVideosPage() {
         </div>
       </section>
 
-      {/* Boletín */}
       <SeccionBoletin />
-
-      {/* Pie de Página */}
       <PieDePagina />
     </main>
   )
