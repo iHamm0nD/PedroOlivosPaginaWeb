@@ -71,103 +71,51 @@ export async function UltimoVideo() {
   const date = formatDate(video.publishedAt)
 
   return (
-    <section className="bg-olive-dark py-16 md:py-24 relative overflow-hidden">
-      {/* Decorative background lines */}
-      <div className="absolute inset-0 opacity-5 pointer-events-none">
-        <div className="absolute top-0 left-1/4 w-px h-full bg-cream" />
-        <div className="absolute top-0 right-1/4 w-px h-full bg-cream" />
-      </div>
+    <div className="w-full h-full">
+      <Link
+        href={videoUrl}
+        target="_blank"
+        rel="noopener noreferrer"
+        className="group relative flex flex-col h-full rounded-3xl overflow-hidden shadow-xl hover:shadow-2xl transition-all duration-400 hover:-translate-y-2 border-2 border-pink/40 bg-gradient-to-br from-white to-cream"
+      >
+        {/* Thumbnail — crece para llenar el espacio disponible */}
+        <div className="relative flex-1 min-h-0 overflow-hidden">
+          <Image
+            src={thumbnailUrl}
+            alt={video.title}
+            fill
+            className="object-cover transition-transform duration-500 group-hover:scale-105"
+            unoptimized
+          />
+          {/* Gradient overlay */}
+          <div className="absolute inset-0 bg-gradient-to-t from-pink-dark/80 via-pink-dark/30 to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-300" />
 
-      <div className="max-w-[1200px] mx-auto px-4 sm:px-6 lg:px-8">
-        {/* Section label */}
-        <div className="flex items-center gap-4 mb-10">
-          <div className="w-10 h-px bg-pink" />
-          <span
-            className="text-pink text-sm font-semibold tracking-[0.3em] uppercase"
-            style={{ fontFamily: "var(--font-cormorant), 'Cormorant Garamond', serif" }}
-          >
-            Recién publicado
-          </span>
-        </div>
-
-        <div className="grid grid-cols-1 lg:grid-cols-2 gap-10 lg:gap-16 items-center">
-          {/* Thumbnail */}
-          <div className="relative group">
-            <Link href={videoUrl} target="_blank" rel="noopener noreferrer">
-              {/* Glow border */}
-              <div className="absolute -inset-1 bg-pink/30 rounded-2xl blur-sm group-hover:bg-pink/50 transition-all duration-500" />
-              <div className="relative aspect-video w-full rounded-2xl overflow-hidden shadow-2xl">
-                <Image
-                  src={thumbnailUrl}
-                  alt={video.title}
-                  fill
-                  className="object-cover transition-transform duration-700 group-hover:scale-105"
-                  unoptimized
-                />
-                {/* Play button */}
-                <div className="absolute inset-0 flex items-center justify-center bg-black/20 group-hover:bg-black/10 transition-all duration-300">
-                  <div className="w-20 h-20 bg-pink/90 rounded-full flex items-center justify-center shadow-2xl group-hover:scale-110 transition-transform duration-300">
-                    <Play className="w-8 h-8 text-white ml-1" fill="currentColor" />
-                  </div>
-                </div>
-                {/* "NUEVO" badge */}
-                <div className="absolute top-4 left-4 bg-pink text-white text-xs font-bold px-3 py-1.5 rounded-full tracking-widest uppercase shadow-md">
-                  Nuevo
-                </div>
-              </div>
-            </Link>
+          {/* Play button */}
+          <div className="absolute inset-0 flex items-center justify-center">
+            <div className="w-16 h-16 bg-pink/90 rounded-full flex items-center justify-center shadow-lg opacity-0 group-hover:opacity-100 scale-75 group-hover:scale-100 transition-all duration-300">
+              <Play className="w-7 h-7 text-white ml-1" fill="currentColor" />
+            </div>
           </div>
 
-          {/* Info */}
-          <div className="flex flex-col gap-6">
-            <div>
-              <h2
-                className="text-cream text-4xl md:text-5xl font-light leading-tight mb-2"
-                style={{ fontFamily: "var(--font-cormorant), 'Cormorant Garamond', serif" }}
-              >
-                Último Video
-              </h2>
-              {date && (
-                <p className="text-cream/40 text-sm tracking-widest uppercase">{date}</p>
-              )}
-            </div>
-
-            <h3 className="text-cream text-xl md:text-2xl font-semibold leading-snug">
-              {video.title}
-            </h3>
-
-            <p className="text-cream/60 text-base leading-relaxed">
-              Mi video más reciente en YouTube. Cada semana comparto nuevas interpretaciones, tutoriales y música en vivo. Actívate las notificaciones para no perderte nada.
-            </p>
-
-            <div className="flex flex-wrap gap-3">
-              <Link
-                href={videoUrl}
-                target="_blank"
-                rel="noopener noreferrer"
-                className="inline-flex items-center gap-2 bg-pink hover:bg-pink-dark text-white font-bold text-sm px-7 py-3.5 rounded-full shadow-lg transition-all duration-300 hover:scale-105 hover:shadow-xl"
-              >
-                <Play className="w-4 h-4" fill="currentColor" />
-                Ver ahora
-              </Link>
-              <Link
-                href="https://www.youtube.com/@pedroolivosmusica?sub_confirmation=1"
-                target="_blank"
-                rel="noopener noreferrer"
-                className="inline-flex items-center gap-2 border border-cream/30 text-cream hover:bg-cream/10 font-semibold text-sm px-7 py-3.5 rounded-full transition-all duration-300 hover:scale-105"
-              >
-                <Youtube className="w-4 h-4" />
-                Suscribirse
-              </Link>
-            </div>
-
-            {/* Auto-update notice */}
-            <p className="text-cream/30 text-xs tracking-wide">
-              Se actualiza automáticamente con cada nuevo video publicado
-            </p>
+          {/* "NUEVO" badge */}
+          <div className="absolute top-4 left-4 bg-pink text-white text-xs font-bold px-3 py-1.5 rounded-full tracking-widest uppercase shadow-lg">
+            Nuevo
           </div>
         </div>
-      </div>
-    </section>
+
+        {/* Content — altura fija al fondo */}
+        <div className="flex-shrink-0 p-6 md:p-7">
+          {date && (
+            <p className="text-olive text-xs font-semibold tracking-widest uppercase mb-2">{date}</p>
+          )}
+          <h3 className="text-lg md:text-xl font-bold text-olive-dark leading-snug line-clamp-3 group-hover:text-olive transition-colors duration-300 mb-2">
+            {video.title}
+          </h3>
+          <p className="text-olive/60 text-sm">
+            Video más reciente
+          </p>
+        </div>
+      </Link>
+    </div>
   )
 }
