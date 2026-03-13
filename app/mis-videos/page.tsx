@@ -107,7 +107,7 @@ export default async function MisVideosPage() {
 
       {/* ── Shorts (solo se muestra si YOUTUBE_API_KEY está configurada) ──── */}
       {shorts.length > 0 && (
-        <section className="bg-cream py-16 md:py-20">
+        <section className="bg-white/40 py-16 md:py-20 border-b border-pink/10">
           <div className="max-w-[1200px] mx-auto px-4 sm:px-6 lg:px-8">
             {/* Header */}
             <div className="flex items-center justify-between mb-10">
@@ -119,7 +119,7 @@ export default async function MisVideosPage() {
                     Videos cortos
                   </p>
                   <h2
-                    className="text-olive-dark text-3xl md:text-4xl font-light"
+                    className="text-olive text-3xl md:text-4xl font-light"
                     style={{ fontFamily: "var(--font-cormorant), 'Cormorant Garamond', serif" }}
                   >
                     Shorts
@@ -130,7 +130,7 @@ export default async function MisVideosPage() {
                 href="https://www.youtube.com/@pedroolivosmusica/shorts"
                 target="_blank"
                 rel="noopener noreferrer"
-                className="hidden md:flex items-center gap-2 text-olive text-sm font-semibold hover:text-pink transition-colors duration-300 group"
+                className="hidden md:flex items-center gap-2 text-olive hover:text-pink text-sm font-semibold transition-colors duration-300 group"
               >
                 Ver todos
                 <span className="group-hover:translate-x-1 transition-transform duration-300">→</span>
@@ -145,7 +145,7 @@ export default async function MisVideosPage() {
                   href={`https://www.youtube.com/shorts/${short.videoId}`}
                   target="_blank"
                   rel="noopener noreferrer"
-                  className="group relative block rounded-2xl overflow-hidden shadow-md hover:shadow-xl transition-all duration-300 hover:-translate-y-1.5 bg-olive-dark"
+                  className="group relative block rounded-2xl overflow-hidden shadow-lg hover:shadow-2xl transition-all duration-300 hover:-translate-y-2 bg-olive/20 border border-pink/15"
                   style={{ aspectRatio: "9/16" }}
                 >
                   <Image
@@ -156,23 +156,23 @@ export default async function MisVideosPage() {
                     unoptimized
                   />
                   {/* Gradient */}
-                  <div className="absolute inset-0 bg-gradient-to-t from-black/80 via-black/20 to-transparent" />
+                  <div className="absolute inset-0 bg-gradient-to-t from-black/60 via-black/10 to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-300" />
 
                   {/* Short badge */}
-                  <div className="absolute top-3 right-3 bg-pink text-white text-xs font-bold px-2.5 py-1 rounded-full tracking-wider uppercase shadow">
+                  <div className="absolute top-3 right-3 bg-pink/80 text-white text-xs font-bold px-2.5 py-1 rounded-full tracking-wider uppercase shadow-md border border-white/30">
                     Short
                   </div>
 
                   {/* Play */}
                   <div className="absolute inset-0 flex items-center justify-center opacity-0 group-hover:opacity-100 transition-opacity duration-300">
-                    <div className="w-12 h-12 bg-pink/90 rounded-full flex items-center justify-center shadow-lg">
-                      <Play className="w-5 h-5 text-white ml-0.5" fill="currentColor" />
+                    <div className="w-14 h-14 bg-pink/85 rounded-full flex items-center justify-center shadow-lg border border-white/40">
+                      <Play className="w-6 h-6 text-white ml-0.5" fill="currentColor" />
                     </div>
                   </div>
 
                   {/* Title */}
                   <div className="absolute bottom-0 left-0 right-0 p-3">
-                    <p className="text-white text-xs font-semibold leading-snug line-clamp-2">
+                    <p className="text-white text-xs font-semibold leading-snug line-clamp-2 drop-shadow">
                       {short.title}
                     </p>
                   </div>
@@ -186,7 +186,7 @@ export default async function MisVideosPage() {
                 href="https://www.youtube.com/@pedroolivosmusica/shorts"
                 target="_blank"
                 rel="noopener noreferrer"
-                className="inline-flex items-center gap-2 border border-olive/30 text-olive font-semibold text-sm px-6 py-2.5 rounded-full hover:bg-olive/5 transition-all duration-300"
+                className="inline-flex items-center gap-2 border border-pink/30 text-olive font-semibold text-sm px-6 py-2.5 rounded-full hover:bg-pink/10 transition-all duration-300"
               >
                 Ver todos los Shorts →
               </Link>
@@ -196,7 +196,7 @@ export default async function MisVideosPage() {
       )}
 
       {/* ── Todos los videos ────────────────────────────────────────── */}
-      <section className="bg-olive/8 py-16 md:py-20 border-t border-olive/10">
+      <section className="bg-cream py-16 md:py-20 border-t border-pink/15">
         <div className="max-w-[1200px] mx-auto px-4 sm:px-6 lg:px-8">
           {/* Header */}
           <div className="flex items-center justify-between mb-10">
@@ -208,7 +208,7 @@ export default async function MisVideosPage() {
                   Toda la colección
                 </p>
                 <h2
-                  className="text-olive-dark text-3xl md:text-4xl font-light"
+                  className="text-olive text-3xl md:text-4xl font-light"
                   style={{ fontFamily: "var(--font-cormorant), 'Cormorant Garamond', serif" }}
                 >
                   Mis Videos
@@ -219,7 +219,7 @@ export default async function MisVideosPage() {
               href="https://www.youtube.com/@pedroolivosmusica/videos"
               target="_blank"
               rel="noopener noreferrer"
-              className="hidden md:flex items-center gap-2 text-olive text-sm font-semibold hover:text-pink transition-colors duration-300 group"
+              className="hidden md:flex items-center gap-2 text-olive hover:text-pink text-sm font-semibold transition-colors duration-300 group"
             >
               Ver canal completo
               <span className="group-hover:translate-x-1 transition-transform duration-300">→</span>
@@ -244,7 +244,7 @@ export default async function MisVideosPage() {
               href="https://www.youtube.com/@pedroolivosmusica/videos"
               target="_blank"
               rel="noopener noreferrer"
-              className="inline-flex items-center gap-2 border border-olive/30 text-olive font-semibold text-sm px-6 py-2.5 rounded-full hover:bg-olive/5 transition-all duration-300"
+              className="inline-flex items-center gap-2 border border-pink/30 text-olive font-semibold text-sm px-6 py-2.5 rounded-full hover:bg-pink/8 transition-all duration-300"
             >
               Ver canal completo →
             </Link>
