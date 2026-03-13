@@ -9,8 +9,8 @@ const navItems = [
   { name: "HOME", href: "/" },
   { name: "TIENDA", href: "/tienda" },
   { name: "MIS VIDEOS", href: "/mis-videos" },
-  { name: "SERVICIOS", href: "#servicios" },
-  { name: "CONTACTO", href: "#subscribe" },
+  { name: "SERVICIOS", href: "/#servicios" },
+  { name: "CONTACTO", href: "/#subscribe" },
 ]
 
 export function Navbar() {
