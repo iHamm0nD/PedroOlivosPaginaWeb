@@ -1,5 +1,5 @@
 import type { Metadata } from 'next'
-import { Nunito, Quicksand, Playfair_Display, Great_Vibes } from 'next/font/google'
+import { Nunito, Quicksand, Playfair_Display, Great_Vibes, Cormorant_Garamond } from 'next/font/google'
 import { Analytics } from '@vercel/analytics/next'
 import './globals.css'
 
@@ -28,6 +28,13 @@ const greatVibes = Great_Vibes({
   weight: ['400'],
 });
 
+const cormorant = Cormorant_Garamond({
+  subsets: ["latin"],
+  variable: '--font-cormorant',
+  weight: ['300', '400', '500', '600', '700'],
+  style: ['normal', 'italic'],
+});
+
 export const metadata: Metadata = {
   title: 'Pedro Olivos | Oficial Web Site',
   description: 'Aprende a tocar violin con Pedro Olivos',
@@ -40,7 +47,7 @@ export default function RootLayout({
 }>) {
   return (
     <html lang="en">
-      <body className={`${nunito.variable} ${quicksand.variable} ${playfair.variable} ${greatVibes.variable} font-sans antialiased`}>
+        <body className={`${nunito.variable} ${quicksand.variable} ${playfair.variable} ${greatVibes.variable} ${cormorant.variable} font-sans antialiased`}>
         {children}
         <Analytics />
       </body>

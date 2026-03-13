@@ -9,8 +9,8 @@ const navItems = [
   { name: "HOME", href: "/" },
   { name: "TIENDA", href: "/tienda" },
   { name: "MIS VIDEOS", href: "/mis-videos" },
-  { name: "SERVICIOS", href: "#servicios" },
-  { name: "CONTACTO", href: "#subscribe" },
+  { name: "SERVICIOS", href: "/#servicios" },
+  { name: "CONTACTO", href: "/#subscribe" },
 ]
 
 export function Navegacion() {
@@ -28,9 +28,19 @@ export function Navegacion() {
       <div className="max-w-[1200px] mx-auto px-4 sm:px-6 lg:px-8 h-full">
         <div className="flex items-center justify-between h-full">
           {/* Logo */}
-          <Link href="/" className="flex flex-col leading-tight">
-            <span className="text-white text-2xl font-black tracking-tight">PEDRO</span>
-            <span className="text-white/90 text-sm font-medium -mt-1">OLIVOS</span>
+          <Link href="/" className="flex flex-col leading-none group">
+            <span
+              className="text-cream text-3xl font-light tracking-widest uppercase transition-all duration-300 group-hover:text-pink"
+              style={{ fontFamily: "var(--font-cormorant), 'Cormorant Garamond', serif", letterSpacing: "0.18em" }}
+            >
+              Pedro
+            </span>
+            <span
+              className="text-pink text-lg font-semibold tracking-[0.35em] uppercase -mt-1 transition-all duration-300 group-hover:text-cream"
+              style={{ fontFamily: "var(--font-cormorant), 'Cormorant Garamond', serif" }}
+            >
+              Olivos
+            </span>
           </Link>
 
           {/* Desktop Navigation */}
