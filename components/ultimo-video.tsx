@@ -62,11 +62,12 @@ export async function UltimoVideo() {
   // Fallback al primer video manual si falla el RSS
   const video = latest ?? {
     videoId: "byIoQPP2Koc",
-    title: "Último video de Pedro Olivos",
+    title: "Ven a ver mi último video",
     publishedAt: "",
   }
 
-  const thumbnailUrl = `https://img.youtube.com/vi/${video.videoId}/maxresdefault.jpg`
+  const thumbnailUrlMaxRes = `https://img.youtube.com/vi/${video.videoId}/maxresdefault.jpg`
+  const thumbnailUrlHq = `https://img.youtube.com/vi/${video.videoId}/hqdefault.jpg`
   const videoUrl = `https://www.youtube.com/watch?v=${video.videoId}`
   const date = formatDate(video.publishedAt)
 
@@ -80,13 +81,16 @@ export async function UltimoVideo() {
       >
         {/* Thumbnail — crece para llenar el espacio disponible */}
         <div className="relative flex-1 min-h-0 overflow-hidden">
-          <Image
-            src={thumbnailUrl}
-            alt={video.title}
-            fill
-            className="object-cover transition-transform duration-500 group-hover:scale-105"
-            unoptimized
-          />
+          <picture>
+            <source srcSet={thumbnailUrlMaxRes} type="image/jpeg" />
+            <Image
+              src={thumbnailUrlHq}
+              alt={video.title}
+              fill
+              className="object-cover transition-transform duration-500 group-hover:scale-105"
+              unoptimized
+            />
+          </picture>
           {/* Gradient overlay */}
           <div className="absolute inset-0 bg-gradient-to-t from-pink-dark/80 via-pink-dark/30 to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-300" />
 
