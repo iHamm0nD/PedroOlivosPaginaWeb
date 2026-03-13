@@ -102,9 +102,6 @@ export default async function MisVideosPage() {
         </div>
       </section>
 
-      {/* ── Último video (auto-actualizable) ────────────────────────── */}
-      <UltimoVideo />
-
       {/* ── Shorts (solo se muestra si YOUTUBE_API_KEY está configurada) ──── */}
       {shorts.length > 0 && (
         <section className="bg-white py-16 md:py-20">
@@ -228,6 +225,11 @@ export default async function MisVideosPage() {
 
           {/* Videos grid */}
           <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-5 md:gap-6">
+            {/* Último video destacado */}
+            <div className="sm:col-span-1 lg:col-span-2 lg:row-span-1">
+              <UltimoVideo />
+            </div>
+
             {videos.map((video, i) => (
               <TarjetaVideo
                 key={video.videoId}
