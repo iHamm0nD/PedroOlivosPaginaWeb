@@ -50,17 +50,17 @@ export function AboutSection() {
                 src="/images/pedro-about-1.jpg"
                 alt="Pedro Olivos posando con su violin en el parque"
                 fill
-                className="object-cover object-top"
+                className="object-cover object-[99%_center] scale-[1.19]" // con esto se ajusta la imagen dependendiendo izq o derecha
               />
             </div>
 
             {/* Second image — offset right and down */}
-            <div className="absolute top-20 right-0 md:right-4 w-44 h-60 md:w-52 md:h-72 rounded-3xl overflow-hidden shadow-xl border-4 border-white z-20">
+            <div className="absolute top-20 right-0 md:right-4 w-44s h-60 md:w-52 md:h-72 rounded-3xl overflow-hidden shadow-xl border-4 border-white z-20">
               <Image
                 src="/images/pedro-about-2.jpg"
                 alt="Pedro Olivos tocando violin en el parque"
                 fill
-                className="object-cover object-[center_20%]"
+                className="object-cover object-[20%_center] scale-[0.99]"
               />
             </div>
 
@@ -70,7 +70,7 @@ export function AboutSection() {
                 src="/images/pedro-about-3.jpg"
                 alt="Pedro Olivos ejecutando violin en parque con flores"
                 fill
-                className="object-cover object-[center_20%]"
+                className="object-cover object-[21%_center] scale-[1.05]"
               />
             </div>
 
@@ -83,7 +83,7 @@ export function AboutSection() {
           {/* Right — text */}
           <div className="space-y-6">
             <p className="text-gray-700 leading-relaxed text-base md:text-lg font-sans">
-              Soy <span className="font-bold text-olive-dark">Pedro Olivos</span>, violinista y artista digital apasionado por compartir la música en todas sus formas. Mi camino es el de un músico en constante aprendizaje, y eso es precisamente lo que me motiva cada día.
+              Soy <span className="font-bold text-olive-dark">Pedro Olivos</span>, violinista y creador digital apasionado por compartir la música en todas sus formas. Mi camino es el de un músico en constante aprendizaje, y eso es precisamente lo que me motiva cada día.
             </p>
 
             <p className="text-gray-700 leading-relaxed font-sans">

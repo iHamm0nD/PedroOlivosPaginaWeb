@@ -33,7 +33,7 @@ export function HeroSection() {
               <div className="flex items-center gap-3">
                 <div className="w-10 h-px bg-pink" />
                 <span className="text-pink text-xs font-bold tracking-[0.3em] uppercase font-sans">
-                  Violinista &amp; Compositor
+                  Violinista &amp; Creador Digital
                 </span>
               </div>
 
@@ -54,7 +54,7 @@ export function HeroSection() {
 
               {/* Tagline */}
               <p className="text-cream/75 text-sm md:text-base max-w-xs leading-relaxed font-sans mt-1">
-                Música que nace del alma. Partituras, conciertos y clases que despiertan emociones.
+                Música que nace del alma. Partituras y clases que despiertan emociones.
               </p>
 
               {/* CTAs */}
@@ -66,12 +66,12 @@ export function HeroSection() {
                   Sobre Mi
                 </Link>
                 <Link
-                  href="https://wa.me/51999999999"
+                  href="https://wa.me/51987654321"
                   target="_blank"
                   rel="noopener noreferrer"
                   className="inline-flex items-center gap-2 border border-cream/50 text-cream font-bold text-xs tracking-widest uppercase px-6 py-3 rounded-full hover:bg-cream/10 transition-colors duration-300 font-sans"
                 >
-                  Contratar
+                  Contactame
                 </Link>
               </div>
             </div>
