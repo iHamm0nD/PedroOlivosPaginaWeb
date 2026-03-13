@@ -223,19 +223,31 @@ export default async function MisVideosPage() {
             </Link>
           </div>
 
-          {/* Videos grid */}
-          <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-5 md:gap-6">
-            {/* Último video destacado */}
-            <div className="sm:col-span-1 lg:col-span-2 lg:row-span-1">
-              <UltimoVideo />
-            </div>
+          {/* Último video — ancho completo */}
+          <div className="mb-6">
+            <UltimoVideo />
+          </div>
 
-            {videos.map((video, i) => (
+          {/* Primeros 2 videos — 2 columnas */}
+          <div className="grid grid-cols-1 sm:grid-cols-2 gap-5 md:gap-6 mb-6">
+            {videos.slice(0, 2).map((video, i) => (
               <TarjetaVideo
                 key={video.videoId}
                 videoId={video.videoId}
                 title={video.title}
                 index={i}
+              />
+            ))}
+          </div>
+
+          {/* Resto de videos — 3 columnas */}
+          <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-5 md:gap-6">
+            {videos.slice(2).map((video, i) => (
+              <TarjetaVideo
+                key={video.videoId}
+                videoId={video.videoId}
+                title={video.title}
+                index={i + 2}
               />
             ))}
           </div>
