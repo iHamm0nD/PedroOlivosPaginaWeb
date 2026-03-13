@@ -223,21 +223,24 @@ export default async function MisVideosPage() {
             </Link>
           </div>
 
-          {/* Último video — ancho completo */}
-          <div className="mb-6">
-            <UltimoVideo />
-          </div>
+          {/* Primera fila: Último video (2/3) + 2 videos apilados (1/3) */}
+          <div className="grid grid-cols-1 lg:grid-cols-3 gap-5 md:gap-6 mb-6">
+            {/* Último video - ocupa 2 columnas */}
+            <div className="lg:col-span-2">
+              <UltimoVideo />
+            </div>
 
-          {/* Primeros 2 videos — 2 columnas */}
-          <div className="grid grid-cols-1 sm:grid-cols-2 gap-5 md:gap-6 mb-6">
-            {videos.slice(0, 2).map((video, i) => (
-              <TarjetaVideo
-                key={video.videoId}
-                videoId={video.videoId}
-                title={video.title}
-                index={i}
-              />
-            ))}
+            {/* 2 videos apilados a la derecha */}
+            <div className="flex flex-col gap-5 md:gap-6">
+              {videos.slice(0, 2).map((video, i) => (
+                <TarjetaVideo
+                  key={video.videoId}
+                  videoId={video.videoId}
+                  title={video.title}
+                  index={i}
+                />
+              ))}
+            </div>
           </div>
 
           {/* Resto de videos — 3 columnas */}
