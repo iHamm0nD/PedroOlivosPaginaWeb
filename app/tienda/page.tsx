@@ -57,9 +57,6 @@ export default function TiendaPage() {
         </div>
       </section>
 
-      {/* Boletín */}
-      <SeccionBoletin />
-
       {/* Pie de Página */}
       <PieDePagina />
     </main>
