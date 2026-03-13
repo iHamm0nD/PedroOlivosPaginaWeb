@@ -1,96 +1,103 @@
 import Image from "next/image"
-import { Music, Headphones, Disc3, Mic2 } from "lucide-react"
+import Link from "next/link"
 
 export function HeroSection() {
   return (
-    <section className="relative bg-pink overflow-hidden">
-      {/* Background decorative shapes */}
-      <div className="absolute inset-0 overflow-hidden">
-        <div className="absolute top-20 left-10 w-32 h-32 bg-white/10 rounded-full blur-2xl" />
-        <div className="absolute top-40 right-20 w-48 h-48 bg-white/10 rounded-full blur-3xl" />
-        <div className="absolute bottom-20 left-1/4 w-24 h-24 bg-white/15 rounded-full blur-xl" />
+    <section className="relative overflow-hidden min-h-[calc(100vh-64px)]">
+
+      {/* Full-bleed background photo */}
+      <div className="absolute inset-0">
+        <Image
+          src="/images/pedro-about-2.jpg"
+          alt="Pedro Olivos tocando violin"
+          fill
+          className="object-cover object-[center_20%]"
+          priority
+        />
+        {/* Dark vignette — corners and bottom, warm neutral tones */}
+        <div className="absolute inset-0 bg-gradient-to-t from-[#1a1208]/90 via-[#1a1208]/35 to-[#1a1208]/10" />
+        <div className="absolute inset-0 bg-gradient-to-r from-[#1a1208]/65 via-transparent to-[#1a1208]/40" />
+        {/* Warm amber tint overlay — ties to palette */}
+        <div className="absolute inset-0 bg-[#DDA15E]/08 mix-blend-multiply" />
       </div>
 
-      <div className="max-w-[1200px] mx-auto px-4 sm:px-6 lg:px-8 relative">
-        <div className="flex flex-col items-center justify-center min-h-[500px] md:min-h-[600px] py-12 md:py-16">
-          {/* Floating elements - Left side */}
-          <div className="absolute left-4 md:left-12 top-1/4 animate-float">
-            <div className="bg-white/90 rounded-2xl p-3 shadow-lg">
-              <Music className="w-6 h-6 text-pink" />
-            </div>
-          </div>
-          
-          <div className="absolute left-8 md:left-24 top-1/2 animate-float-delay">
-            <div className="bg-white/90 rounded-full p-2 shadow-lg">
-              <Disc3 className="w-5 h-5 text-olive" />
-            </div>
-          </div>
+      {/* Content */}
+      <div className="relative z-10 flex flex-col justify-end min-h-[calc(100vh-64px)] pb-16 md:pb-20">
+        <div className="max-w-[1200px] mx-auto px-6 lg:px-12 w-full">
+          <div className="flex flex-col md:flex-row md:items-end md:justify-between gap-8">
 
-          {/* Floating elements - Right side */}
-          <div className="absolute right-4 md:right-16 top-1/3 animate-float-slow">
-            <div className="bg-white/90 rounded-2xl p-3 shadow-lg">
-              <Headphones className="w-6 h-6 text-blue" />
-            </div>
-          </div>
-          
-          <div className="absolute right-8 md:right-28 top-2/3 animate-float">
-            <div className="bg-white/90 rounded-full p-2 shadow-lg">
-              <Mic2 className="w-5 h-5 text-olive" />
-            </div>
-          </div>
+            {/* Left — main title block */}
+            <div className="flex flex-col gap-4">
 
-          {/* Spotify/Music App mockup behind */}
-          <div className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-48 md:w-64 h-80 md:h-[420px] bg-gray-900 rounded-[3rem] border-4 border-gray-800 shadow-2xl opacity-30 -rotate-6">
-            <div className="absolute inset-4 flex flex-col items-center justify-center opacity-50">
-              <Disc3 className="w-16 h-16 text-green-500" />
-            </div>
-          </div>
-
-          {/* Main hero content */}
-          <div className="relative z-10 flex flex-col items-center">
-            {/* Hero image */}
-            <div className="relative w-64 h-64 md:w-80 md:h-80 lg:w-96 lg:h-96 mb-8">
-              <div className="absolute inset-0 bg-gradient-to-b from-white/20 to-transparent rounded-full" />
-              <Image
-                src="/images/luna-hero.jpg"
-                alt="Luna Rivera cantando con microfono en concierto"
-                fill
-                className="object-cover rounded-full shadow-2xl"
-                priority
-              />
-              {/* Mic icon overlay */}
-              <div className="absolute -bottom-2 -right-2 bg-white rounded-full p-3 shadow-lg animate-pulse-soft">
-                <Mic2 className="w-6 h-6 text-pink" />
+              {/* Eyebrow */}
+              <div className="flex items-center gap-3">
+                <div className="w-10 h-px bg-pink" />
+                <span className="text-pink text-xs font-bold tracking-[0.3em] uppercase font-sans">
+                  Violinista &amp; Compositor
+                </span>
               </div>
-            </div>
 
-            {/* Hero Title */}
-            <div className="text-center">
-              <h1 className="text-4xl sm:text-5xl md:text-6xl lg:text-7xl font-black text-white leading-none tracking-tight drop-shadow-lg">
-                <span className="block">SENTIR</span>
-                <span className="block">CREAR</span>
-                <span className="block">MUSICA</span>
-              </h1>
+              {/* Name */}
+              <div>
+                <h1
+                  className="leading-[1.1] drop-shadow-2xl"
+                  style={{ fontFamily: "var(--font-great-vibes), 'Great Vibes', cursive" }}
+                >
+                  <span className="block text-cream text-7xl sm:text-9xl lg:text-[9rem] xl:text-[11rem]">
+                    Pedro
+                  </span>
+                  <span className="block text-pink text-7xl sm:text-9xl lg:text-[9rem] xl:text-[11rem] -mt-4">
+                    Olivos
+                  </span>
+                </h1>
+              </div>
+
+              {/* Tagline */}
+              <p className="text-cream/75 text-sm md:text-base max-w-xs leading-relaxed font-sans mt-1">
+                Música que nace del alma. Partituras, conciertos y clases que despiertan emociones.
+              </p>
+
+              {/* CTAs */}
+              <div className="flex flex-wrap gap-3 mt-2">
+                <Link
+                  href="#sobre-mi"
+                  className="inline-flex items-center gap-2 bg-pink text-olive-dark font-bold text-xs tracking-widest uppercase px-6 py-3 rounded-full hover:bg-[#BC6C25] transition-colors duration-300 font-sans"
+                >
+                  Sobre Mi
+                </Link>
+                <Link
+                  href="https://wa.me/51999999999"
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  className="inline-flex items-center gap-2 border border-cream/50 text-cream font-bold text-xs tracking-widest uppercase px-6 py-3 rounded-full hover:bg-cream/10 transition-colors duration-300 font-sans"
+                >
+                  Contratar
+                </Link>
+              </div>
             </div>
           </div>
         </div>
       </div>
 
-      {/* Wave transition */}
-      <div className="absolute bottom-0 left-0 right-0">
+      {/* Bottom decorative border line */}
+      <div className="absolute bottom-0 left-0 right-0 h-1 bg-gradient-to-r from-transparent via-pink to-transparent opacity-60" />
+
+      {/* Wave transition into page */}
+      <div className="absolute bottom-0 left-0 right-0 pointer-events-none">
         <svg
-          viewBox="0 0 1440 120"
+          viewBox="0 0 1440 60"
           fill="none"
           xmlns="http://www.w3.org/2000/svg"
           className="w-full h-auto"
           preserveAspectRatio="none"
         >
           <path
-            d="M0 120L60 110C120 100 240 80 360 70C480 60 600 60 720 65C840 70 960 80 1080 85C1200 90 1320 90 1380 90L1440 90V120H1380C1320 120 1200 120 1080 120C960 120 840 120 720 120C600 120 480 120 360 120C240 120 120 120 60 120H0Z"
+            d="M0 60L60 54C120 48 240 36 360 33C480 30 600 36 720 39C840 42 960 42 1080 40.5C1200 39 1320 39 1380 39L1440 39V60H0Z"
             fill="#FEFAE0"
           />
         </svg>
       </div>
+
     </section>
   )
 }
