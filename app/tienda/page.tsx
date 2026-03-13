@@ -58,9 +58,6 @@ export default function TiendaPage() {
         </div>
       </section>
 
-      {/* Section Divider */}
-      <SectionDivider />
-
       {/* Newsletter */}
       <NewsletterSection />
 
