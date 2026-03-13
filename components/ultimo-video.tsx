@@ -71,15 +71,15 @@ export async function UltimoVideo() {
   const date = formatDate(video.publishedAt)
 
   return (
-    <div className="w-full">
+    <div className="w-full h-full">
       <Link
         href={videoUrl}
         target="_blank"
         rel="noopener noreferrer"
-        className="group relative block rounded-3xl overflow-hidden shadow-xl hover:shadow-2xl transition-all duration-400 hover:-translate-y-2 border-2 border-pink/40 bg-gradient-to-br from-white to-cream"
+        className="group relative flex flex-col h-full rounded-3xl overflow-hidden shadow-xl hover:shadow-2xl transition-all duration-400 hover:-translate-y-2 border-2 border-pink/40 bg-gradient-to-br from-white to-cream"
       >
-        {/* Thumbnail with overlay */}
-        <div className="relative w-full aspect-video overflow-hidden">
+        {/* Thumbnail — crece para llenar el espacio disponible */}
+        <div className="relative flex-1 min-h-0 overflow-hidden">
           <Image
             src={thumbnailUrl}
             alt={video.title}
@@ -89,7 +89,7 @@ export async function UltimoVideo() {
           />
           {/* Gradient overlay */}
           <div className="absolute inset-0 bg-gradient-to-t from-pink-dark/80 via-pink-dark/30 to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-300" />
-          
+
           {/* Play button */}
           <div className="absolute inset-0 flex items-center justify-center">
             <div className="w-16 h-16 bg-pink/90 rounded-full flex items-center justify-center shadow-lg opacity-0 group-hover:opacity-100 scale-75 group-hover:scale-100 transition-all duration-300">
@@ -103,8 +103,8 @@ export async function UltimoVideo() {
           </div>
         </div>
 
-        {/* Content */}
-        <div className="p-6 md:p-7">
+        {/* Content — altura fija al fondo */}
+        <div className="flex-shrink-0 p-6 md:p-7">
           {date && (
             <p className="text-pink text-xs font-semibold tracking-widest uppercase mb-2">{date}</p>
           )}

@@ -224,9 +224,9 @@ export default async function MisVideosPage() {
           </div>
 
           {/* Primera fila: Último video (2/3) + 2 videos apilados (1/3) */}
-          <div className="grid grid-cols-1 lg:grid-cols-3 gap-5 md:gap-6 mb-6">
-            {/* Último video - ocupa 2 columnas */}
-            <div className="lg:col-span-2">
+          <div className="grid grid-cols-1 lg:grid-cols-3 gap-5 md:gap-6 mb-6 lg:items-stretch">
+            {/* Último video - ocupa 2 columnas, llena la altura */}
+            <div className="lg:col-span-2 flex flex-col">
               <UltimoVideo />
             </div>
 
