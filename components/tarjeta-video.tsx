@@ -5,46 +5,65 @@ import { Play } from "lucide-react"
 interface VideoCardProps {
   videoId: string
   title: string
+  index?: number
 }
 
-export function TarjetaVideo({ videoId, title }: VideoCardProps) {
+export function TarjetaVideo({ videoId, title, index = 0 }: VideoCardProps) {
   const thumbnailUrl = `https://img.youtube.com/vi/${videoId}/maxresdefault.jpg`
   const videoUrl = `https://www.youtube.com/watch?v=${videoId}`
 
   return (
-    <div className="group bg-white rounded-3xl overflow-hidden shadow-md hover:shadow-xl transition-all duration-300 hover:-translate-y-1">
-      {/* Thumbnail with play overlay */}
-      <Link href={videoUrl} target="_blank" rel="noopener noreferrer" className="relative block w-full aspect-video overflow-hidden">
+    <Link
+      href={videoUrl}
+      target="_blank"
+      rel="noopener noreferrer"
+      className="group block rounded-xl overflow-hidden transition-all duration-300 hover:-translate-y-1 hover:shadow-lg"
+      style={{ backgroundColor: "#FFFFFF", border: "1px solid #E8E0D4" }}
+    >
+      {/* Thumbnail */}
+      <div className="relative w-full aspect-video overflow-hidden">
         <Image
           src={thumbnailUrl}
           alt={title}
           fill
-          className="object-cover transition-transform duration-300 group-hover:scale-105"
+          className="object-cover transition-transform duration-500 group-hover:scale-105"
           unoptimized
         />
-        {/* Play icon overlay */}
-        <div className="absolute inset-0 flex items-center justify-center bg-black/0 group-hover:bg-black/20 transition-all duration-300">
-          <div className="w-14 h-14 bg-white/90 rounded-full flex items-center justify-center shadow-lg opacity-0 group-hover:opacity-100 scale-75 group-hover:scale-100 transition-all duration-300">
-            <Play className="w-6 h-6 text-pink ml-0.5" fill="currentColor" />
+        {/* Overlay on hover */}
+        <div className="absolute inset-0 bg-black/20 opacity-0 group-hover:opacity-100 transition-opacity duration-300" />
+        {/* Play button */}
+        <div className="absolute inset-0 flex items-center justify-center">
+          <div
+            className="w-11 h-11 rounded-full flex items-center justify-center shadow-md opacity-0 group-hover:opacity-100 scale-90 group-hover:scale-100 transition-all duration-300"
+            style={{ backgroundColor: "#DDA15E" }}
+          >
+            <Play className="w-4 h-4 ml-0.5" fill="#FAF7F2" color="#FAF7F2" />
           </div>
         </div>
-      </Link>
+        {/* Index badge */}
+        <div
+          className="absolute top-3 left-3 w-7 h-7 rounded-full flex items-center justify-center"
+          style={{ backgroundColor: "rgba(28,25,23,0.75)", backdropFilter: "blur(4px)" }}
+        >
+          <span className="text-xs font-bold" style={{ color: "#FAF7F2" }}>
+            {String(index + 1).padStart(2, "0")}
+          </span>
+        </div>
+      </div>
 
-      {/* Card Content */}
-      <div className="p-5 space-y-3">
-        <h3 className="text-base font-bold text-gray-800 leading-snug line-clamp-2">
+      {/* Content */}
+      <div className="p-4">
+        <h3
+          className="text-sm font-semibold leading-snug line-clamp-2 transition-colors duration-300 group-hover:text-amber-700"
+          style={{ color: "#1C1917" }}
+        >
           {title}
         </h3>
-
-        <Link
-          href={videoUrl}
-          target="_blank"
-          rel="noopener noreferrer"
-          className="inline-block bg-cream hover:bg-cream/80 text-gray-800 font-bold text-sm px-6 py-2.5 rounded-full shadow-sm transition-all duration-300 hover:scale-105 hover:shadow-md"
-        >
-          Ver video
-        </Link>
+        <div className="mt-3 flex items-center gap-1.5 text-xs font-medium" style={{ color: "#A8A29E" }}>
+          <Play className="w-3 h-3" />
+          <span>Ver en YouTube</span>
+        </div>
       </div>
-    </div>
+    </Link>
   )
 }
