@@ -1,6 +1,5 @@
 import { Navegacion } from "@/components/01-navegacion"
 import { TarjetaProducto } from "@/components/tarjeta-producto"
-import { SeccionBoletin } from "@/components/05-seccion-boletin"
 import { PieDePagina } from "@/components/06-pie-de-pagina"
 import Link from "next/link"
 import { ArrowRight } from "lucide-react"
