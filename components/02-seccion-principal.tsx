@@ -66,9 +66,7 @@ export function SeccionPrincipal() {
                   Sobre Mi
                 </Link>
                 <Link
-                  href="https://wa.me/51987654321"
-                  target="_blank"
-                  rel="noopener noreferrer"
+                  href="/contacto"
                   className="inline-flex items-center gap-2 border border-cream/50 text-cream font-bold text-xs tracking-widest uppercase px-6 py-3 rounded-full hover:bg-cream/10 transition-colors duration-300 font-sans"
                 >
                   Contactame
