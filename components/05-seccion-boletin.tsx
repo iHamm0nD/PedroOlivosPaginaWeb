@@ -1,7 +1,8 @@
 "use client"
 
 import Link from "next/link"
-import { Mail, MessageCircle, MapPin, ArrowRight } from "lucide-react"
+import Image from "next/image"
+import { Mail, MessageCircle, MapPin, ArrowRight, Play, Heart, Star, Users } from "lucide-react"
 
 function TikTokIcon({ className }: { className?: string }) {
   return (
@@ -44,155 +45,130 @@ function WhatsAppIcon({ className }: { className?: string }) {
 }
 
 const socialLinks = [
-  { name: "TikTok", icon: TikTokIcon, href: "https://www.tiktok.com/@pedrolivos" },
-  { name: "Instagram", icon: InstagramIcon, href: "https://www.instagram.com/pedrolivos/" },
-  { name: "Facebook", icon: FacebookIcon, href: "https://www.facebook.com/PedrOlivosPartituras" },
-  { name: "YouTube", icon: YouTubeIcon, href: "https://www.youtube.com/@pedroolivosmusica" },
+  { name: "TikTok", icon: TikTokIcon, href: "https://www.tiktok.com/@pedrolivos", followers: "50K" },
+  { name: "Instagram", icon: InstagramIcon, href: "https://www.instagram.com/pedrolivos/", followers: "25K" },
+  { name: "Facebook", icon: FacebookIcon, href: "https://www.facebook.com/PedrOlivosPartituras", followers: "10K" },
+  { name: "YouTube", icon: YouTubeIcon, href: "https://www.youtube.com/@pedroolivosmusica", followers: "15K" },
 ]
 
-const contactItems = [
-  {
-    icon: MessageCircle,
-    label: "WhatsApp",
-    value: "+51 999 999 999",
-    href: "https://wa.me/51999999999",
-  },
-  {
-    icon: Mail,
-    label: "Email",
-    value: "contacto@pedrolivos.com",
-    href: "mailto:contacto@pedrolivos.com",
-  },
-  {
-    icon: MapPin,
-    label: "Ubicación",
-    value: "Lima, Perú",
-    href: "#",
-  },
+const stats = [
+  { icon: Users, value: "500+", label: "Alumnos activos", color: "pink" },
+  { icon: Star, value: "5.0", label: "Valoración promedio", color: "olive" },
+  { icon: Heart, value: "10+", label: "Años de experiencia", color: "pink" },
 ]
 
 export function SeccionBoletin() {
   return (
-    <section id="subscribe" className="bg-cream relative overflow-hidden">
+    <section id="subscribe" className="bg-white relative overflow-hidden">
 
-      <div className="max-w-[1200px] mx-auto px-4 sm:px-6 lg:px-8 pt-16 pb-24 md:pt-20 md:pb-32">
+      {/* Decorative elements */}
+      <div className="absolute top-0 right-0 w-[600px] h-[600px] bg-gradient-to-bl from-pink/10 via-pink/5 to-transparent rounded-full -translate-y-1/2 translate-x-1/2 pointer-events-none" />
+      <div className="absolute bottom-0 left-0 w-[500px] h-[500px] bg-gradient-to-tr from-olive/10 via-olive/5 to-transparent rounded-full translate-y-1/2 -translate-x-1/2 pointer-events-none" />
+
+      <div className="max-w-[1400px] mx-auto px-4 sm:px-6 lg:px-8 py-20 md:py-32 relative z-10">
 
         {/* Section header */}
-        <div className="mb-16 md:mb-20">
-          <div className="flex items-center gap-4 mb-6">
-            <div className="w-10 h-px bg-pink" />
-            <span className="text-pink text-xs font-bold tracking-[0.35em] uppercase font-sans">
-              Hablemos
+        <div className="text-center mb-16 md:mb-20">
+          <div className="inline-flex items-center gap-3 bg-olive-dark/5 backdrop-blur-sm border border-olive/10 rounded-full px-5 py-2 mb-8">
+            <MessageCircle className="w-4 h-4 text-pink" />
+            <span className="text-olive-dark text-xs font-bold tracking-[0.3em] uppercase font-sans">
+              Conectemos
             </span>
           </div>
+          
           <h2
-            className="text-5xl md:text-6xl lg:text-7xl font-light text-olive-dark leading-none text-balance"
+            className="text-5xl sm:text-6xl md:text-7xl lg:text-8xl font-bold text-olive-dark leading-[0.9] tracking-tight"
             style={{ fontFamily: "var(--font-cormorant), 'Cormorant Garamond', serif" }}
           >
-            Ponte en <em className="text-pink not-italic font-semibold">Contacto</em>
+            Ponte en{" "}
+            <span className="relative inline-block">
+              <span className="relative z-10 text-pink">Contacto</span>
+              <svg className="absolute -bottom-2 left-0 w-full h-4 text-pink/30" viewBox="0 0 200 12" fill="currentColor" preserveAspectRatio="none">
+                <path d="M0,8 Q50,0 100,8 T200,8" stroke="currentColor" strokeWidth="4" fill="none" />
+              </svg>
+            </span>
           </h2>
-          <p className="mt-5 text-olive/60 text-sm font-sans max-w-md leading-relaxed">
+          
+          <p className="mt-6 text-olive/60 text-base md:text-lg font-sans max-w-xl mx-auto leading-relaxed">
             Ya sea para una clase, una presentación especial o simplemente para conversar sobre música, estoy aquí.
           </p>
         </div>
 
-        {/* Two column layout */}
-        <div className="grid md:grid-cols-5 gap-8 lg:gap-16 items-start">
-
-          {/* Left col — contact items */}
-          <div className="md:col-span-2 space-y-10">
-
-            {/* Contact items as editorial list */}
-            <div className="space-y-0 divide-y divide-olive/8">
-              {contactItems.map((item) => (
-                <Link
-                  key={item.label}
-                  href={item.href}
-                  target={item.href.startsWith("http") || item.href.startsWith("mailto") ? "_blank" : undefined}
-                  rel={item.href.startsWith("http") ? "noopener noreferrer" : undefined}
-                  className="flex items-center gap-5 py-5 group transition-all duration-300"
-                >
-                  <div className="w-11 h-11 rounded-full border border-olive/15 bg-white flex items-center justify-center shrink-0 transition-all duration-300 group-hover:bg-pink group-hover:border-pink shadow-sm">
-                    <item.icon className="w-4.5 h-4.5 text-olive group-hover:text-white transition-colors duration-300" />
-                  </div>
-                  <div className="flex-1 min-w-0">
-                    <p className="text-xs text-olive/40 font-bold tracking-widest uppercase font-sans">{item.label}</p>
-                    <p className="text-olive-dark font-semibold font-sans text-sm mt-0.5 group-hover:text-pink transition-colors duration-300 truncate">{item.value}</p>
-                  </div>
-                  <ArrowRight className="w-4 h-4 text-olive/20 group-hover:text-pink transition-all duration-300 group-hover:translate-x-1 shrink-0" />
-                </Link>
-              ))}
-            </div>
-
-            {/* Social links */}
-            <div>
-              <p className="text-xs text-olive/40 font-bold tracking-[0.3em] uppercase font-sans mb-4">Redes sociales</p>
-              <div className="flex gap-2.5">
-                {socialLinks.map((social) => (
-                  <Link
-                    key={social.name}
-                    href={social.href}
-                    target="_blank"
-                    rel="noopener noreferrer"
-                    className="w-11 h-11 border border-olive/15 bg-white hover:bg-olive-dark rounded-full flex items-center justify-center transition-all duration-300 hover:scale-105 hover:border-olive-dark group shadow-sm"
-                    aria-label={social.name}
-                  >
-                    <social.icon className="w-4 h-4 text-olive group-hover:text-cream transition-colors duration-300" />
-                  </Link>
-                ))}
+        {/* Stats row */}
+        <div className="grid grid-cols-3 gap-4 md:gap-6 mb-16 md:mb-20">
+          {stats.map((stat) => (
+            <div 
+              key={stat.label} 
+              className="group bg-cream hover:bg-white border border-olive/10 rounded-2xl md:rounded-3xl p-5 md:p-8 text-center transition-all duration-500 hover:shadow-xl hover:shadow-olive/5 hover:-translate-y-1"
+            >
+              <div className={`w-12 h-12 md:w-14 md:h-14 rounded-xl md:rounded-2xl mx-auto mb-4 flex items-center justify-center transition-all duration-500 ${
+                stat.color === "pink" 
+                  ? "bg-pink/10 group-hover:bg-pink" 
+                  : "bg-olive/10 group-hover:bg-olive"
+              }`}>
+                <stat.icon className={`w-5 h-5 md:w-6 md:h-6 transition-colors duration-500 ${
+                  stat.color === "pink" 
+                    ? "text-pink group-hover:text-white" 
+                    : "text-olive group-hover:text-cream"
+                }`} />
               </div>
-            </div>
-
-            {/* Quote */}
-            <div className="border-l-2 border-pink/40 pl-5 py-1">
               <p
-                className="text-xl text-olive-dark/60 font-light italic leading-snug"
+                className="text-3xl md:text-5xl font-bold text-olive-dark mb-1"
                 style={{ fontFamily: "var(--font-cormorant), 'Cormorant Garamond', serif" }}
               >
-                "La música es el viaje, el violín es mi camino."
+                {stat.value}
               </p>
-              <p className="text-olive/35 text-xs font-bold tracking-widest uppercase font-sans mt-2">
-                — Pedro Olivos
-              </p>
+              <p className="text-[10px] md:text-xs text-olive/50 font-bold uppercase tracking-wider font-sans">{stat.label}</p>
             </div>
-          </div>
+          ))}
+        </div>
 
-          {/* Right col — community card */}
-          <div className="md:col-span-3">
+        {/* Main content grid */}
+        <div className="grid lg:grid-cols-5 gap-6 md:gap-8">
 
-            {/* Community highlight card — light style */}
-            <div className="bg-white border border-olive/10 rounded-3xl p-8 md:p-10 shadow-sm relative overflow-hidden">
+          {/* Left column - Community Card */}
+          <div className="lg:col-span-3">
+            <div className="relative bg-olive-dark rounded-3xl md:rounded-[2rem] p-8 md:p-12 overflow-hidden h-full">
+              
+              {/* Decorative pattern */}
+              <div className="absolute inset-0 opacity-10">
+                <div className="absolute top-10 right-10 w-40 h-40 border border-cream/30 rounded-full" />
+                <div className="absolute top-20 right-20 w-60 h-60 border border-cream/20 rounded-full" />
+                <div className="absolute bottom-10 left-10 w-32 h-32 border border-pink/30 rounded-full" />
+              </div>
 
-              {/* Decorative top accent bar */}
-              <div className="absolute top-0 left-0 right-0 h-1 bg-pink rounded-t-3xl" />
+              {/* Glowing orb */}
+              <div className="absolute top-1/2 right-0 w-96 h-96 bg-pink/20 rounded-full blur-[100px] -translate-y-1/2 translate-x-1/2 pointer-events-none" />
 
-              {/* Soft decorative shape */}
-              <div className="absolute bottom-0 right-0 w-56 h-56 rounded-full bg-pink/5 translate-x-1/3 translate-y-1/3 pointer-events-none" />
-
-              <div className="relative z-10 space-y-6">
-                <div className="flex items-center gap-3">
-                  <div className="w-8 h-px bg-pink/60" />
-                  <span className="text-pink text-xs font-bold tracking-[0.3em] uppercase font-sans">Comunidad exclusiva</span>
+              <div className="relative z-10">
+                <div className="inline-flex items-center gap-2 bg-pink/20 backdrop-blur-sm border border-pink/30 rounded-full px-4 py-2 mb-6">
+                  <span className="relative flex h-2 w-2">
+                    <span className="animate-ping absolute inline-flex h-full w-full rounded-full bg-pink opacity-75"></span>
+                    <span className="relative inline-flex rounded-full h-2 w-2 bg-pink"></span>
+                  </span>
+                  <span className="text-cream text-xs font-bold tracking-widest uppercase font-sans">
+                    Comunidad activa
+                  </span>
                 </div>
 
                 <h3
-                  className="text-3xl md:text-4xl font-light text-olive-dark leading-tight text-balance"
+                  className="text-3xl sm:text-4xl md:text-5xl font-bold text-cream leading-tight mb-4"
                   style={{ fontFamily: "var(--font-cormorant), 'Cormorant Garamond', serif" }}
                 >
                   Pedro Olivos y sus{" "}
-                  <em className="text-pink not-italic font-semibold">Violinistas</em>
+                  <span className="text-pink">Violinistas</span>
                 </h3>
 
-                <p className="text-olive/60 text-sm leading-relaxed font-sans max-w-sm">
-                  Una comunidad amigable para músicos aficionados y amantes de la música. Un espacio para compartir, aprender y motivarnos a practicar y disfrutar juntos.
+                <p className="text-cream/70 text-base md:text-lg leading-relaxed font-sans max-w-lg mb-8">
+                  Una comunidad amigable para músicos aficionados y amantes de la música. Un espacio para compartir, aprender y motivarnos a practicar juntos.
                 </p>
 
-                {/* Benefit pills */}
-                <div className="flex flex-wrap gap-2">
+                {/* Benefits */}
+                <div className="flex flex-wrap gap-2 mb-10">
                   {["Partituras semanales", "Tips de práctica", "Acceso anticipado", "Comunidad activa"].map((benefit) => (
                     <span
                       key={benefit}
-                      className="inline-flex items-center gap-1.5 text-xs font-semibold text-olive-dark bg-cream border border-olive/10 px-3.5 py-1.5 rounded-full font-sans"
+                      className="inline-flex items-center gap-2 text-xs font-semibold text-cream bg-cream/10 backdrop-blur-sm border border-cream/10 px-4 py-2.5 rounded-full font-sans"
                     >
                       <span className="w-1.5 h-1.5 rounded-full bg-pink inline-block shrink-0" />
                       {benefit}
@@ -200,45 +176,117 @@ export function SeccionBoletin() {
                   ))}
                 </div>
 
-                <div className="pt-2 flex flex-col sm:flex-row gap-3">
+                <div className="flex flex-col sm:flex-row gap-4">
                   <Link
                     href="https://wa.me/51999999999"
                     target="_blank"
                     rel="noopener noreferrer"
-                    className="inline-flex items-center justify-center gap-3 bg-olive-dark hover:bg-olive text-cream font-bold text-xs tracking-widest uppercase px-7 py-4 rounded-full shadow-md transition-all duration-300 hover:shadow-lg font-sans"
+                    className="inline-flex items-center justify-center gap-3 bg-pink hover:bg-pink-dark text-white font-bold text-xs tracking-widest uppercase px-8 py-5 rounded-full transition-all duration-300 hover:scale-105 font-sans shadow-lg shadow-pink/30"
                   >
-                    <WhatsAppIcon className="w-4 h-4" />
-                    Unirme a la comunidad
+                    <WhatsAppIcon className="w-5 h-5" />
+                    Unirme ahora
                   </Link>
                   <Link
                     href="mailto:contacto@pedrolivos.com"
-                    className="inline-flex items-center justify-center gap-2 border border-olive/20 text-olive-dark hover:border-olive-dark text-xs font-bold tracking-widest uppercase px-7 py-4 rounded-full transition-all duration-300 font-sans"
+                    className="inline-flex items-center justify-center gap-3 bg-cream/10 hover:bg-cream/20 text-cream border border-cream/20 text-xs font-bold tracking-widest uppercase px-8 py-5 rounded-full transition-all duration-300 font-sans backdrop-blur-sm"
                   >
+                    <Mail className="w-4 h-4" />
                     Enviar email
-                    <ArrowRight className="w-3.5 h-3.5" />
                   </Link>
                 </div>
               </div>
             </div>
+          </div>
 
-            {/* Stats row */}
-            <div className="mt-6 grid grid-cols-3 gap-4">
-              {[
-                { value: "500+", label: "Alumnos" },
-                { value: "5★", label: "Valoración" },
-                { value: "10+", label: "Años exp." },
-              ].map((stat) => (
-                <div key={stat.label} className="bg-white border border-olive/10 rounded-2xl p-5 text-center shadow-sm">
-                  <p
-                    className="text-3xl font-light text-olive-dark"
-                    style={{ fontFamily: "var(--font-cormorant), 'Cormorant Garamond', serif" }}
-                  >
-                    {stat.value}
-                  </p>
-                  <p className="text-xs text-olive/50 font-semibold uppercase tracking-widest font-sans mt-1">{stat.label}</p>
+          {/* Right column */}
+          <div className="lg:col-span-2 space-y-6">
+
+            {/* Contact info card */}
+            <div className="bg-cream border border-olive/10 rounded-3xl p-6 md:p-8">
+              <p className="text-xs text-olive/50 font-bold tracking-[0.3em] uppercase font-sans mb-6">Información de contacto</p>
+              
+              <div className="space-y-4">
+                <Link
+                  href="https://wa.me/51999999999"
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  className="group flex items-center gap-4 p-4 bg-white rounded-2xl border border-olive/10 hover:border-pink/30 hover:shadow-lg hover:shadow-pink/5 transition-all duration-300"
+                >
+                  <div className="w-12 h-12 rounded-xl bg-pink/10 group-hover:bg-pink flex items-center justify-center transition-all duration-300">
+                    <MessageCircle className="w-5 h-5 text-pink group-hover:text-white transition-colors duration-300" />
+                  </div>
+                  <div className="flex-1">
+                    <p className="text-[10px] text-olive/40 font-bold tracking-widest uppercase font-sans">WhatsApp</p>
+                    <p className="text-olive-dark font-bold font-sans">+51 999 999 999</p>
+                  </div>
+                  <ArrowRight className="w-4 h-4 text-olive/30 group-hover:text-pink group-hover:translate-x-1 transition-all duration-300" />
+                </Link>
+
+                <Link
+                  href="mailto:contacto@pedrolivos.com"
+                  className="group flex items-center gap-4 p-4 bg-white rounded-2xl border border-olive/10 hover:border-olive/30 hover:shadow-lg hover:shadow-olive/5 transition-all duration-300"
+                >
+                  <div className="w-12 h-12 rounded-xl bg-olive/10 group-hover:bg-olive flex items-center justify-center transition-all duration-300">
+                    <Mail className="w-5 h-5 text-olive group-hover:text-cream transition-colors duration-300" />
+                  </div>
+                  <div className="flex-1">
+                    <p className="text-[10px] text-olive/40 font-bold tracking-widest uppercase font-sans">Email</p>
+                    <p className="text-olive-dark font-bold font-sans text-sm">contacto@pedrolivos.com</p>
+                  </div>
+                  <ArrowRight className="w-4 h-4 text-olive/30 group-hover:text-olive group-hover:translate-x-1 transition-all duration-300" />
+                </Link>
+
+                <div className="flex items-center gap-4 p-4 bg-white rounded-2xl border border-olive/10">
+                  <div className="w-12 h-12 rounded-xl bg-pink/10 flex items-center justify-center">
+                    <MapPin className="w-5 h-5 text-pink" />
+                  </div>
+                  <div className="flex-1">
+                    <p className="text-[10px] text-olive/40 font-bold tracking-widest uppercase font-sans">Ubicación</p>
+                    <p className="text-olive-dark font-bold font-sans">Lima, Perú</p>
+                  </div>
                 </div>
-              ))}
+              </div>
             </div>
+
+            {/* Social links card */}
+            <div className="bg-cream border border-olive/10 rounded-3xl p-6 md:p-8">
+              <p className="text-xs text-olive/50 font-bold tracking-[0.3em] uppercase font-sans mb-6">Sígueme en redes</p>
+              
+              <div className="grid grid-cols-2 gap-3">
+                {socialLinks.map((social) => (
+                  <Link
+                    key={social.name}
+                    href={social.href}
+                    target="_blank"
+                    rel="noopener noreferrer"
+                    className="group flex items-center gap-3 p-4 bg-white rounded-2xl border border-olive/10 hover:border-olive-dark hover:shadow-lg hover:shadow-olive/5 transition-all duration-300"
+                  >
+                    <div className="w-10 h-10 rounded-xl bg-olive-dark group-hover:scale-110 flex items-center justify-center transition-all duration-300">
+                      <social.icon className="w-4 h-4 text-cream" />
+                    </div>
+                    <div>
+                      <p className="text-olive-dark font-bold text-sm font-sans">{social.name}</p>
+                      <p className="text-olive/40 text-xs font-sans">{social.followers}</p>
+                    </div>
+                  </Link>
+                ))}
+              </div>
+            </div>
+          </div>
+        </div>
+
+        {/* Quote */}
+        <div className="mt-16 md:mt-20 text-center">
+          <div className="inline-block max-w-2xl">
+            <p
+              className="text-2xl md:text-4xl text-olive-dark/70 font-light italic leading-relaxed"
+              style={{ fontFamily: "var(--font-cormorant), 'Cormorant Garamond', serif" }}
+            >
+              "La música es el viaje, el violín es mi camino."
+            </p>
+            <p className="text-olive/40 text-xs font-bold tracking-[0.3em] uppercase font-sans mt-4">
+              — Pedro Olivos
+            </p>
           </div>
         </div>
       </div>
