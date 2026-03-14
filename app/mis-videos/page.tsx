@@ -1,14 +1,10 @@
 import { Navegacion } from "@/components/01-navegacion"
 import { TarjetaVideo } from "@/components/tarjeta-video"
 import { UltimoVideo } from "@/components/ultimo-video"
-import { SeccionBoletin } from "@/components/05-seccion-boletin"
 import { PieDePagina } from "@/components/06-pie-de-pagina"
 import Image from "next/image"
 import Link from "next/link"
-import { Play, Youtube } from "lucide-react"
-
-// ─── Channel ID del canal de Pedro Olivos ─────────────────────────────────
-const CHANNEL_ID = "UCmBnbGTuQslnr2YfzJ3sPyQ"
+import { Youtube } from "lucide-react"
 
 // ─── IDs de videos largos ────────────────────────────────────────────────────
 const videoIds = [
@@ -141,12 +137,11 @@ export default async function MisVideosPage() {
 
             {/* 2 videos apilados a la derecha */}
             <div className="flex flex-col gap-5 md:gap-6">
-              {videos.slice(0, 2).map((video, i) => (
+              {videos.slice(0, 2).map((video) => (
                 <TarjetaVideo
                   key={video.videoId}
                   videoId={video.videoId}
                   title={video.title}
-                  index={i}
                 />
               ))}
             </div>
@@ -154,12 +149,11 @@ export default async function MisVideosPage() {
 
           {/* Resto de videos — 3 columnas */}
           <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-5 md:gap-6">
-            {videos.slice(2).map((video, i) => (
+            {videos.slice(2).map((video) => (
               <TarjetaVideo
                 key={video.videoId}
                 videoId={video.videoId}
                 title={video.title}
-                index={i + 2}
               />
             ))}
           </div>

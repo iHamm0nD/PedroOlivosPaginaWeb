@@ -1,8 +1,7 @@
-"use client"
 
 import Link from "next/link"
-import Image from "next/image"
-import { Mail, MessageCircle, MapPin, ArrowRight, Play, Heart, Star, Users } from "lucide-react"
+
+import { Mail, MessageCircle, MapPin, ArrowRight } from "lucide-react"
 
 function TikTokIcon({ className }: { className?: string }) {
   return (
@@ -45,16 +44,10 @@ function WhatsAppIcon({ className }: { className?: string }) {
 }
 
 const socialLinks = [
-  { name: "TikTok", icon: TikTokIcon, href: "https://www.tiktok.com/@pedrolivos", followers: "50K" },
-  { name: "Instagram", icon: InstagramIcon, href: "https://www.instagram.com/pedrolivos/", followers: "25K" },
-  { name: "Facebook", icon: FacebookIcon, href: "https://www.facebook.com/PedrOlivosPartituras", followers: "10K" },
-  { name: "YouTube", icon: YouTubeIcon, href: "https://www.youtube.com/@pedroolivosmusica", followers: "15K" },
-]
-
-const stats = [
-  { icon: Users, value: "500+", label: "Alumnos activos", color: "pink" },
-  { icon: Star, value: "5.0", label: "Valoración promedio", color: "olive" },
-  { icon: Heart, value: "10+", label: "Años de experiencia", color: "pink" },
+  { name: "TikTok", icon: TikTokIcon, href: "https://www.tiktok.com/@pedrolivos" },
+  { name: "Instagram", icon: InstagramIcon, href: "https://www.instagram.com/pedrolivos/" },
+  { name: "Facebook", icon: FacebookIcon, href: "https://www.facebook.com/PedrOlivosPartituras" },
+  { name: "YouTube", icon: YouTubeIcon, href: "https://www.youtube.com/@pedroolivosmusica" },
 ]
 
 export function SeccionBoletin() {
@@ -75,7 +68,7 @@ export function SeccionBoletin() {
               Conectemos
             </span>
           </div>
-          
+
           <h2
             className="text-5xl sm:text-6xl md:text-7xl lg:text-8xl font-bold text-olive-dark leading-[0.9] tracking-tight"
             style={{ fontFamily: "var(--font-cormorant), 'Cormorant Garamond', serif" }}
@@ -88,39 +81,10 @@ export function SeccionBoletin() {
               </svg>
             </span>
           </h2>
-          
+
           <p className="mt-6 text-olive/60 text-base md:text-lg font-sans max-w-xl mx-auto leading-relaxed">
             Ya sea para una clase, una presentación especial o simplemente para conversar sobre música, estoy aquí.
           </p>
-        </div>
-
-        {/* Stats row */}
-        <div className="grid grid-cols-3 gap-4 md:gap-6 mb-16 md:mb-20">
-          {stats.map((stat) => (
-            <div 
-              key={stat.label} 
-              className="group bg-cream hover:bg-white border border-olive/10 rounded-2xl md:rounded-3xl p-5 md:p-8 text-center transition-all duration-500 hover:shadow-xl hover:shadow-olive/5 hover:-translate-y-1"
-            >
-              <div className={`w-12 h-12 md:w-14 md:h-14 rounded-xl md:rounded-2xl mx-auto mb-4 flex items-center justify-center transition-all duration-500 ${
-                stat.color === "pink" 
-                  ? "bg-pink/10 group-hover:bg-pink" 
-                  : "bg-olive/10 group-hover:bg-olive"
-              }`}>
-                <stat.icon className={`w-5 h-5 md:w-6 md:h-6 transition-colors duration-500 ${
-                  stat.color === "pink" 
-                    ? "text-pink group-hover:text-white" 
-                    : "text-olive group-hover:text-cream"
-                }`} />
-              </div>
-              <p
-                className="text-3xl md:text-5xl font-bold text-olive-dark mb-1"
-                style={{ fontFamily: "var(--font-cormorant), 'Cormorant Garamond', serif" }}
-              >
-                {stat.value}
-              </p>
-              <p className="text-[10px] md:text-xs text-olive/50 font-bold uppercase tracking-wider font-sans">{stat.label}</p>
-            </div>
-          ))}
         </div>
 
         {/* Main content grid */}
@@ -129,7 +93,7 @@ export function SeccionBoletin() {
           {/* Left column - Community Card */}
           <div className="lg:col-span-3">
             <div className="relative bg-olive-dark rounded-3xl md:rounded-[2rem] p-8 md:p-12 overflow-hidden h-full">
-              
+
               {/* Decorative pattern */}
               <div className="absolute inset-0 opacity-10">
                 <div className="absolute top-10 right-10 w-40 h-40 border border-cream/30 rounded-full" />
@@ -204,7 +168,7 @@ export function SeccionBoletin() {
             {/* Contact info card */}
             <div className="bg-cream border border-olive/10 rounded-3xl p-6 md:p-8">
               <p className="text-xs text-olive/50 font-bold tracking-[0.3em] uppercase font-sans mb-6">Información de contacto</p>
-              
+
               <div className="space-y-4">
                 <Link
                   href="https://wa.me/51999999999"
@@ -251,7 +215,7 @@ export function SeccionBoletin() {
             {/* Social links card */}
             <div className="bg-cream border border-olive/10 rounded-3xl p-6 md:p-8">
               <p className="text-xs text-olive/50 font-bold tracking-[0.3em] uppercase font-sans mb-6">Sígueme en redes</p>
-              
+
               <div className="grid grid-cols-2 gap-3">
                 {socialLinks.map((social) => (
                   <Link
@@ -266,7 +230,6 @@ export function SeccionBoletin() {
                     </div>
                     <div>
                       <p className="text-olive-dark font-bold text-sm font-sans">{social.name}</p>
-                      <p className="text-olive/40 text-xs font-sans">{social.followers}</p>
                     </div>
                   </Link>
                 ))}
@@ -288,6 +251,136 @@ export function SeccionBoletin() {
               — Pedro Olivos
             </p>
           </div>
+        </div>
+      </div>
+    </section>
+  )
+}
+
+export function SeccionMembresia() {
+  return (
+    <section id="servicios" className="bg-olive-dark py-16 md:py-24">
+      <div className="max-w-[1200px] mx-auto px-4 sm:px-6 lg:px-8">
+        <div className="max-w-2xl mx-auto">
+          {/* White Card */}
+          <div className="bg-cream rounded-3xl p-8 md:p-12 shadow-xl">
+            <div className="text-center space-y-8">
+
+              {/* WhatsApp Badge */}
+              <div className="flex items-center justify-center gap-3">
+                <div className="w-14 h-14 bg-[#25D366] rounded-full flex items-center justify-center shadow-lg">
+                  <WhatsAppIcon className="w-7 h-7 text-white" />
+                </div>
+              </div>
+
+              {/* Group Name */}
+              <div className="space-y-2">
+                <h3 className="text-2xl md:text-3xl font-black text-olive-dark font-sans">
+                  Grupo VIP de Partituras
+                </h3>
+                <p className="text-gray-500 text-sm font-sans">
+                  Grupo exclusivo de WhatsApp
+                </p>
+              </div>
+
+              {/* Benefits List */}
+              <ul className="space-y-4 text-left max-w-md mx-auto">
+                <li className="flex items-start gap-3 text-gray-700 text-lg">
+                  <span className="text-2xl flex-shrink-0">🎻</span>
+                  <span>Partituras exclusivas cada semana.</span>
+                </li>
+                <li className="flex items-start gap-3 text-gray-700 text-lg">
+                  <span className="text-2xl flex-shrink-0">🎶</span>
+                  <span>Tutoriales y tips para mejorar tu técnica.</span>
+                </li>
+                <li className="flex items-start gap-3 text-gray-700 text-lg">
+                  <span className="text-2xl flex-shrink-0">📹</span>
+                  <span>Contenido exclusivo detrás de cámaras.</span>
+                </li>
+                <li className="flex items-start gap-3 text-gray-700 text-lg">
+                  <span className="text-2xl flex-shrink-0">🎵</span>
+                  <span>Acceso anticipado a nuevos covers y arreglos.</span>
+                </li>
+                <li className="flex items-start gap-3 text-gray-700 text-lg">
+                  <span className="text-2xl flex-shrink-0">🤝</span>
+                  <span>Comunidad de violinistas apasionados.</span>
+                </li>
+              </ul>
+
+              {/* CTA Button */}
+              <Link
+                href="https://chat.whatsapp.com/TULINK"
+                target="_blank"
+                rel="noopener noreferrer"
+                className="inline-flex items-center gap-3 bg-[#25D366] hover:bg-[#1da851] text-white font-bold text-lg px-10 py-4 rounded-full shadow-lg transition-all duration-300 hover:scale-105 hover:shadow-xl"
+              >
+                <WhatsAppIcon className="w-6 h-6" />
+                UNIRME AL GRUPO
+              </Link>
+
+              <p className="text-gray-400 text-xs font-sans">
+                ¡Es gratis! Solo haz clic y únete al grupo 🎻
+              </p>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+  )
+}
+
+export function SeccionBoletinmain() {
+  return (
+    <section id="subscribe" className="bg-pink py-16 md:py-20">
+      <div className="max-w-[1200px] mx-auto px-4 sm:px-6 lg:px-8">
+        <div className="max-w-lg mx-auto text-center space-y-8">
+
+          {/* Label */}
+          <div className="flex items-center justify-center gap-3">
+            <div className="w-8 h-px bg-olive-dark/40" />
+            <span className="text-olive-dark text-xs font-bold tracking-[0.3em] uppercase font-sans">
+              Comunidad
+            </span>
+            <div className="w-8 h-px bg-olive-dark/40" />
+          </div>
+
+          <div className="space-y-3">
+            <h2 className="text-2xl md:text-3xl font-black text-olive-dark font-sans text-balance">
+              Pedro Olivos y sus Violinistas
+            </h2>
+            <p className="text-olive-dark/70 font-sans text-sm leading-relaxed">
+              Es una comunidad amigable para músicos aficionados y amantes de la música. Aunque nace desde el violín, es un espacio abierto para compartir, aprender, motivarnos a practicar y disfrutar juntos de la música. 🎶
+            </p>
+          </div>
+
+          <Link
+            href="https://wa.me/51999999999"
+            target="_blank"
+            rel="noopener noreferrer"
+            className="inline-flex items-center gap-2 bg-olive-dark hover:bg-olive text-cream font-bold text-sm tracking-widest uppercase px-8 py-4 rounded-full shadow-lg transition-all duration-300 hover:scale-105 hover:shadow-xl font-sans"
+          >
+            Unirme
+          </Link>
+
+          {/* Social Links */}
+          <div className="pt-4 space-y-4">
+            <p className="text-olive-dark/80 font-sans text-sm font-semibold">Sigueme en todas mis redes</p>
+            <div className="flex justify-center gap-4">
+              {socialLinks.map((social) => (
+                <Link
+                  key={social.name}
+                  href={social.href}
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  className="w-12 h-12 bg-white/30 hover:bg-olive-dark rounded-full flex items-center justify-center transition-all duration-300 hover:scale-110 group border border-white/20"
+                  aria-label={social.name}
+                >
+                  <social.icon className="w-5 h-5 text-olive-dark group-hover:text-cream transition-colors" />
+                </Link>
+              ))}
+            </div>
+          </div>
+
         </div>
       </div>
     </section>

@@ -1,8 +1,6 @@
-"use client"
 
 import Link from "next/link"
 import { Music, BookOpen, Users, Mic2, ArrowRight, Sparkles } from "lucide-react"
-import { useState } from "react"
 
 const services = [
   {
@@ -52,8 +50,6 @@ const services = [
 ]
 
 export function SeccionServicios() {
-  const [hoveredIndex, setHoveredIndex] = useState<number | null>(null)
-
   return (
     <section id="servicios" className="bg-cream py-20 md:py-32 relative overflow-hidden">
 
@@ -109,8 +105,6 @@ export function SeccionServicios() {
               rel={service.href.startsWith("http") ? "noopener noreferrer" : undefined}
               className={`group relative bg-white rounded-3xl p-7 md:p-10 border border-olive/10 transition-all duration-500 hover:shadow-2xl hover:shadow-olive/10 hover:-translate-y-2 overflow-hidden ${index === 0 ? "md:row-span-2" : ""
                 }`}
-              onMouseEnter={() => setHoveredIndex(index)}
-              onMouseLeave={() => setHoveredIndex(null)}
             >
               {/* Background gradient on hover */}
               <div className={`absolute inset-0 opacity-0 group-hover:opacity-100 transition-opacity duration-500 ${service.color === "pink"

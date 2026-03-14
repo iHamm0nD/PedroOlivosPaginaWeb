@@ -5,10 +5,9 @@ import { Play } from "lucide-react"
 interface VideoCardProps {
   videoId: string
   title: string
-  index?: number
 }
 
-export function TarjetaVideo({ videoId, title, index = 0 }: VideoCardProps) {
+export function TarjetaVideo({ videoId, title }: VideoCardProps) {
   // maxresdefault might not exist for some videos, hqdefault is safely generated for all
   const thumbnailUrlMaxRes = `https://img.youtube.com/vi/${videoId}/maxresdefault.jpg`
   const thumbnailUrlHq = `https://img.youtube.com/vi/${videoId}/hqdefault.jpg`
