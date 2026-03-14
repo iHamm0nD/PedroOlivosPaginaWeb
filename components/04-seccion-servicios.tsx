@@ -7,7 +7,6 @@ import { useState } from "react"
 const services = [
   {
     icon: Music,
-    number: "01",
     title: "Clases de Violín",
     subtitle: "Online & Presencial",
     description:
@@ -19,7 +18,6 @@ const services = [
   },
   {
     icon: BookOpen,
-    number: "02",
     title: "Partituras Exclusivas",
     subtitle: "Arreglos propios",
     description:
@@ -31,7 +29,6 @@ const services = [
   },
   {
     icon: Users,
-    number: "03",
     title: "Grupo VIP",
     subtitle: "Comunidad WhatsApp",
     description:
@@ -43,7 +40,6 @@ const services = [
   },
   {
     icon: Mic2,
-    number: "04",
     title: "Presentaciones",
     subtitle: "Eventos & Serenatas",
     description:
@@ -60,13 +56,13 @@ export function SeccionServicios() {
 
   return (
     <section id="servicios" className="bg-cream py-20 md:py-32 relative overflow-hidden">
-      
+
       {/* Decorative floating elements */}
       <div className="absolute top-20 right-10 w-72 h-72 bg-pink/10 rounded-full blur-3xl pointer-events-none" />
       <div className="absolute bottom-20 left-10 w-96 h-96 bg-olive/5 rounded-full blur-3xl pointer-events-none" />
-      
+
       {/* Large background number */}
-      <div 
+      <div
         className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 text-[30vw] font-black text-olive/[0.02] select-none pointer-events-none leading-none"
         style={{ fontFamily: "var(--font-cormorant), 'Cormorant Garamond', serif" }}
         aria-hidden="true"
@@ -81,10 +77,10 @@ export function SeccionServicios() {
           <div className="inline-flex items-center gap-3 bg-olive-dark/5 backdrop-blur-sm border border-olive/10 rounded-full px-5 py-2 mb-8">
             <Sparkles className="w-4 h-4 text-pink" />
             <span className="text-olive-dark text-xs font-bold tracking-[0.3em] uppercase font-sans">
-              Lo que ofrezco
+              Música que inspira, enseña y conecta.
             </span>
           </div>
-          
+
           <h2
             className="text-5xl sm:text-6xl md:text-7xl lg:text-8xl font-bold text-olive-dark leading-[0.9] tracking-tight"
             style={{ fontFamily: "var(--font-cormorant), 'Cormorant Garamond', serif" }}
@@ -97,9 +93,9 @@ export function SeccionServicios() {
               </svg>
             </span>
           </h2>
-          
+
           <p className="mt-6 text-olive/60 text-base md:text-lg font-sans max-w-xl mx-auto leading-relaxed">
-            Música que inspira, enseña y conecta. Elige la experiencia perfecta para ti.
+            Elige la experiencia perfecta para ti.
           </p>
         </div>
 
@@ -111,50 +107,37 @@ export function SeccionServicios() {
               href={service.href}
               target={service.href.startsWith("http") ? "_blank" : undefined}
               rel={service.href.startsWith("http") ? "noopener noreferrer" : undefined}
-              className={`group relative bg-white rounded-3xl p-7 md:p-10 border border-olive/10 transition-all duration-500 hover:shadow-2xl hover:shadow-olive/10 hover:-translate-y-2 overflow-hidden ${
-                index === 0 ? "md:row-span-2" : ""
-              }`}
+              className={`group relative bg-white rounded-3xl p-7 md:p-10 border border-olive/10 transition-all duration-500 hover:shadow-2xl hover:shadow-olive/10 hover:-translate-y-2 overflow-hidden ${index === 0 ? "md:row-span-2" : ""
+                }`}
               onMouseEnter={() => setHoveredIndex(index)}
               onMouseLeave={() => setHoveredIndex(null)}
             >
               {/* Background gradient on hover */}
-              <div className={`absolute inset-0 opacity-0 group-hover:opacity-100 transition-opacity duration-500 ${
-                service.color === "pink" 
-                  ? "bg-gradient-to-br from-pink/5 via-transparent to-pink/10" 
-                  : "bg-gradient-to-br from-olive/5 via-transparent to-olive/10"
-              }`} />
-              
+              <div className={`absolute inset-0 opacity-0 group-hover:opacity-100 transition-opacity duration-500 ${service.color === "pink"
+                ? "bg-gradient-to-br from-pink/5 via-transparent to-pink/10"
+                : "bg-gradient-to-br from-olive/5 via-transparent to-olive/10"
+                }`} />
+
               {/* Highlight badge */}
               {service.highlight && (
-                <div className={`absolute top-6 right-6 px-4 py-1.5 rounded-full text-xs font-bold tracking-wider uppercase ${
-                  service.highlight === "Popular" 
-                    ? "bg-pink text-white" 
-                    : "bg-olive text-cream"
-                }`}>
+                <div className={`absolute top-6 right-6 px-4 py-1.5 rounded-full text-xs font-bold tracking-wider uppercase ${service.highlight === "Popular"
+                  ? "bg-pink text-white"
+                  : "bg-olive text-cream"
+                  }`}>
                   {service.highlight}
                 </div>
               )}
 
               <div className="relative z-10 h-full flex flex-col">
-                {/* Large number */}
-                <span 
-                  className="text-8xl md:text-9xl font-black text-olive/[0.06] absolute -top-4 -left-2 leading-none select-none group-hover:text-pink/10 transition-colors duration-500"
-                  style={{ fontFamily: "var(--font-cormorant), 'Cormorant Garamond', serif" }}
-                >
-                  {service.number}
-                </span>
-
                 {/* Icon */}
-                <div className={`w-14 h-14 md:w-16 md:h-16 rounded-2xl flex items-center justify-center mb-6 transition-all duration-500 ${
-                  service.color === "pink"
-                    ? "bg-pink/10 group-hover:bg-pink group-hover:scale-110"
-                    : "bg-olive/10 group-hover:bg-olive group-hover:scale-110"
-                }`}>
-                  <service.icon className={`w-6 h-6 md:w-7 md:h-7 transition-colors duration-500 ${
-                    service.color === "pink"
-                      ? "text-pink group-hover:text-white"
-                      : "text-olive group-hover:text-cream"
-                  }`} />
+                <div className={`w-14 h-14 md:w-16 md:h-16 rounded-2xl flex items-center justify-center mb-6 transition-all duration-500 ${service.color === "pink"
+                  ? "bg-pink/10 group-hover:bg-pink group-hover:scale-110"
+                  : "bg-olive/10 group-hover:bg-olive group-hover:scale-110"
+                  }`}>
+                  <service.icon className={`w-6 h-6 md:w-7 md:h-7 transition-colors duration-500 ${service.color === "pink"
+                    ? "text-pink group-hover:text-white"
+                    : "text-olive group-hover:text-cream"
+                    }`} />
                 </div>
 
                 {/* Subtitle */}
@@ -180,16 +163,14 @@ export function SeccionServicios() {
                   <span className="text-sm font-bold text-olive-dark group-hover:text-pink transition-colors duration-300 font-sans">
                     {service.cta}
                   </span>
-                  <div className={`w-12 h-12 rounded-full flex items-center justify-center transition-all duration-500 ${
-                    service.color === "pink"
-                      ? "bg-pink/10 group-hover:bg-pink"
-                      : "bg-olive/10 group-hover:bg-olive"
-                  }`}>
-                    <ArrowRight className={`w-5 h-5 transition-all duration-300 group-hover:translate-x-1 ${
-                      service.color === "pink"
-                        ? "text-pink group-hover:text-white"
-                        : "text-olive group-hover:text-cream"
-                    }`} />
+                  <div className={`w-12 h-12 rounded-full flex items-center justify-center transition-all duration-500 ${service.color === "pink"
+                    ? "bg-pink/10 group-hover:bg-pink"
+                    : "bg-olive/10 group-hover:bg-olive"
+                    }`}>
+                    <ArrowRight className={`w-5 h-5 transition-all duration-300 group-hover:translate-x-1 ${service.color === "pink"
+                      ? "text-pink group-hover:text-white"
+                      : "text-olive group-hover:text-cream"
+                      }`} />
                   </div>
                 </div>
               </div>
@@ -204,7 +185,7 @@ export function SeccionServicios() {
               <p className="text-cream/60 text-xs font-bold tracking-widest uppercase font-sans mb-1">
                 ¿Tienes dudas?
               </p>
-              <p 
+              <p
                 className="text-cream text-xl md:text-2xl font-light"
                 style={{ fontFamily: "var(--font-cormorant), 'Cormorant Garamond', serif" }}
               >

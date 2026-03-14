@@ -2,30 +2,78 @@ import { Navegacion } from "@/components/01-navegacion"
 import { TarjetaProducto } from "@/components/tarjeta-producto"
 import { PieDePagina } from "@/components/06-pie-de-pagina"
 import Link from "next/link"
-import { ArrowRight, Sparkles, ShoppingBag, Star, Zap } from "lucide-react"
+import { ArrowRight, Sparkles, ShoppingBag } from "lucide-react"
 
 const products = [
   {
     image: "/images/hotmart1.png",
     title: "Empieza Bien en el Violín: Rutinas de Práctica para Principiantes",
     price: "S/ 37.00",
-    badge: "Bestseller",
+    badge: "Nuevo",
     badgeColor: "pink",
+    href: "https://pay.hotmart.com/D104500426K?sck=HOTMART_PRODUCT_PAGE&off=lq0kdrk8&hotfeature=32&bid=1773452234704",
+    description: (
+      <>
+        <p className="mb-4"><strong>🎻 Empieza Bien en el Violín – Rutinas de Práctica para Principiantes</strong></p>
+        <p className="mb-4">Si estás comenzando en el violín, sabes que practicar puede generar muchas dudas:</p>
+        <p className="mb-4 font-bold italic">¿Estoy haciéndolo bien? ¿Por dónde empiezo? ¿Cuánto debería practicar?</p>
+        <p className="mb-4">Este eBook fue creado para brindarte una guía clara, práctica y estructurada desde tus primeras sesiones.</p>
+        <p className="mb-4">A lo largo del material encontrarás los fundamentos de una práctica eficiente, estrategias para evitar errores comunes del principiante y seis rutinas cuidadosamente diseñadas para desarrollar control del arco, sonido limpio, coordinación y estabilidad rítmica.</p>
+        <p className="mb-4">El enfoque prioriza la práctica consciente, la reducción de tensión y el progreso progresivo, permitiéndote avanzar con mayor seguridad y menor frustración.</p>
+        <p className="mb-4">Ideal para violinistas principiantes que desean construir una base sólida desde el inicio.</p>
+        <p className="mb-4 mt-6 italic">✨ Pequeñas prácticas constantes generan grandes avances.</p>
+      </>
+    )
   },
   {
     image: "/images/hotmart2.png",
     title: "¿El Violín es Fácil? Método Práctico para aprender a tocar el violín con Enfoque Peruano",
     price: "S/ 99.00",
-    badge: "Nuevo",
     badgeColor: "olive",
+    href: "https://pay.hotmart.com/O104704980X?sck=HOTMART_PRODUCT_PAGE&off=2izqn3d9&hotfeature=32&bid=1773452254969",
+    description: (
+      <>
+        <p className="mb-4"><strong>🎻 ¿El Violín es Fácil?</strong></p>
+        <p className="mb-4"><strong>Método práctico con enfoque andino – Pedro Olivos</strong></p>
+        <p className="mb-4">Muchos se hacen la misma pregunta antes de empezar:</p>
+        <p className="mb-4 font-bold italic">¿El violín es fácil?</p>
+        <p className="mb-4">La verdad es que no es cuestión de facilidad… sino de tener el método correcto.</p>
+        <p className="mb-4">Este libro nace de años de experiencia enseñando y formando violinistas, y está diseñado para guiarte paso a paso desde cero hasta un nivel intermedio, con una estructura clara, progresiva y práctica.</p>
+        <p className="mb-4">Aquí no encontrarás teoría innecesaria ni explicaciones complicadas.</p>
+        <p className="mb-6">Encontrarás un camino organizado para que realmente avances.</p>
+
+        <p className="mb-4"><strong>📈 ¿Para quién es este libro?</strong></p>
+        <ul className="list-disc pl-5 mb-6 space-y-2 text-olive/80">
+          <li>Personas que quieren empezar violín desde cero</li>
+          <li>Estudiantes que desean reforzar su técnica</li>
+          <li>Docentes que buscan material estructurado</li>
+          <li>Músicos que quieren integrar repertorio andino al violín</li>
+          <li>Autodidactas disciplinados que buscan una guía clara</li>
+        </ul>
+
+        <p className="mb-4"><strong>🎯 Lo que hace diferente a este método</strong></p>
+        <p className="mb-4">No es solo un manual.</p>
+        <p className="mb-4">Es una herramienta práctica de acompañamiento.</p>
+        <p className="mb-4">Cada ejercicio fue diseñado para que desarrolles memoria muscular, seguridad técnica y calidad sonora.</p>
+        <p className="mb-4">Si practicas con constancia, verás resultados reales.</p>
+        <p className="mb-4">Porque aprender violín no depende del talento.</p>
+        <p className="mb-4">Depende de la disciplina, la guía correcta y la conexión con la música que te representa.</p>
+
+        <p className="mb-4 mt-6 italic">🎶 Si estás listo para dejar de preguntarte si el violín es difícil y comenzar a avanzar con estructura, claridad e identidad…</p>
+        <p className="mb-4 font-bold">Este libro es tu punto de partida.</p>
+      </>
+    ),
+    features: [
+      "Aprender la postura correcta y el agarre natural del arco",
+      "Producir un sonido limpio y controlado",
+      "Desarrollar coordinación en la mano izquierda",
+      "Entender y aplicar la digitación correctamente",
+      "Practicar con rutinas estructuradas que aceleran tu progreso",
+      "Interpretar melodías y repertorio andino adaptado al violín"
+    ]
   },
 ]
 
-const features = [
-  { icon: Star, title: "Calidad Premium", description: "Material revisado y probado por cientos de alumnos" },
-  { icon: Zap, title: "Acceso Inmediato", description: "Descarga instantánea después de tu compra" },
-  { icon: ShoppingBag, title: "Soporte Incluido", description: "Resuelve tus dudas por WhatsApp" },
-]
 
 export default function TiendaPage() {
   return (
@@ -34,7 +82,7 @@ export default function TiendaPage() {
 
       {/* Hero section - More impactful */}
       <section className="relative bg-olive-dark overflow-hidden">
-        
+
         {/* Decorative elements */}
         <div className="absolute inset-0">
           <div className="absolute top-0 right-0 w-[800px] h-[800px] bg-pink/20 rounded-full blur-[150px] -translate-y-1/2 translate-x-1/3" />
@@ -48,15 +96,15 @@ export default function TiendaPage() {
           <div className="absolute bottom-20 right-20 w-48 h-48 border border-pink rounded-full" />
         </div>
 
-        <div className="max-w-[1400px] mx-auto px-4 sm:px-6 lg:px-8 py-24 md:py-36 relative z-10">
+        <div className="max-w-[1400px] mx-auto px-4 sm:px-6 lg:px-8 py-12 md:py-20 relative z-10">
           <div className="max-w-3xl">
             <div className="inline-flex items-center gap-3 bg-cream/10 backdrop-blur-sm border border-cream/20 rounded-full px-5 py-2 mb-8">
               <ShoppingBag className="w-4 h-4 text-pink" />
               <span className="text-cream text-xs font-bold tracking-[0.3em] uppercase font-sans">
-                Cursos & Material
+                eBooks & Material
               </span>
             </div>
-            
+
             <h1
               className="text-5xl sm:text-6xl md:text-7xl lg:text-8xl font-bold text-cream leading-[0.9] tracking-tight mb-6"
               style={{ fontFamily: "var(--font-cormorant), 'Cormorant Garamond', serif" }}
@@ -64,13 +112,13 @@ export default function TiendaPage() {
               Mi{" "}
               <span className="text-pink">Tienda</span>
             </h1>
-            
+
             <p className="text-cream/70 text-lg md:text-xl font-sans max-w-xl leading-relaxed mb-10">
               Descubre mi colección de recursos diseñados para ayudarte a llevar tu música al siguiente nivel.
             </p>
 
             <div className="flex flex-wrap gap-4">
-              <a 
+              <a
                 href="#productos"
                 className="inline-flex items-center gap-3 bg-pink hover:bg-pink-dark text-white font-bold text-xs tracking-widest uppercase px-8 py-5 rounded-full transition-all duration-300 hover:scale-105 font-sans shadow-lg shadow-pink/30"
               >
@@ -92,33 +140,16 @@ export default function TiendaPage() {
         {/* Wave bottom */}
         <div className="absolute bottom-0 left-0 right-0">
           <svg viewBox="0 0 1440 80" fill="none" xmlns="http://www.w3.org/2000/svg" className="w-full">
-            <path d="M0 80V40C240 80 480 0 720 40C960 80 1200 0 1440 40V80H0Z" fill="#FEFAE0"/>
+            <path d="M0 80V40C240 80 480 0 720 40C960 80 1200 0 1440 40V80H0Z" fill="#FEFAE0" />
           </svg>
         </div>
       </section>
 
-      {/* Features row */}
-      <section className="bg-cream py-12 md:py-16 border-b border-olive/10">
-        <div className="max-w-[1400px] mx-auto px-4 sm:px-6 lg:px-8">
-          <div className="grid md:grid-cols-3 gap-6 md:gap-8">
-            {features.map((feature) => (
-              <div key={feature.title} className="flex items-start gap-4">
-                <div className="w-12 h-12 rounded-2xl bg-olive-dark/5 flex items-center justify-center shrink-0">
-                  <feature.icon className="w-5 h-5 text-pink" />
-                </div>
-                <div>
-                  <h3 className="text-olive-dark font-bold text-sm font-sans mb-1">{feature.title}</h3>
-                  <p className="text-olive/60 text-sm font-sans">{feature.description}</p>
-                </div>
-              </div>
-            ))}
-          </div>
-        </div>
-      </section>
+
 
       {/* Products section */}
-      <section id="productos" className="bg-cream py-20 md:py-28 relative overflow-hidden">
-        
+      <section id="productos" className="bg-cream py-8 md:py-16 relative overflow-hidden">
+
         {/* Decorative blob */}
         <div className="absolute top-1/2 right-0 w-[500px] h-[500px] bg-pink/5 rounded-full blur-3xl -translate-y-1/2 translate-x-1/2 pointer-events-none" />
 
@@ -151,6 +182,9 @@ export default function TiendaPage() {
                 price={product.price}
                 badge={product.badge}
                 badgeColor={product.badgeColor}
+                description={product.description}
+                features={product.features}
+                href={product.href}
               />
             ))}
 
@@ -164,7 +198,7 @@ export default function TiendaPage() {
                   </div>
                 </div>
               </div>
-              
+
               <p
                 className="text-3xl font-bold text-olive/40 mb-2"
                 style={{ fontFamily: "var(--font-cormorant), 'Cormorant Garamond', serif" }}
@@ -179,7 +213,7 @@ export default function TiendaPage() {
 
       {/* Custom partituras CTA */}
       <section className="bg-olive-dark relative overflow-hidden">
-        
+
         {/* Decorative elements */}
         <div className="absolute inset-0">
           <div className="absolute top-0 left-0 w-[500px] h-[500px] bg-pink/20 rounded-full blur-[120px] -translate-y-1/2 -translate-x-1/3" />
@@ -189,39 +223,6 @@ export default function TiendaPage() {
         <div className="absolute inset-0 opacity-5">
           <div className="absolute top-10 right-10 w-48 h-48 border border-cream rounded-full" />
           <div className="absolute bottom-10 left-10 w-32 h-32 border border-pink rounded-full" />
-        </div>
-
-        <div className="max-w-[1400px] mx-auto px-4 sm:px-6 lg:px-8 py-16 md:py-24 relative z-10">
-          <div className="flex flex-col lg:flex-row items-center justify-between gap-8 text-center lg:text-left">
-            <div className="max-w-xl">
-              <div className="inline-flex items-center gap-2 bg-pink/20 backdrop-blur-sm border border-pink/30 rounded-full px-4 py-2 mb-6">
-                <Sparkles className="w-4 h-4 text-pink" />
-                <span className="text-cream text-xs font-bold tracking-widest uppercase font-sans">
-                  Servicio personalizado
-                </span>
-              </div>
-              <h3
-                className="text-3xl sm:text-4xl md:text-5xl font-bold text-cream leading-tight mb-4"
-                style={{ fontFamily: "var(--font-cormorant), 'Cormorant Garamond', serif" }}
-              >
-                ¿Buscas una partitura{" "}
-                <span className="text-pink">específica</span>?
-              </h3>
-              <p className="text-cream/70 text-base md:text-lg font-sans">
-                Puedo crear arreglos personalizados para cualquier canción que desees tocar en violín.
-              </p>
-            </div>
-            
-            <Link
-              href="https://wa.me/51999999999"
-              target="_blank"
-              rel="noopener noreferrer"
-              className="inline-flex items-center gap-3 bg-pink hover:bg-pink-dark text-white font-bold text-xs tracking-widest uppercase px-10 py-6 rounded-full transition-all duration-300 hover:scale-105 font-sans shadow-lg shadow-pink/30 shrink-0"
-            >
-              Solicitar por WhatsApp
-              <ArrowRight className="w-4 h-4" />
-            </Link>
-          </div>
         </div>
       </section>
 
