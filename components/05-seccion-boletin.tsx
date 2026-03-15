@@ -1,7 +1,5 @@
-
 import Link from "next/link"
-
-import { Mail, MessageCircle, MapPin, ArrowRight } from "lucide-react"
+import { Mail, MessageCircle, MapPin, ArrowRight, ExternalLink } from "lucide-react"
 
 function TikTokIcon({ className }: { className?: string }) {
   return (
@@ -44,25 +42,54 @@ function WhatsAppIcon({ className }: { className?: string }) {
 }
 
 const socialLinks = [
-  { name: "TikTok", icon: TikTokIcon, href: "https://www.tiktok.com/@pedrolivos" },
-  { name: "Instagram", icon: InstagramIcon, href: "https://www.instagram.com/pedrolivos/" },
-  { name: "Facebook", icon: FacebookIcon, href: "https://www.facebook.com/PedrOlivosPartituras" },
-  { name: "YouTube", icon: YouTubeIcon, href: "https://www.youtube.com/@pedroolivosmusica" },
+  {
+    name: "TikTok",
+    handle: "@pedrolivos",
+    icon: TikTokIcon,
+    href: "https://www.tiktok.com/@pedrolivos",
+    bg: "bg-olive-dark",
+    description: "Videos cortos y reels",
+  },
+  {
+    name: "Instagram",
+    handle: "@pedrolivos",
+    icon: InstagramIcon,
+    href: "https://www.instagram.com/pedrolivos/",
+    bg: "bg-pink",
+    description: "Fotos y stories",
+  },
+  {
+    name: "Facebook",
+    handle: "PedrOlivosPartituras",
+    icon: FacebookIcon,
+    href: "https://www.facebook.com/PedrOlivosPartituras",
+    bg: "bg-olive",
+    description: "Partituras y comunidad",
+  },
+  {
+    name: "YouTube",
+    handle: "@pedroolivosmusica",
+    icon: YouTubeIcon,
+    href: "https://www.youtube.com/@pedroolivosmusica",
+    bg: "bg-pink-dark",
+    description: "Covers y tutoriales",
+  },
 ]
 
 export function SeccionBoletin() {
   return (
-    <section id="subscribe" className="bg-white relative overflow-hidden">
+    <section id="contacto" className="bg-cream pt-8 md:pt-12 pb-20 md:pb-32 relative overflow-hidden">
 
-      {/* Decorative elements */}
-      <div className="absolute top-0 right-0 w-[600px] h-[600px] bg-gradient-to-bl from-pink/10 via-pink/5 to-transparent rounded-full -translate-y-1/2 translate-x-1/2 pointer-events-none" />
-      <div className="absolute bottom-0 left-0 w-[500px] h-[500px] bg-gradient-to-tr from-olive/10 via-olive/5 to-transparent rounded-full translate-y-1/2 -translate-x-1/2 pointer-events-none" />
+      {/* Subtle background decorations */}
+      <div className="absolute top-0 left-0 right-0 h-px bg-olive/10 pointer-events-none" />
+      <div className="absolute top-40 right-0 w-[500px] h-[500px] bg-pink/5 rounded-full blur-3xl pointer-events-none" />
+      <div className="absolute bottom-20 left-0 w-[400px] h-[400px] bg-olive/5 rounded-full blur-3xl pointer-events-none" />
 
-      <div className="max-w-[1400px] mx-auto px-4 sm:px-6 lg:px-8 py-20 md:py-32 relative z-10">
+      <div className="max-w-[1400px] mx-auto px-4 sm:px-6 lg:px-8 relative z-10">
 
         {/* Section header */}
-        <div className="text-center mb-16 md:mb-20">
-          <div className="inline-flex items-center gap-3 bg-olive-dark/5 backdrop-blur-sm border border-olive/10 rounded-full px-5 py-2 mb-8">
+        <div className="text-center mb-12 md:mb-16">
+          <div className="inline-flex items-center gap-3 bg-olive-dark/5 border border-olive/10 rounded-full px-5 py-2 mb-6">
             <MessageCircle className="w-4 h-4 text-pink" />
             <span className="text-olive-dark text-xs font-bold tracking-[0.3em] uppercase font-sans">
               Conectemos
@@ -76,83 +103,124 @@ export function SeccionBoletin() {
             Ponte en{" "}
             <span className="relative inline-block">
               <span className="relative z-10 text-pink">Contacto</span>
-              <svg className="absolute -bottom-2 left-0 w-full h-4 text-pink/30" viewBox="0 0 200 12" fill="currentColor" preserveAspectRatio="none">
+              <svg
+                className="absolute -bottom-2 left-0 w-full h-4 text-pink/30"
+                viewBox="0 0 200 12"
+                fill="currentColor"
+                preserveAspectRatio="none"
+              >
                 <path d="M0,8 Q50,0 100,8 T200,8" stroke="currentColor" strokeWidth="4" fill="none" />
               </svg>
             </span>
           </h2>
 
-          <p className="mt-6 text-olive/60 text-base md:text-lg font-sans max-w-xl mx-auto leading-relaxed">
+          <p className="mt-5 text-olive/60 text-base md:text-lg font-sans max-w-xl mx-auto leading-relaxed">
             Ya sea para una clase, una presentación especial o simplemente para conversar sobre música, estoy aquí.
           </p>
         </div>
 
-        {/* Main content grid */}
-        <div className="grid lg:grid-cols-5 gap-6 md:gap-8">
+        {/* ── Row 1: Social networks ── */}
+        <div className="mb-6 md:mb-8">
+          <p className="text-[11px] text-olive/40 font-bold tracking-[0.3em] uppercase font-sans mb-4">
+            Sígueme en redes sociales
+          </p>
+          <div className="grid grid-cols-2 lg:grid-cols-4 gap-4">
+            {socialLinks.map((social) => (
+              <Link
+                key={social.name}
+                href={social.href}
+                target="_blank"
+                rel="noopener noreferrer"
+                className="group relative overflow-hidden rounded-2xl border border-olive/10 bg-white hover:shadow-xl hover:shadow-olive/10 transition-all duration-500 hover:-translate-y-1"
+              >
+                {/* Colored top accent strip */}
+                <div className={`h-1.5 w-full ${social.bg} transition-all duration-300 group-hover:h-2`} />
 
-          {/* Left column - Community Card */}
-          <div className="lg:col-span-3">
-            <div className="relative bg-olive-dark rounded-3xl md:rounded-[2rem] p-8 md:p-12 overflow-hidden h-full">
+                <div className="p-5 md:p-6">
+                  <div className={`w-12 h-12 rounded-xl ${social.bg} flex items-center justify-center mb-4 transition-transform duration-300 group-hover:scale-110`}>
+                    <social.icon className="w-5 h-5 text-cream" />
+                  </div>
 
-              {/* Decorative pattern */}
-              <div className="absolute inset-0 opacity-10">
-                <div className="absolute top-10 right-10 w-40 h-40 border border-cream/30 rounded-full" />
-                <div className="absolute top-20 right-20 w-60 h-60 border border-cream/20 rounded-full" />
-                <div className="absolute bottom-10 left-10 w-32 h-32 border border-pink/30 rounded-full" />
-              </div>
+                  <p className="text-olive-dark font-bold text-base font-sans leading-none mb-1">
+                    {social.name}
+                  </p>
+                  <p className="text-olive/50 text-xs font-sans mb-2">{social.handle}</p>
+                  <p className="text-olive/55 text-xs font-sans leading-relaxed">{social.description}</p>
 
-              {/* Glowing orb */}
-              <div className="absolute top-1/2 right-0 w-96 h-96 bg-pink/20 rounded-full blur-[100px] -translate-y-1/2 translate-x-1/2 pointer-events-none" />
+                  <div className="flex items-center gap-1 mt-4">
+                    <span className="text-[10px] font-bold tracking-widest uppercase text-olive/35 font-sans group-hover:text-pink transition-colors duration-300">
+                      Seguir
+                    </span>
+                    <ExternalLink className="w-3 h-3 text-olive/30 group-hover:text-pink transition-colors duration-300" />
+                  </div>
+                </div>
+              </Link>
+            ))}
+          </div>
+        </div>
 
-              <div className="relative z-10">
-                <div className="inline-flex items-center gap-2 bg-pink/20 backdrop-blur-sm border border-pink/30 rounded-full px-4 py-2 mb-6">
+        {/* ── Row 2: Community card + Contact info ── */}
+        <div className="grid lg:grid-cols-12 gap-5 md:gap-6">
+
+          {/* WhatsApp Community Card */}
+          <div className="lg:col-span-7">
+            <div className="relative bg-olive-dark rounded-2xl overflow-hidden h-full">
+
+              {/* Decorative rings */}
+              <div className="absolute top-0 right-0 w-72 h-72 border border-cream/10 rounded-full -translate-y-1/3 translate-x-1/3 pointer-events-none" />
+              <div className="absolute top-0 right-0 w-48 h-48 border border-pink/20 rounded-full -translate-y-1/4 translate-x-1/4 pointer-events-none" />
+              <div className="absolute bottom-0 left-0 w-56 h-56 bg-pink/10 rounded-full translate-y-1/2 -translate-x-1/4 blur-2xl pointer-events-none" />
+
+              <div className="relative z-10 p-8 md:p-10 flex flex-col h-full">
+
+                {/* Live badge */}
+                <div className="inline-flex items-center gap-2 bg-pink/20 border border-pink/30 rounded-full px-4 py-1.5 mb-6 self-start">
                   <span className="relative flex h-2 w-2">
-                    <span className="animate-ping absolute inline-flex h-full w-full rounded-full bg-pink opacity-75"></span>
-                    <span className="relative inline-flex rounded-full h-2 w-2 bg-pink"></span>
+                    <span className="animate-ping absolute inline-flex h-full w-full rounded-full bg-pink opacity-75" />
+                    <span className="relative inline-flex rounded-full h-2 w-2 bg-pink" />
                   </span>
-                  <span className="text-cream text-xs font-bold tracking-widest uppercase font-sans">
+                  <span className="text-cream text-[10px] font-bold tracking-widest uppercase font-sans">
                     Comunidad activa
                   </span>
                 </div>
 
                 <h3
-                  className="text-3xl sm:text-4xl md:text-5xl font-bold text-cream leading-tight mb-4"
+                  className="text-3xl md:text-4xl lg:text-5xl font-bold text-cream leading-[1.1] mb-3"
                   style={{ fontFamily: "var(--font-cormorant), 'Cormorant Garamond', serif" }}
                 >
                   Pedro Olivos y sus{" "}
                   <span className="text-pink">Violinistas</span>
                 </h3>
 
-                <p className="text-cream/70 text-base md:text-lg leading-relaxed font-sans max-w-lg mb-8">
-                  Una comunidad amigable para músicos aficionados y amantes de la música. Un espacio para compartir, aprender y motivarnos a practicar juntos.
+                <p className="text-cream/60 text-sm md:text-base leading-relaxed font-sans mb-6 max-w-lg">
+                  Una comunidad para músicos aficionados. Partituras semanales, tips de práctica y motivación para tocar cada día.
                 </p>
 
-                {/* Benefits */}
-                <div className="flex flex-wrap gap-2 mb-10">
-                  {["Partituras semanales", "Tips de práctica", "Acceso anticipado", "Comunidad activa"].map((benefit) => (
+                {/* Benefits chips */}
+                <div className="flex flex-wrap gap-2 mb-8">
+                  {["Partituras semanales", "Tips de práctica", "Acceso anticipado", "Comunidad activa"].map((b) => (
                     <span
-                      key={benefit}
-                      className="inline-flex items-center gap-2 text-xs font-semibold text-cream bg-cream/10 backdrop-blur-sm border border-cream/10 px-4 py-2.5 rounded-full font-sans"
+                      key={b}
+                      className="inline-flex items-center gap-2 text-[11px] font-semibold text-cream/80 bg-cream/10 border border-cream/10 px-3 py-1.5 rounded-full font-sans"
                     >
-                      <span className="w-1.5 h-1.5 rounded-full bg-pink inline-block shrink-0" />
-                      {benefit}
+                      <span className="w-1.5 h-1.5 rounded-full bg-pink shrink-0" />
+                      {b}
                     </span>
                   ))}
                 </div>
 
-                <div className="flex flex-col sm:flex-row gap-4">
+                {/* CTA — "Unirme ahora" links to /#subscribe on homepage */}
+                <div className="flex flex-col sm:flex-row gap-3 mt-auto">
                   <Link
-                    href="https://wa.me/51999999999"
-                    target="_blank"
-                    rel="noopener noreferrer"
-                    className="inline-flex items-center justify-center gap-3 bg-pink hover:bg-pink-dark text-white font-bold text-xs tracking-widest uppercase px-8 py-5 rounded-full transition-all duration-300 hover:scale-105 font-sans shadow-lg shadow-pink/30"
+                    href="/#subscribe"
+                    className="inline-flex items-center justify-center gap-3 bg-pink hover:bg-pink-dark text-white font-bold text-xs tracking-widest uppercase px-8 py-4 rounded-full transition-all duration-300 hover:scale-105 font-sans shadow-lg shadow-pink/30"
                   >
                     <WhatsAppIcon className="w-5 h-5" />
                     Unirme ahora
                   </Link>
                   <Link
                     href="mailto:contacto@pedrolivos.com"
-                    className="inline-flex items-center justify-center gap-3 bg-cream/10 hover:bg-cream/20 text-cream border border-cream/20 text-xs font-bold tracking-widest uppercase px-8 py-5 rounded-full transition-all duration-300 font-sans backdrop-blur-sm"
+                    className="inline-flex items-center justify-center gap-3 bg-cream/10 hover:bg-cream/20 text-cream border border-cream/20 text-xs font-bold tracking-widest uppercase px-8 py-4 rounded-full transition-all duration-300 font-sans"
                   >
                     <Mail className="w-4 h-4" />
                     Enviar email
@@ -162,94 +230,70 @@ export function SeccionBoletin() {
             </div>
           </div>
 
-          {/* Right column */}
-          <div className="lg:col-span-2 space-y-6">
+          {/* Right column: contact + quote */}
+          <div className="lg:col-span-5 flex flex-col gap-4">
 
-            {/* Contact info card */}
-            <div className="bg-cream border border-olive/10 rounded-3xl p-6 md:p-8">
-              <p className="text-xs text-olive/50 font-bold tracking-[0.3em] uppercase font-sans mb-6">Información de contacto</p>
+            {/* Direct contact card */}
+            <div className="bg-white border border-olive/10 rounded-2xl p-6 md:p-7 flex-1">
+              <p className="text-[10px] text-olive/40 font-bold tracking-[0.3em] uppercase font-sans mb-5">
+                Contacto directo
+              </p>
 
-              <div className="space-y-4">
+              <div className="space-y-3">
                 <Link
                   href="https://wa.me/51999999999"
                   target="_blank"
                   rel="noopener noreferrer"
-                  className="group flex items-center gap-4 p-4 bg-white rounded-2xl border border-olive/10 hover:border-pink/30 hover:shadow-lg hover:shadow-pink/5 transition-all duration-300"
+                  className="group flex items-center gap-4 p-4 rounded-xl border border-olive/8 hover:border-pink/30 hover:bg-pink/5 transition-all duration-300"
                 >
-                  <div className="w-12 h-12 rounded-xl bg-pink/10 group-hover:bg-pink flex items-center justify-center transition-all duration-300">
-                    <MessageCircle className="w-5 h-5 text-pink group-hover:text-white transition-colors duration-300" />
+                  <div className="w-11 h-11 rounded-xl bg-pink/10 group-hover:bg-pink flex items-center justify-center shrink-0 transition-all duration-300">
+                    <WhatsAppIcon className="w-5 h-5 text-pink group-hover:text-white transition-colors duration-300" />
                   </div>
-                  <div className="flex-1">
+                  <div className="flex-1 min-w-0">
                     <p className="text-[10px] text-olive/40 font-bold tracking-widest uppercase font-sans">WhatsApp</p>
-                    <p className="text-olive-dark font-bold font-sans">+51 999 999 999</p>
+                    <p className="text-olive-dark font-bold font-sans text-sm truncate">+51 999 999 999</p>
                   </div>
-                  <ArrowRight className="w-4 h-4 text-olive/30 group-hover:text-pink group-hover:translate-x-1 transition-all duration-300" />
+                  <ArrowRight className="w-4 h-4 text-olive/20 group-hover:text-pink group-hover:translate-x-1 transition-all duration-300 shrink-0" />
                 </Link>
 
                 <Link
                   href="mailto:contacto@pedrolivos.com"
-                  className="group flex items-center gap-4 p-4 bg-white rounded-2xl border border-olive/10 hover:border-olive/30 hover:shadow-lg hover:shadow-olive/5 transition-all duration-300"
+                  className="group flex items-center gap-4 p-4 rounded-xl border border-olive/8 hover:border-olive/30 hover:bg-olive/5 transition-all duration-300"
                 >
-                  <div className="w-12 h-12 rounded-xl bg-olive/10 group-hover:bg-olive flex items-center justify-center transition-all duration-300">
+                  <div className="w-11 h-11 rounded-xl bg-olive/10 group-hover:bg-olive flex items-center justify-center shrink-0 transition-all duration-300">
                     <Mail className="w-5 h-5 text-olive group-hover:text-cream transition-colors duration-300" />
                   </div>
-                  <div className="flex-1">
+                  <div className="flex-1 min-w-0">
                     <p className="text-[10px] text-olive/40 font-bold tracking-widest uppercase font-sans">Email</p>
-                    <p className="text-olive-dark font-bold font-sans text-sm">contacto@pedrolivos.com</p>
+                    <p className="text-olive-dark font-bold font-sans text-sm truncate">contacto@pedrolivos.com</p>
                   </div>
-                  <ArrowRight className="w-4 h-4 text-olive/30 group-hover:text-olive group-hover:translate-x-1 transition-all duration-300" />
+                  <ArrowRight className="w-4 h-4 text-olive/20 group-hover:text-olive group-hover:translate-x-1 transition-all duration-300 shrink-0" />
                 </Link>
 
-                <div className="flex items-center gap-4 p-4 bg-white rounded-2xl border border-olive/10">
-                  <div className="w-12 h-12 rounded-xl bg-pink/10 flex items-center justify-center">
+                <div className="flex items-center gap-4 p-4 rounded-xl border border-olive/8">
+                  <div className="w-11 h-11 rounded-xl bg-pink/10 flex items-center justify-center shrink-0">
                     <MapPin className="w-5 h-5 text-pink" />
                   </div>
-                  <div className="flex-1">
+                  <div className="flex-1 min-w-0">
                     <p className="text-[10px] text-olive/40 font-bold tracking-widest uppercase font-sans">Ubicación</p>
-                    <p className="text-olive-dark font-bold font-sans">Lima, Perú</p>
+                    <p className="text-olive-dark font-bold font-sans text-sm">Lima, Perú</p>
                   </div>
                 </div>
               </div>
             </div>
 
-            {/* Social links card */}
-            <div className="bg-cream border border-olive/10 rounded-3xl p-6 md:p-8">
-              <p className="text-xs text-olive/50 font-bold tracking-[0.3em] uppercase font-sans mb-6">Sígueme en redes</p>
-
-              <div className="grid grid-cols-2 gap-3">
-                {socialLinks.map((social) => (
-                  <Link
-                    key={social.name}
-                    href={social.href}
-                    target="_blank"
-                    rel="noopener noreferrer"
-                    className="group flex items-center gap-3 p-4 bg-white rounded-2xl border border-olive/10 hover:border-olive-dark hover:shadow-lg hover:shadow-olive/5 transition-all duration-300"
-                  >
-                    <div className="w-10 h-10 rounded-xl bg-olive-dark group-hover:scale-110 flex items-center justify-center transition-all duration-300">
-                      <social.icon className="w-4 h-4 text-cream" />
-                    </div>
-                    <div>
-                      <p className="text-olive-dark font-bold text-sm font-sans">{social.name}</p>
-                    </div>
-                  </Link>
-                ))}
-              </div>
+            {/* Quote card */}
+            <div className="bg-olive-dark rounded-2xl p-6 md:p-7">
+              <p
+                className="text-xl md:text-2xl text-cream font-light italic leading-snug mb-3"
+                style={{ fontFamily: "var(--font-cormorant), 'Cormorant Garamond', serif" }}
+              >
+                "La música es el viaje, el violín es mi camino."
+              </p>
+              <p className="text-cream/40 text-[10px] font-bold tracking-[0.3em] uppercase font-sans">
+                — Pedro Olivos
+              </p>
             </div>
-          </div>
-        </div>
-
-        {/* Quote */}
-        <div className="mt-16 md:mt-20 text-center">
-          <div className="inline-block max-w-2xl">
-            <p
-              className="text-2xl md:text-4xl text-olive-dark/70 font-light italic leading-relaxed"
-              style={{ fontFamily: "var(--font-cormorant), 'Cormorant Garamond', serif" }}
-            >
-              "La música es el viaje, el violín es mi camino."
-            </p>
-            <p className="text-olive/40 text-xs font-bold tracking-[0.3em] uppercase font-sans mt-4">
-              — Pedro Olivos
-            </p>
           </div>
         </div>
       </div>
@@ -262,64 +306,52 @@ export function SeccionMembresia() {
     <section id="servicios" className="bg-olive-dark py-16 md:py-24">
       <div className="max-w-[1200px] mx-auto px-4 sm:px-6 lg:px-8">
         <div className="max-w-2xl mx-auto">
-          {/* White Card */}
           <div className="bg-cream rounded-3xl p-8 md:p-12 shadow-xl">
             <div className="text-center space-y-8">
-
-              {/* WhatsApp Badge */}
               <div className="flex items-center justify-center gap-3">
                 <div className="w-14 h-14 bg-[#25D366] rounded-full flex items-center justify-center shadow-lg">
                   <WhatsAppIcon className="w-7 h-7 text-white" />
                 </div>
               </div>
-
-              {/* Group Name */}
               <div className="space-y-2">
                 <h3 className="text-2xl md:text-3xl font-black text-olive-dark font-sans">
                   Grupo VIP de Partituras
                 </h3>
-                <p className="text-gray-500 text-sm font-sans">
-                  Grupo exclusivo de WhatsApp
-                </p>
+                <p className="text-gray-500 text-sm font-sans">Grupo exclusivo de WhatsApp</p>
               </div>
-
-              {/* Benefits List */}
               <ul className="space-y-4 text-left max-w-md mx-auto">
                 <li className="flex items-start gap-3 text-gray-700 text-lg">
-                  <span className="text-2xl flex-shrink-0">🎻</span>
+                  <span className="w-2 h-2 rounded-full bg-pink mt-2 shrink-0" />
                   <span>Partituras exclusivas cada semana.</span>
                 </li>
                 <li className="flex items-start gap-3 text-gray-700 text-lg">
-                  <span className="text-2xl flex-shrink-0">🎶</span>
+                  <span className="w-2 h-2 rounded-full bg-pink mt-2 shrink-0" />
                   <span>Tutoriales y tips para mejorar tu técnica.</span>
                 </li>
                 <li className="flex items-start gap-3 text-gray-700 text-lg">
-                  <span className="text-2xl flex-shrink-0">📹</span>
+                  <span className="w-2 h-2 rounded-full bg-pink mt-2 shrink-0" />
                   <span>Contenido exclusivo detrás de cámaras.</span>
                 </li>
                 <li className="flex items-start gap-3 text-gray-700 text-lg">
-                  <span className="text-2xl flex-shrink-0">🎵</span>
+                  <span className="w-2 h-2 rounded-full bg-pink mt-2 shrink-0" />
                   <span>Acceso anticipado a nuevos covers y arreglos.</span>
                 </li>
                 <li className="flex items-start gap-3 text-gray-700 text-lg">
-                  <span className="text-2xl flex-shrink-0">🤝</span>
+                  <span className="w-2 h-2 rounded-full bg-pink mt-2 shrink-0" />
                   <span>Comunidad de violinistas apasionados.</span>
                 </li>
               </ul>
-
-              {/* CTA Button */}
               <Link
                 href="https://chat.whatsapp.com/TULINK"
                 target="_blank"
                 rel="noopener noreferrer"
-                className="inline-flex items-center gap-3 bg-[#25D366] hover:bg-[#1da851] text-white font-bold text-lg px-10 py-4 rounded-full shadow-lg transition-all duration-300 hover:scale-105 hover:shadow-xl"
+                className="inline-flex items-center gap-3 bg-[#25D366] hover:bg-[#1da851] text-white font-bold text-lg px-10 py-4 rounded-full shadow-lg transition-all duration-300 hover:scale-105"
               >
                 <WhatsAppIcon className="w-6 h-6" />
                 UNIRME AL GRUPO
               </Link>
-
               <p className="text-gray-400 text-xs font-sans">
-                ¡Es gratis! Solo haz clic y únete al grupo 🎻
+                Es gratis. Solo haz clic y únete al grupo.
               </p>
             </div>
           </div>
@@ -334,8 +366,6 @@ export function SeccionBoletinmain() {
     <section id="subscribe" className="bg-pink py-16 md:py-20">
       <div className="max-w-[1200px] mx-auto px-4 sm:px-6 lg:px-8">
         <div className="max-w-lg mx-auto text-center space-y-8">
-
-          {/* Label */}
           <div className="flex items-center justify-center gap-3">
             <div className="w-8 h-px bg-olive-dark/40" />
             <span className="text-olive-dark text-xs font-bold tracking-[0.3em] uppercase font-sans">
@@ -343,44 +373,23 @@ export function SeccionBoletinmain() {
             </span>
             <div className="w-8 h-px bg-olive-dark/40" />
           </div>
-
           <div className="space-y-3">
             <h2 className="text-2xl md:text-3xl font-black text-olive-dark font-sans text-balance">
               Pedro Olivos y sus Violinistas
             </h2>
             <p className="text-olive-dark/70 font-sans text-sm leading-relaxed">
-              Es una comunidad amigable para músicos aficionados y amantes de la música. Aunque nace desde el violín, es un espacio abierto para compartir, aprender, motivarnos a practicar y disfrutar juntos de la música. 🎶
+              Una comunidad amigable para músicos aficionados y amantes de la música.
             </p>
           </div>
-
           <Link
-            href="https://wa.me/51999999999"
+            href="https://chat.whatsapp.com/TULINK"
             target="_blank"
             rel="noopener noreferrer"
-            className="inline-flex items-center gap-2 bg-olive-dark hover:bg-olive text-cream font-bold text-sm tracking-widest uppercase px-8 py-4 rounded-full shadow-lg transition-all duration-300 hover:scale-105 hover:shadow-xl font-sans"
+            className="inline-flex items-center gap-3 bg-olive-dark hover:bg-olive text-cream font-bold text-xs tracking-widest uppercase px-8 py-4 rounded-full transition-all duration-300 hover:scale-105 font-sans shadow-lg"
           >
-            Unirme
+            <WhatsAppIcon className="w-5 h-5" />
+            Unirme gratis
           </Link>
-
-          {/* Social Links */}
-          <div className="pt-4 space-y-4">
-            <p className="text-olive-dark/80 font-sans text-sm font-semibold">Sigueme en todas mis redes</p>
-            <div className="flex justify-center gap-4">
-              {socialLinks.map((social) => (
-                <Link
-                  key={social.name}
-                  href={social.href}
-                  target="_blank"
-                  rel="noopener noreferrer"
-                  className="w-12 h-12 bg-white/30 hover:bg-olive-dark rounded-full flex items-center justify-center transition-all duration-300 hover:scale-110 group border border-white/20"
-                  aria-label={social.name}
-                >
-                  <social.icon className="w-5 h-5 text-olive-dark group-hover:text-cream transition-colors" />
-                </Link>
-              ))}
-            </div>
-          </div>
-
         </div>
       </div>
     </section>
