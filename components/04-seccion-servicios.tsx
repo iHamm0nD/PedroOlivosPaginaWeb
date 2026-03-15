@@ -87,17 +87,13 @@ export function SeccionServicios() {
         {/* Services Grid - 3 cards, asymmetric layout */}
         <div className="grid grid-cols-1 lg:grid-cols-12 gap-6 md:gap-8">
           {services.map((service, index) => {
-            // First card: wide (7 cols), second and third: side by side (5 cols each)
-            const isWide = index === 0
-            const gridClass = isWide ? "lg:col-span-12 xl:col-span-7" : "lg:col-span-6 xl:col-span-5"
-            // Last card fills remaining space next to first if xl, else splits equally
-            // For simplicity: index 0 = 7 cols, index 1 = 5 cols, index 2 = 12 cols (full row on lg, 5 cols on xl row 2 paired with index 0 tail)
+            // index 0 = 7 cols, index 1 = 5 cols, index 2 = full row
             const colSpan =
               index === 0
                 ? "lg:col-span-7"
                 : index === 1
                 ? "lg:col-span-5"
-                : "lg:col-span-12 xl:col-span-12"
+                : "lg:col-span-12"
 
             return (
               <Link
