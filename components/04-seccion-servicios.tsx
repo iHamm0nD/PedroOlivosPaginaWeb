@@ -1,6 +1,6 @@
 
 import Link from "next/link"
-import { Music, BookOpen, Users, Mic2, ArrowRight, Sparkles } from "lucide-react"
+import { Music, BookOpen, Mic2, ArrowRight, Sparkles } from "lucide-react"
 
 const services = [
   {
@@ -26,17 +26,6 @@ const services = [
     color: "olive",
   },
   {
-    icon: Users,
-    title: "Grupo VIP",
-    subtitle: "Comunidad WhatsApp",
-    description:
-      "Únete a la comunidad exclusiva de violinistas. Recibe partituras semanales, tips y la motivación de músicos apasionados.",
-    cta: "Unirme gratis",
-    href: "https://wa.me/51999999999",
-    highlight: "Gratis",
-    color: "pink",
-  },
-  {
     icon: Mic2,
     title: "Presentaciones",
     subtitle: "Eventos & Serenatas",
@@ -45,13 +34,13 @@ const services = [
     cta: "Consultar",
     href: "https://wa.me/51999999999",
     highlight: null,
-    color: "olive",
+    color: "pink",
   },
 ]
 
 export function SeccionServicios() {
   return (
-    <section id="servicios" className="bg-cream py-20 md:py-32 relative overflow-hidden">
+    <section id="servicios" className="bg-cream pt-10 md:pt-16 pb-20 md:pb-32 relative overflow-hidden">
 
       {/* Decorative floating elements */}
       <div className="absolute top-20 right-10 w-72 h-72 bg-pink/10 rounded-full blur-3xl pointer-events-none" />
@@ -95,27 +84,36 @@ export function SeccionServicios() {
           </p>
         </div>
 
-        {/* Services Grid - New Magazine Style */}
+        {/* Services Grid - 3 cards, asymmetric layout */}
         <div className="grid grid-cols-1 lg:grid-cols-12 gap-6 md:gap-8">
           {services.map((service, index) => {
-            const isLarge = index === 0 || index === 3
-            const gridClass = isLarge ? "lg:col-span-7" : "lg:col-span-5"
-            
+            // First card: wide (7 cols), second and third: side by side (5 cols each)
+            const isWide = index === 0
+            const gridClass = isWide ? "lg:col-span-12 xl:col-span-7" : "lg:col-span-6 xl:col-span-5"
+            // Last card fills remaining space next to first if xl, else splits equally
+            // For simplicity: index 0 = 7 cols, index 1 = 5 cols, index 2 = 12 cols (full row on lg, 5 cols on xl row 2 paired with index 0 tail)
+            const colSpan =
+              index === 0
+                ? "lg:col-span-7"
+                : index === 1
+                ? "lg:col-span-5"
+                : "lg:col-span-12 xl:col-span-12"
+
             return (
               <Link
                 key={service.title}
                 href={service.href}
                 target={service.href.startsWith("http") ? "_blank" : undefined}
                 rel={service.href.startsWith("http") ? "noopener noreferrer" : undefined}
-                className={`group relative overflow-hidden rounded-2xl ${gridClass}`}
+                className={`group relative overflow-hidden rounded-2xl ${colSpan}`}
               >
                 {/* Card Background */}
                 <div className={`absolute inset-0 transition-transform duration-700 group-hover:scale-105 ${
-                  service.color === "pink" 
-                    ? "bg-gradient-to-br from-pink via-pink-dark to-olive-dark" 
+                  service.color === "pink"
+                    ? "bg-gradient-to-br from-pink via-pink-dark to-olive-dark"
                     : "bg-gradient-to-br from-olive via-olive-dark to-olive-dark"
                 }`} />
-                
+
                 {/* Decorative Pattern */}
                 <div className="absolute inset-0 opacity-10">
                   <div className="absolute top-0 right-0 w-64 h-64 bg-white/20 rounded-full -translate-y-1/2 translate-x-1/2" />
@@ -123,16 +121,19 @@ export function SeccionServicios() {
                 </div>
 
                 {/* Content Container */}
-                <div className={`relative z-10 p-8 md:p-10 flex flex-col ${isLarge ? "min-h-[380px] md:min-h-[420px]" : "min-h-[320px] md:min-h-[360px]"}`}>
-                  
-                  {/* Top Row: Badge & Icon */}
-                  <div className="flex items-start justify-between mb-auto">
-                    {/* Icon Container */}
+                <div className={`relative z-10 p-8 md:p-10 flex flex-col ${
+                  index === 2
+                    ? "min-h-[260px] md:min-h-[280px] xl:flex-row xl:items-center xl:gap-16"
+                    : index === 0
+                    ? "min-h-[380px] md:min-h-[420px]"
+                    : "min-h-[320px] md:min-h-[360px]"
+                }`}>
+
+                  {/* Top Row: Icon & Badge */}
+                  <div className={`flex items-start justify-between ${index === 2 ? "xl:flex-col xl:justify-start xl:gap-6 xl:shrink-0" : "mb-auto"}`}>
                     <div className="w-16 h-16 md:w-20 md:h-20 rounded-full bg-white/10 backdrop-blur-sm flex items-center justify-center border border-white/20 transition-all duration-500 group-hover:bg-white/20 group-hover:scale-110">
                       <service.icon className="w-7 h-7 md:w-9 md:h-9 text-cream" />
                     </div>
-                    
-                    {/* Highlight Badge */}
                     {service.highlight && (
                       <span className="px-4 py-2 bg-white/20 backdrop-blur-sm text-cream text-xs font-bold tracking-widest uppercase rounded-full border border-white/20">
                         {service.highlight}
@@ -140,27 +141,24 @@ export function SeccionServicios() {
                     )}
                   </div>
 
-                  {/* Bottom Content */}
-                  <div className="mt-8">
-                    {/* Subtitle */}
+                  {/* Bottom / Main Content */}
+                  <div className={`${index === 2 ? "xl:flex-1" : "mt-8"}`}>
                     <p className="text-cream/60 text-xs font-bold tracking-[0.3em] uppercase font-sans mb-3">
                       {service.subtitle}
                     </p>
-
-                    {/* Title */}
                     <h3
-                      className={`font-bold text-cream leading-[1.1] mb-4 ${isLarge ? "text-3xl md:text-4xl lg:text-5xl" : "text-2xl md:text-3xl"}`}
+                      className={`font-bold text-cream leading-[1.1] mb-4 ${
+                        index === 0 ? "text-3xl md:text-4xl lg:text-5xl" : "text-2xl md:text-3xl"
+                      }`}
                       style={{ fontFamily: "var(--font-cormorant), 'Cormorant Garamond', serif" }}
                     >
                       {service.title}
                     </h3>
-
-                    {/* Description */}
-                    <p className={`text-cream/70 leading-relaxed font-sans mb-6 ${isLarge ? "text-sm md:text-base max-w-md" : "text-sm"}`}>
+                    <p className={`text-cream/70 leading-relaxed font-sans mb-6 ${
+                      index === 0 ? "text-sm md:text-base max-w-md" : "text-sm"
+                    } ${index === 2 ? "xl:max-w-xl" : ""}`}>
                       {service.description}
                     </p>
-
-                    {/* CTA Button */}
                     <div className="flex items-center gap-4">
                       <span className="inline-flex items-center gap-3 px-6 py-3 bg-white/10 backdrop-blur-sm text-cream text-sm font-bold tracking-wider uppercase rounded-full border border-white/20 transition-all duration-500 group-hover:bg-white group-hover:text-olive-dark">
                         {service.cta}
@@ -170,7 +168,7 @@ export function SeccionServicios() {
                   </div>
 
                   {/* Decorative Number */}
-                  <div 
+                  <div
                     className="absolute bottom-4 right-6 text-8xl md:text-9xl font-black text-white/5 select-none pointer-events-none leading-none"
                     style={{ fontFamily: "var(--font-cormorant), 'Cormorant Garamond', serif" }}
                     aria-hidden="true"
@@ -183,31 +181,6 @@ export function SeccionServicios() {
           })}
         </div>
 
-        {/* Bottom CTA */}
-        <div className="mt-16 md:mt-20 text-center">
-          <div className="inline-flex flex-col sm:flex-row items-center gap-6 bg-olive-dark rounded-3xl px-8 py-6 md:px-12 md:py-8">
-            <div className="text-center sm:text-left">
-              <p className="text-cream/60 text-xs font-bold tracking-widest uppercase font-sans mb-1">
-                ¿Tienes dudas?
-              </p>
-              <p
-                className="text-cream text-xl md:text-2xl font-light"
-                style={{ fontFamily: "var(--font-cormorant), 'Cormorant Garamond', serif" }}
-              >
-                Conversemos por WhatsApp
-              </p>
-            </div>
-            <Link
-              href="https://wa.me/51999999999"
-              target="_blank"
-              rel="noopener noreferrer"
-              className="inline-flex items-center gap-3 bg-pink hover:bg-pink-dark text-white text-xs font-bold tracking-widest uppercase px-8 py-4 rounded-full transition-all duration-300 hover:scale-105 font-sans shadow-lg shadow-pink/25"
-            >
-              Contactar ahora
-              <ArrowRight className="w-4 h-4" />
-            </Link>
-          </div>
-        </div>
       </div>
     </section>
   )
