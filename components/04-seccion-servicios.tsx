@@ -95,81 +95,92 @@ export function SeccionServicios() {
           </p>
         </div>
 
-        {/* Services Grid - Bento style */}
-        <div className="grid md:grid-cols-2 gap-5 md:gap-6">
-          {services.map((service, index) => (
-            <Link
-              key={service.title}
-              href={service.href}
-              target={service.href.startsWith("http") ? "_blank" : undefined}
-              rel={service.href.startsWith("http") ? "noopener noreferrer" : undefined}
-              className={`group relative bg-white rounded-3xl p-7 md:p-10 border border-olive/10 transition-all duration-500 hover:shadow-2xl hover:shadow-olive/10 hover:-translate-y-2 overflow-hidden ${index === 0 ? "md:row-span-2" : ""
-                }`}
-            >
-              {/* Background gradient on hover */}
-              <div className={`absolute inset-0 opacity-0 group-hover:opacity-100 transition-opacity duration-500 ${service.color === "pink"
-                ? "bg-gradient-to-br from-pink/5 via-transparent to-pink/10"
-                : "bg-gradient-to-br from-olive/5 via-transparent to-olive/10"
+        {/* Services Grid - New Magazine Style */}
+        <div className="grid grid-cols-1 lg:grid-cols-12 gap-6 md:gap-8">
+          {services.map((service, index) => {
+            const isLarge = index === 0 || index === 3
+            const gridClass = isLarge ? "lg:col-span-7" : "lg:col-span-5"
+            
+            return (
+              <Link
+                key={service.title}
+                href={service.href}
+                target={service.href.startsWith("http") ? "_blank" : undefined}
+                rel={service.href.startsWith("http") ? "noopener noreferrer" : undefined}
+                className={`group relative overflow-hidden rounded-2xl ${gridClass}`}
+              >
+                {/* Card Background */}
+                <div className={`absolute inset-0 transition-transform duration-700 group-hover:scale-105 ${
+                  service.color === "pink" 
+                    ? "bg-gradient-to-br from-pink via-pink-dark to-olive-dark" 
+                    : "bg-gradient-to-br from-olive via-olive-dark to-olive-dark"
                 }`} />
-
-              {/* Highlight badge */}
-              {service.highlight && (
-                <div className={`absolute top-6 right-6 px-4 py-1.5 rounded-full text-xs font-bold tracking-wider uppercase ${service.highlight === "Popular"
-                  ? "bg-pink text-white"
-                  : "bg-olive text-cream"
-                  }`}>
-                  {service.highlight}
-                </div>
-              )}
-
-              <div className="relative z-10 h-full flex flex-col">
-                {/* Icon */}
-                <div className={`w-14 h-14 md:w-16 md:h-16 rounded-2xl flex items-center justify-center mb-6 transition-all duration-500 ${service.color === "pink"
-                  ? "bg-pink/10 group-hover:bg-pink group-hover:scale-110"
-                  : "bg-olive/10 group-hover:bg-olive group-hover:scale-110"
-                  }`}>
-                  <service.icon className={`w-6 h-6 md:w-7 md:h-7 transition-colors duration-500 ${service.color === "pink"
-                    ? "text-pink group-hover:text-white"
-                    : "text-olive group-hover:text-cream"
-                    }`} />
+                
+                {/* Decorative Pattern */}
+                <div className="absolute inset-0 opacity-10">
+                  <div className="absolute top-0 right-0 w-64 h-64 bg-white/20 rounded-full -translate-y-1/2 translate-x-1/2" />
+                  <div className="absolute bottom-0 left-0 w-48 h-48 bg-white/10 rounded-full translate-y-1/2 -translate-x-1/2" />
                 </div>
 
-                {/* Subtitle */}
-                <p className="text-xs uppercase tracking-[0.25em] font-bold text-pink/70 font-sans mb-2">
-                  {service.subtitle}
-                </p>
+                {/* Content Container */}
+                <div className={`relative z-10 p-8 md:p-10 flex flex-col ${isLarge ? "min-h-[380px] md:min-h-[420px]" : "min-h-[320px] md:min-h-[360px]"}`}>
+                  
+                  {/* Top Row: Badge & Icon */}
+                  <div className="flex items-start justify-between mb-auto">
+                    {/* Icon Container */}
+                    <div className="w-16 h-16 md:w-20 md:h-20 rounded-full bg-white/10 backdrop-blur-sm flex items-center justify-center border border-white/20 transition-all duration-500 group-hover:bg-white/20 group-hover:scale-110">
+                      <service.icon className="w-7 h-7 md:w-9 md:h-9 text-cream" />
+                    </div>
+                    
+                    {/* Highlight Badge */}
+                    {service.highlight && (
+                      <span className="px-4 py-2 bg-white/20 backdrop-blur-sm text-cream text-xs font-bold tracking-widest uppercase rounded-full border border-white/20">
+                        {service.highlight}
+                      </span>
+                    )}
+                  </div>
 
-                {/* Title */}
-                <h3
-                  className="text-2xl md:text-3xl lg:text-4xl font-bold text-olive-dark leading-tight mb-4 group-hover:text-olive transition-colors duration-300"
-                  style={{ fontFamily: "var(--font-cormorant), 'Cormorant Garamond', serif" }}
-                >
-                  {service.title}
-                </h3>
+                  {/* Bottom Content */}
+                  <div className="mt-8">
+                    {/* Subtitle */}
+                    <p className="text-cream/60 text-xs font-bold tracking-[0.3em] uppercase font-sans mb-3">
+                      {service.subtitle}
+                    </p>
 
-                {/* Description */}
-                <p className="text-olive/60 text-sm md:text-base leading-relaxed font-sans flex-grow">
-                  {service.description}
-                </p>
+                    {/* Title */}
+                    <h3
+                      className={`font-bold text-cream leading-[1.1] mb-4 ${isLarge ? "text-3xl md:text-4xl lg:text-5xl" : "text-2xl md:text-3xl"}`}
+                      style={{ fontFamily: "var(--font-cormorant), 'Cormorant Garamond', serif" }}
+                    >
+                      {service.title}
+                    </h3>
 
-                {/* CTA */}
-                <div className="mt-6 pt-6 border-t border-olive/10 flex items-center justify-between">
-                  <span className="text-sm font-bold text-olive-dark group-hover:text-pink transition-colors duration-300 font-sans">
-                    {service.cta}
-                  </span>
-                  <div className={`w-12 h-12 rounded-full flex items-center justify-center transition-all duration-500 ${service.color === "pink"
-                    ? "bg-pink/10 group-hover:bg-pink"
-                    : "bg-olive/10 group-hover:bg-olive"
-                    }`}>
-                    <ArrowRight className={`w-5 h-5 transition-all duration-300 group-hover:translate-x-1 ${service.color === "pink"
-                      ? "text-pink group-hover:text-white"
-                      : "text-olive group-hover:text-cream"
-                      }`} />
+                    {/* Description */}
+                    <p className={`text-cream/70 leading-relaxed font-sans mb-6 ${isLarge ? "text-sm md:text-base max-w-md" : "text-sm"}`}>
+                      {service.description}
+                    </p>
+
+                    {/* CTA Button */}
+                    <div className="flex items-center gap-4">
+                      <span className="inline-flex items-center gap-3 px-6 py-3 bg-white/10 backdrop-blur-sm text-cream text-sm font-bold tracking-wider uppercase rounded-full border border-white/20 transition-all duration-500 group-hover:bg-white group-hover:text-olive-dark">
+                        {service.cta}
+                        <ArrowRight className="w-4 h-4 transition-transform duration-300 group-hover:translate-x-1" />
+                      </span>
+                    </div>
+                  </div>
+
+                  {/* Decorative Number */}
+                  <div 
+                    className="absolute bottom-4 right-6 text-8xl md:text-9xl font-black text-white/5 select-none pointer-events-none leading-none"
+                    style={{ fontFamily: "var(--font-cormorant), 'Cormorant Garamond', serif" }}
+                    aria-hidden="true"
+                  >
+                    0{index + 1}
                   </div>
                 </div>
-              </div>
-            </Link>
-          ))}
+              </Link>
+            )
+          })}
         </div>
 
         {/* Bottom CTA */}
