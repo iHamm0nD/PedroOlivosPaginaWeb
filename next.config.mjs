@@ -3,7 +3,7 @@ const nextConfig = {
   typescript: {
   },
   images: {
-    unoptimized: true,
+    // Image optimization is enabled for Vercel performance
     remotePatterns: [
       {
         protocol: 'https',

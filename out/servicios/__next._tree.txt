@@ -1,0 +1,9 @@
+:HL["/_next/static/chunks/2e25e810b349d82b.css","style"]
+:HL["/_next/static/media/01e4147cff8141ee-s.p.7787e134.woff2","font",{"crossOrigin":"","type":"font/woff2"}]
+:HL["/_next/static/media/07454f8ad8aaac57-s.p.fc65572f.woff2","font",{"crossOrigin":"","type":"font/woff2"}]
+:HL["/_next/static/media/2a65768255d6b625-s.p.d19752fb.woff2","font",{"crossOrigin":"","type":"font/woff2"}]
+:HL["/_next/static/media/4a7551bcc3548e67-s.p.717db902.woff2","font",{"crossOrigin":"","type":"font/woff2"}]
+:HL["/_next/static/media/70e3db2de7f94926-s.p.347f98aa.woff2","font",{"crossOrigin":"","type":"font/woff2"}]
+:HL["/_next/static/media/8bd76523131fa0fc-s.p.eb17b6b9.woff2","font",{"crossOrigin":"","type":"font/woff2"}]
+:HL["/_next/static/media/f48d461c03e0a8ec-s.p.4f85faee.woff2","font",{"crossOrigin":"","type":"font/woff2"}]
+0:{"buildId":"aMzH7pSpdgty6WWew7Q_2","tree":{"name":"","paramType":null,"paramKey":"","hasRuntimePrefetch":false,"slots":{"children":{"name":"servicios","paramType":null,"paramKey":"servicios","hasRuntimePrefetch":false,"slots":{"children":{"name":"__PAGE__","paramType":null,"paramKey":"__PAGE__","hasRuntimePrefetch":false,"slots":null,"isRootLayout":false}},"isRootLayout":false}},"isRootLayout":true},"staleTime":300}
