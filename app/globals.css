@@ -88,10 +88,12 @@
   --color-pink: #DDA15E;
   --color-pink-dark: #BC6C25;
   --color-cream: #FEFAE0;
-  --color-blue: #606C38;
-  --color-blue-dark: #283618;
-  --color-purple: #606C38;
-  --color-purple-dark: #283618;
+  
+  /* Social Media Brand Colors */
+  --color-tiktok: #000000;
+  --color-instagram: #E1306C;
+  --color-facebook: #1877F2;
+  --color-youtube: #FF0000;
   
   /* Semantic aliases for Tailwind */
   --color-navbar: #606C38;

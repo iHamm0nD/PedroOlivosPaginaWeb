@@ -47,7 +47,7 @@ const socialLinks = [
     handle: "@pedrolivos",
     icon: TikTokIcon,
     href: "https://www.tiktok.com/@pedrolivos",
-    bg: "bg-olive-dark",
+    bg: "bg-black",
     description: "Videos cortos y reels",
   },
   {
@@ -55,7 +55,7 @@ const socialLinks = [
     handle: "@pedrolivos",
     icon: InstagramIcon,
     href: "https://www.instagram.com/pedrolivos/",
-    bg: "bg-pink",
+    bg: "bg-[#E1306C]",
     description: "Fotos y stories",
   },
   {
@@ -63,7 +63,7 @@ const socialLinks = [
     handle: "PedrOlivosPartituras",
     icon: FacebookIcon,
     href: "https://www.facebook.com/PedrOlivosPartituras",
-    bg: "bg-olive",
+    bg: "bg-[#1877F2]",
     description: "Partituras y comunidad",
   },
   {
@@ -71,7 +71,7 @@ const socialLinks = [
     handle: "@pedroolivosmusica",
     icon: YouTubeIcon,
     href: "https://www.youtube.com/@pedroolivosmusica",
-    bg: "bg-pink-dark",
+    bg: "bg-[#FF0000]",
     description: "Covers y tutoriales",
   },
 ]
@@ -114,50 +114,11 @@ export function SeccionBoletin() {
             </span>
           </h2>
 
-          <p className="mt-5 text-olive/60 text-base md:text-lg font-sans max-w-xl mx-auto leading-relaxed">
+          <p className="mt-5 text-olive/80 text-base md:text-lg font-sans max-w-xl mx-auto leading-relaxed">
             Ya sea para una clase, una presentación especial o simplemente para conversar sobre música, estoy aquí.
           </p>
         </div>
 
-        {/* ── Row 1: Social networks ── */}
-        <div className="mb-6 md:mb-8">
-          <p className="text-[11px] text-olive/40 font-bold tracking-[0.3em] uppercase font-sans mb-4">
-            Sígueme en redes sociales
-          </p>
-          <div className="grid grid-cols-2 lg:grid-cols-4 gap-4">
-            {socialLinks.map((social) => (
-              <Link
-                key={social.name}
-                href={social.href}
-                target="_blank"
-                rel="noopener noreferrer"
-                className="group relative overflow-hidden rounded-2xl border border-olive/10 bg-white hover:shadow-xl hover:shadow-olive/10 transition-all duration-500 hover:-translate-y-1"
-              >
-                {/* Colored top accent strip */}
-                <div className={`h-1.5 w-full ${social.bg} transition-all duration-300 group-hover:h-2`} />
-
-                <div className="p-5 md:p-6">
-                  <div className={`w-12 h-12 rounded-xl ${social.bg} flex items-center justify-center mb-4 transition-transform duration-300 group-hover:scale-110`}>
-                    <social.icon className="w-5 h-5 text-cream" />
-                  </div>
-
-                  <p className="text-olive-dark font-bold text-base font-sans leading-none mb-1">
-                    {social.name}
-                  </p>
-                  <p className="text-olive/50 text-xs font-sans mb-2">{social.handle}</p>
-                  <p className="text-olive/55 text-xs font-sans leading-relaxed">{social.description}</p>
-
-                  <div className="flex items-center gap-1 mt-4">
-                    <span className="text-[10px] font-bold tracking-widest uppercase text-olive/35 font-sans group-hover:text-pink transition-colors duration-300">
-                      Seguir
-                    </span>
-                    <ExternalLink className="w-3 h-3 text-olive/30 group-hover:text-pink transition-colors duration-300" />
-                  </div>
-                </div>
-              </Link>
-            ))}
-          </div>
-        </div>
 
         {/* ── Row 2: Community card + Contact info ── */}
         <div className="grid lg:grid-cols-12 gap-5 md:gap-6">
@@ -192,7 +153,7 @@ export function SeccionBoletin() {
                   <span className="text-pink">Violinistas</span>
                 </h3>
 
-                <p className="text-cream/60 text-sm md:text-base leading-relaxed font-sans mb-6 max-w-lg">
+                <p className="text-cream/90 text-sm md:text-base leading-relaxed font-sans mb-6 max-w-lg">
                   Una comunidad para músicos aficionados. Partituras semanales, tips de práctica y motivación para tocar cada día.
                 </p>
 
@@ -201,7 +162,7 @@ export function SeccionBoletin() {
                   {["Partituras semanales", "Tips de práctica", "Acceso anticipado", "Comunidad activa"].map((b) => (
                     <span
                       key={b}
-                      className="inline-flex items-center gap-2 text-[11px] font-semibold text-cream/80 bg-cream/10 border border-cream/10 px-3 py-1.5 rounded-full font-sans"
+                      className="inline-flex items-center gap-2 text-[11px] font-semibold text-cream bg-cream/10 border border-cream/10 px-3 py-1.5 rounded-full font-sans"
                     >
                       <span className="w-1.5 h-1.5 rounded-full bg-pink shrink-0" />
                       {b}
@@ -235,7 +196,7 @@ export function SeccionBoletin() {
 
             {/* Direct contact card */}
             <div className="bg-white border border-olive/10 rounded-2xl p-6 md:p-7 flex-1">
-              <p className="text-[10px] text-olive/40 font-bold tracking-[0.3em] uppercase font-sans mb-5">
+              <p className="text-[10px] text-olive/70 font-bold tracking-[0.3em] uppercase font-sans mb-5">
                 Contacto directo
               </p>
 
@@ -250,7 +211,7 @@ export function SeccionBoletin() {
                     <WhatsAppIcon className="w-5 h-5 text-pink group-hover:text-white transition-colors duration-300" />
                   </div>
                   <div className="flex-1 min-w-0">
-                    <p className="text-[10px] text-olive/40 font-bold tracking-widest uppercase font-sans">WhatsApp</p>
+                    <p className="text-[10px] text-olive/70 font-bold tracking-widest uppercase font-sans">WhatsApp</p>
                     <p className="text-olive-dark font-bold font-sans text-sm truncate">+51 999 999 999</p>
                   </div>
                   <ArrowRight className="w-4 h-4 text-olive/20 group-hover:text-pink group-hover:translate-x-1 transition-all duration-300 shrink-0" />
@@ -264,7 +225,7 @@ export function SeccionBoletin() {
                     <Mail className="w-5 h-5 text-olive group-hover:text-cream transition-colors duration-300" />
                   </div>
                   <div className="flex-1 min-w-0">
-                    <p className="text-[10px] text-olive/40 font-bold tracking-widest uppercase font-sans">Email</p>
+                    <p className="text-[10px] text-olive/70 font-bold tracking-widest uppercase font-sans">Email</p>
                     <p className="text-olive-dark font-bold font-sans text-sm truncate">contacto@pedrolivos.com</p>
                   </div>
                   <ArrowRight className="w-4 h-4 text-olive/20 group-hover:text-olive group-hover:translate-x-1 transition-all duration-300 shrink-0" />
@@ -275,8 +236,8 @@ export function SeccionBoletin() {
                     <MapPin className="w-5 h-5 text-pink" />
                   </div>
                   <div className="flex-1 min-w-0">
-                    <p className="text-[10px] text-olive/40 font-bold tracking-widest uppercase font-sans">Ubicación</p>
-                    <p className="text-olive-dark font-bold font-sans text-sm">Lima, Perú</p>
+                    <p className="text-[10px] text-olive/70 font-bold tracking-widest uppercase font-sans">Ubicación</p>
+                    <p className="text-olive-dark font-bold font-sans text-sm">Huánuco, Perú</p>
                   </div>
                 </div>
               </div>
@@ -290,10 +251,50 @@ export function SeccionBoletin() {
               >
                 "La música es el viaje, el violín es mi camino."
               </p>
-              <p className="text-cream/40 text-[10px] font-bold tracking-[0.3em] uppercase font-sans">
+              <p className="text-cream/70 text-[10px] font-bold tracking-[0.3em] uppercase font-sans">
                 — Pedro Olivos
               </p>
             </div>
+          </div>
+        </div>
+
+        {/* ── Row 1: Social networks (Moved below) ── */}
+        <div className="mt-8 md:mt-10">
+          <p className="text-[11px] text-olive/60 font-bold tracking-[0.3em] uppercase font-sans mb-4">
+            Sígueme en redes sociales
+          </p>
+          <div className="grid grid-cols-2 lg:grid-cols-4 gap-4">
+            {socialLinks.map((social) => (
+              <Link
+                key={social.name}
+                href={social.href}
+                target="_blank"
+                rel="noopener noreferrer"
+                className="group relative overflow-hidden rounded-2xl border border-olive/10 bg-white hover:shadow-xl hover:shadow-olive/10 transition-all duration-500 hover:-translate-y-1"
+              >
+                {/* Colored top accent strip */}
+                <div className={`h-1.5 w-full ${social.bg} transition-all duration-300 group-hover:h-2`} />
+
+                <div className="p-5 md:p-6">
+                  <div className={`w-12 h-12 rounded-xl ${social.bg} flex items-center justify-center mb-4 transition-transform duration-300 group-hover:scale-110`}>
+                    <social.icon className="w-5 h-5 text-cream" />
+                  </div>
+
+                  <p className="text-olive-dark font-bold text-base font-sans leading-none mb-1">
+                    {social.name}
+                  </p>
+                  <p className="text-olive/70 text-xs font-sans mb-2">{social.handle}</p>
+                  <p className="text-olive/80 text-xs font-sans leading-relaxed">{social.description}</p>
+
+                  <div className="flex items-center gap-1 mt-4">
+                    <span className="text-[10px] font-bold tracking-widest uppercase text-olive/60 font-sans group-hover:text-pink transition-colors duration-300">
+                      Seguir
+                    </span>
+                    <ExternalLink className="w-3 h-3 text-olive/30 group-hover:text-pink transition-colors duration-300" />
+                  </div>
+                </div>
+              </Link>
+            ))}
           </div>
         </div>
       </div>
@@ -317,26 +318,26 @@ export function SeccionMembresia() {
                 <h3 className="text-2xl md:text-3xl font-black text-olive-dark font-sans">
                   Grupo VIP de Partituras
                 </h3>
-                <p className="text-gray-500 text-sm font-sans">Grupo exclusivo de WhatsApp</p>
+                <p className="text-olive-dark/80 font-medium text-sm font-sans">Grupo exclusivo de WhatsApp</p>
               </div>
               <ul className="space-y-4 text-left max-w-md mx-auto">
-                <li className="flex items-start gap-3 text-gray-700 text-lg">
+                <li className="flex items-start gap-3 text-olive-dark/90 text-lg">
                   <span className="w-2 h-2 rounded-full bg-pink mt-2 shrink-0" />
                   <span>Partituras exclusivas cada semana.</span>
                 </li>
-                <li className="flex items-start gap-3 text-gray-700 text-lg">
+                <li className="flex items-start gap-3 text-olive-dark/90 text-lg">
                   <span className="w-2 h-2 rounded-full bg-pink mt-2 shrink-0" />
                   <span>Tutoriales y tips para mejorar tu técnica.</span>
                 </li>
-                <li className="flex items-start gap-3 text-gray-700 text-lg">
+                <li className="flex items-start gap-3 text-olive-dark/90 text-lg">
                   <span className="w-2 h-2 rounded-full bg-pink mt-2 shrink-0" />
                   <span>Contenido exclusivo detrás de cámaras.</span>
                 </li>
-                <li className="flex items-start gap-3 text-gray-700 text-lg">
+                <li className="flex items-start gap-3 text-olive-dark/90 text-lg">
                   <span className="w-2 h-2 rounded-full bg-pink mt-2 shrink-0" />
                   <span>Acceso anticipado a nuevos covers y arreglos.</span>
                 </li>
-                <li className="flex items-start gap-3 text-gray-700 text-lg">
+                <li className="flex items-start gap-3 text-olive-dark/90 text-lg">
                   <span className="w-2 h-2 rounded-full bg-pink mt-2 shrink-0" />
                   <span>Comunidad de violinistas apasionados.</span>
                 </li>
@@ -350,7 +351,7 @@ export function SeccionMembresia() {
                 <WhatsAppIcon className="w-6 h-6" />
                 UNIRME AL GRUPO
               </Link>
-              <p className="text-gray-400 text-xs font-sans">
+              <p className="text-olive-dark/70 font-medium text-xs font-sans">
                 Es gratis. Solo haz clic y únete al grupo.
               </p>
             </div>
@@ -377,7 +378,7 @@ export function SeccionBoletinmain() {
             <h2 className="text-2xl md:text-3xl font-black text-olive-dark font-sans text-balance">
               Pedro Olivos y sus Violinistas
             </h2>
-            <p className="text-olive-dark/70 font-sans text-sm leading-relaxed">
+            <p className="text-olive-dark/90 font-medium font-sans text-sm leading-relaxed">
               Una comunidad amigable para músicos aficionados y amantes de la música.
             </p>
           </div>
