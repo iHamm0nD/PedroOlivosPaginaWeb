@@ -24,7 +24,7 @@ const highlights = [
 
 export function SeccionSobreMi() {
   return (
-    <section id="sobre-mi" className="bg-cream py-20 md:py-28">
+    <section id="sobre-mi" className="bg-cream py-12 sm:py-16 md:py-28">
       <div className="max-w-[1200px] mx-auto px-4 sm:px-6 lg:px-8">
 
         {/* Section label */}
@@ -36,48 +36,51 @@ export function SeccionSobreMi() {
           <div className="w-8 h-px bg-pink" />
         </div>
 
-        <h2 className="text-3xl md:text-4xl font-black text-center text-olive-dark mb-14 font-sans text-balance">
+        <h2 className="text-2xl sm:text-3xl md:text-4xl font-black text-center text-olive-dark mb-8 sm:mb-10 md:mb-14 font-sans text-balance">
           PEDRO OLIVOS
         </h2>
 
-        <div className="grid md:grid-cols-2 gap-12 lg:gap-20 items-center">
+        <div className="grid md:grid-cols-2 gap-8 md:gap-12 lg:gap-20 items-center">
 
           {/* Left — photo collage */}
-          <div className="relative h-[420px] md:h-[520px]">
+          <div className="relative h-[320px] sm:h-[380px] md:h-[520px] mx-auto w-full max-w-[320px] sm:max-w-[380px] md:max-w-none">
             {/* Main large image */}
-            <div className="absolute top-0 left-0 w-56 h-72 md:w-64 md:h-80 rounded-3xl overflow-hidden shadow-xl border-4 border-white z-10">
+            <div className="absolute top-0 left-0 w-40 h-52 sm:w-48 sm:h-64 md:w-64 md:h-80 rounded-2xl sm:rounded-3xl overflow-hidden shadow-xl border-2 sm:border-4 border-white z-10">
               <Image
                 src="/images/pedro-about-1.jpg"
                 alt="Pedro Olivos posando con su violin en el parque"
                 fill
-                className="object-cover object-[99%_center] scale-[1.19]" // con esto se ajusta la imagen dependendiendo izq o derecha
+                sizes="(max-width: 640px) 160px, (max-width: 768px) 192px, 256px"
+                className="object-cover object-[99%_center] scale-[1.19]"
               />
             </div>
 
             {/* Second image — offset right and down */}
-            <div className="absolute top-20 right-0 md:right-4 w-44s h-60 md:w-52 md:h-72 rounded-3xl overflow-hidden shadow-xl border-4 border-white z-20">
+            <div className="absolute top-12 sm:top-16 md:top-20 right-0 md:right-4 w-36 h-48 sm:w-40 sm:h-56 md:w-52 md:h-72 rounded-2xl sm:rounded-3xl overflow-hidden shadow-xl border-2 sm:border-4 border-white z-20">
               <Image
                 src="/images/pedro-about-2.jpg"
                 alt="Pedro Olivos tocando violin en el parque"
                 fill
+                sizes="(max-width: 640px) 144px, (max-width: 768px) 160px, 208px"
                 className="object-cover object-[20%_center] scale-[0.99]"
               />
             </div>
 
             {/* Third image — bottom left */}
-            <div className="absolute bottom-0 left-8 md:left-16 w-40 h-52 md:w-48 md:h-60 rounded-3xl overflow-hidden shadow-xl border-4 border-white z-30">
+            <div className="absolute bottom-0 left-4 sm:left-8 md:left-16 w-32 h-40 sm:w-36 sm:h-48 md:w-48 md:h-60 rounded-2xl sm:rounded-3xl overflow-hidden shadow-xl border-2 sm:border-4 border-white z-30">
               <Image
                 src="/images/pedro-about-3.jpg"
                 alt="Pedro Olivos ejecutando violin en parque con flores"
                 fill
+                sizes="(max-width: 640px) 128px, (max-width: 768px) 144px, 192px"
                 className="object-cover object-[21%_center] scale-[1.05]"
               />
             </div>
 
             {/* Decorative accent dot */}
-            <div className="absolute top-6 right-8 w-3 h-3 rounded-full bg-pink opacity-70" />
-            <div className="absolute bottom-10 right-0 w-2 h-2 rounded-full bg-olive opacity-50" />
-            <div className="absolute top-1/2 left-1/2 w-4 h-4 rounded-full bg-pink/20 border border-pink/40" />
+            <div className="absolute top-6 right-8 w-3 h-3 rounded-full bg-pink opacity-70 hidden sm:block" />
+            <div className="absolute bottom-10 right-0 w-2 h-2 rounded-full bg-olive opacity-50 hidden sm:block" />
+            <div className="absolute top-1/2 left-1/2 w-4 h-4 rounded-full bg-pink/20 border border-pink/40 hidden sm:block" />
           </div>
 
           {/* Right — text */}

@@ -13,6 +13,7 @@ export function SeccionPrincipal() {
           fill
           className="object-cover object-[center_20%]"
           priority
+          loading="eager"
         />
         {/* Dark vignette — corners and bottom, warm neutral tones */}
         <div className="absolute inset-0 bg-gradient-to-t from-[#1a1208]/90 via-[#1a1208]/35 to-[#1a1208]/10" />
@@ -22,8 +23,8 @@ export function SeccionPrincipal() {
       </div>
 
       {/* Content */}
-      <div className="relative z-10 flex flex-col justify-end min-h-[calc(100vh-64px)] pb-16 md:pb-20">
-        <div className="max-w-[1200px] mx-auto px-6 lg:px-12 w-full">
+      <div className="relative z-10 flex flex-col justify-end min-h-[calc(100vh-64px)] pb-12 sm:pb-16 md:pb-20">
+        <div className="max-w-[1200px] mx-auto px-4 sm:px-6 lg:px-12 w-full">
           <div className="flex flex-col md:flex-row md:items-end md:justify-between gap-8">
 
             {/* Left — main title block */}
@@ -43,10 +44,10 @@ export function SeccionPrincipal() {
                   className="leading-[1.1] drop-shadow-2xl"
                   style={{ fontFamily: "var(--font-great-vibes), 'Great Vibes', cursive" }}
                 >
-                  <span className="block text-cream text-7xl sm:text-9xl lg:text-[9rem] xl:text-[11rem]">
+                  <span className="block text-cream text-5xl xs:text-6xl sm:text-8xl md:text-9xl lg:text-[9rem] xl:text-[11rem]">
                     Pedro
                   </span>
-                  <span className="block text-pink text-7xl sm:text-9xl lg:text-[9rem] xl:text-[11rem] -mt-4">
+                  <span className="block text-pink text-5xl xs:text-6xl sm:text-8xl md:text-9xl lg:text-[9rem] xl:text-[11rem] -mt-2 sm:-mt-4">
                     Olivos
                   </span>
                 </h1>
@@ -58,16 +59,16 @@ export function SeccionPrincipal() {
               </p>
 
               {/* CTAs */}
-              <div className="flex flex-wrap gap-3 mt-2">
+              <div className="flex flex-col xs:flex-row flex-wrap gap-3 mt-2">
                 <Link
                   href="#sobre-mi"
-                  className="inline-flex items-center gap-2 bg-pink text-olive-dark font-bold text-xs tracking-widest uppercase px-6 py-3 rounded-full hover:bg-[#BC6C25] transition-colors duration-300 font-sans"
+                  className="inline-flex items-center justify-center gap-2 bg-pink text-olive-dark font-bold text-xs tracking-widest uppercase px-5 sm:px-6 py-3 rounded-full hover:bg-[#BC6C25] transition-colors duration-300 font-sans"
                 >
                   Sobre Mi
                 </Link>
                 <Link
                   href="/contacto"
-                  className="inline-flex items-center gap-2 border border-cream/50 text-cream font-bold text-xs tracking-widest uppercase px-6 py-3 rounded-full hover:bg-cream/10 transition-colors duration-300 font-sans"
+                  className="inline-flex items-center justify-center gap-2 border border-cream/50 text-cream font-bold text-xs tracking-widest uppercase px-5 sm:px-6 py-3 rounded-full hover:bg-cream/10 transition-colors duration-300 font-sans"
                 >
                   Contactame
                 </Link>

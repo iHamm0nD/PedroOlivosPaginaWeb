@@ -4,6 +4,11 @@
 
 @custom-variant dark (&:is(.dark *));
 
+/* Custom xs breakpoint for very small screens */
+@theme inline {
+  --breakpoint-xs: 475px;
+}
+
 :root {
   --background: oklch(1 0 0);
   --foreground: oklch(0.145 0 0);

@@ -38,6 +38,11 @@ const cormorant = Cormorant_Garamond({
 export const metadata: Metadata = {
   title: 'Pedro Olivos | Oficial Web Site',
   description: 'Aprende a tocar violin con Pedro Olivos',
+  viewport: {
+    width: 'device-width',
+    initialScale: 1,
+    maximumScale: 1,
+  },
 }
 
 export default function RootLayout({
