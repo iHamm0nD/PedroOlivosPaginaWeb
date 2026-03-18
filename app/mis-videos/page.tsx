@@ -48,13 +48,13 @@ export default async function MisVideosPage() {
       <Navegacion />
 
       {/* ── Hero del canal ─────────────────────────────────────────── */}
-      <section className="bg-gradient-to-b from-cream via-white to-cream py-14 md:py-20 border-b border-pink/20">
+      <section className="bg-gradient-to-b from-cream via-white to-cream py-10 sm:py-14 md:py-20 border-b border-pink/20">
         <div className="max-w-[1200px] mx-auto px-4 sm:px-6 lg:px-8">
-          <div className="flex flex-col md:flex-row items-center gap-8 md:gap-12">
+          <div className="flex flex-col md:flex-row items-center gap-6 sm:gap-8 md:gap-12">
             {/* Avatar */}
             <div className="relative flex-shrink-0">
               <div className="absolute -inset-2 rounded-full bg-pink/30 blur-md" />
-              <div className="relative w-24 h-24 md:w-28 md:h-28 rounded-full overflow-hidden ring-4 ring-pink/60 shadow-xl">
+              <div className="relative w-20 h-20 sm:w-24 sm:h-24 md:w-28 md:h-28 rounded-full overflow-hidden ring-4 ring-pink/60 shadow-xl">
                 <Image
                   src="/images/foto_perfil_PedroOlivos.jpg"
                   alt="Pedro Olivos"
@@ -67,17 +67,17 @@ export default async function MisVideosPage() {
 
             {/* Info */}
             <div className="flex-1 text-center md:text-left">
-              <p className="text-olive text-sm font-semibold tracking-[0.3em] uppercase mb-2"
+              <p className="text-olive text-xs sm:text-sm font-semibold tracking-[0.3em] uppercase mb-1 sm:mb-2"
                 style={{ fontFamily: "var(--font-cormorant), 'Cormorant Garamond', serif" }}>
                 Canal de YouTube
               </p>
               <h1
-                className="text-olive-dark text-4xl md:text-5xl font-light mb-2"
+                className="text-olive-dark text-3xl sm:text-4xl md:text-5xl font-light mb-1 sm:mb-2"
                 style={{ fontFamily: "var(--font-cormorant), 'Cormorant Garamond', serif" }}
               >
                 Pedro Olivos
               </h1>
-              <p className="text-olive/70 text-base">
+              <p className="text-olive/70 text-sm sm:text-base">
                 Tutoriales de violín, covers y música en vivo
               </p>
             </div>
@@ -87,7 +87,7 @@ export default async function MisVideosPage() {
               href="https://www.youtube.com/@pedroolivosmusica?sub_confirmation=1"
               target="_blank"
               rel="noopener noreferrer"
-              className="flex-shrink-0 inline-flex items-center gap-2.5 bg-pink hover:bg-pink-dark text-white font-bold text-sm px-7 py-3.5 rounded-full shadow-lg transition-all duration-300 hover:scale-105"
+              className="flex-shrink-0 inline-flex items-center gap-2 sm:gap-2.5 bg-pink hover:bg-pink-dark text-white font-bold text-xs sm:text-sm px-5 sm:px-7 py-3 sm:py-3.5 rounded-full shadow-lg transition-all duration-300 hover:scale-105"
             >
               <Youtube className="w-4 h-4" />
               Suscribete
@@ -98,19 +98,19 @@ export default async function MisVideosPage() {
 
 
       {/* ── Todos los videos ────────────────────────────────────────── */}
-      <section className="bg-cream py-16 md:py-20">
+      <section className="bg-cream py-10 sm:py-16 md:py-20">
         <div className="max-w-[1200px] mx-auto px-4 sm:px-6 lg:px-8">
           {/* Header */}
-          <div className="flex items-center justify-between mb-10">
-            <div className="flex items-center gap-4">
-              <div className="w-10 h-px bg-pink" />
+          <div className="flex items-center justify-between mb-6 sm:mb-10">
+            <div className="flex items-center gap-3 sm:gap-4">
+              <div className="w-6 sm:w-10 h-px bg-pink" />
               <div>
-                <p className="text-pink text-xs font-semibold tracking-[0.3em] uppercase mb-0.5"
+                <p className="text-pink text-[10px] sm:text-xs font-semibold tracking-[0.3em] uppercase mb-0.5"
                   style={{ fontFamily: "var(--font-cormorant), 'Cormorant Garamond', serif" }}>
                   Toda la colección
                 </p>
                 <h2
-                  className="text-olive-dark text-3xl md:text-4xl font-light"
+                  className="text-olive-dark text-2xl sm:text-3xl md:text-4xl font-light"
                   style={{ fontFamily: "var(--font-cormorant), 'Cormorant Garamond', serif" }}
                 >
                   Mis Videos
@@ -129,14 +129,14 @@ export default async function MisVideosPage() {
           </div>
 
           {/* Primera fila: Último video (2/3) + 2 videos apilados (1/3) */}
-          <div className="grid grid-cols-1 lg:grid-cols-3 gap-5 md:gap-6 mb-6 lg:items-stretch">
+          <div className="grid grid-cols-1 lg:grid-cols-3 gap-4 sm:gap-5 md:gap-6 mb-4 sm:mb-6 lg:items-stretch">
             {/* Último video - ocupa 2 columnas, llena la altura */}
             <div className="lg:col-span-2 flex flex-col">
               <UltimoVideo />
             </div>
 
             {/* 2 videos apilados a la derecha */}
-            <div className="flex flex-col gap-5 md:gap-6">
+            <div className="flex flex-col gap-4 sm:gap-5 md:gap-6">
               {videos.slice(0, 2).map((video) => (
                 <TarjetaVideo
                   key={video.videoId}
@@ -148,7 +148,7 @@ export default async function MisVideosPage() {
           </div>
 
           {/* Resto de videos — 3 columnas */}
-          <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-5 md:gap-6">
+          <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-4 sm:gap-5 md:gap-6">
             {videos.slice(2).map((video) => (
               <TarjetaVideo
                 key={video.videoId}

@@ -96,7 +96,7 @@ export default function TiendaPage() {
           <div className="absolute bottom-20 right-20 w-48 h-48 border border-pink rounded-full" />
         </div>
 
-        <div className="max-w-[1400px] mx-auto px-4 sm:px-6 lg:px-8 py-12 md:py-20 relative z-10">
+        <div className="max-w-[1400px] mx-auto px-4 sm:px-6 lg:px-8 py-10 sm:py-12 md:py-20 relative z-10">
           <div className="max-w-3xl">
             <div className="inline-flex items-center gap-3 bg-cream/10 backdrop-blur-sm border border-cream/20 rounded-full px-5 py-2 mb-8">
               <ShoppingBag className="w-4 h-4 text-pink" />
@@ -106,30 +106,30 @@ export default function TiendaPage() {
             </div>
 
             <h1
-              className="text-5xl sm:text-6xl md:text-7xl lg:text-8xl font-bold text-cream leading-[0.9] tracking-tight mb-6"
+              className="text-4xl xs:text-5xl sm:text-6xl md:text-7xl lg:text-8xl font-bold text-cream leading-[0.9] tracking-tight mb-4 sm:mb-6"
               style={{ fontFamily: "var(--font-cormorant), 'Cormorant Garamond', serif" }}
             >
               Mi{" "}
               <span className="text-pink">Tienda</span>
             </h1>
 
-            <p className="text-cream/70 text-lg md:text-xl font-sans max-w-xl leading-relaxed mb-10">
+            <p className="text-cream/70 text-sm sm:text-base md:text-lg lg:text-xl font-sans max-w-xl leading-relaxed mb-6 sm:mb-8 md:mb-10">
               Descubre mi colección de recursos diseñados para ayudarte a llevar tu música al siguiente nivel.
             </p>
 
-            <div className="flex flex-wrap gap-4">
+            <div className="flex flex-col xs:flex-row flex-wrap gap-3 sm:gap-4">
               <a
                 href="#productos"
-                className="inline-flex items-center gap-3 bg-pink hover:bg-pink-dark text-white font-bold text-xs tracking-widest uppercase px-8 py-5 rounded-full transition-all duration-300 hover:scale-105 font-sans shadow-lg shadow-pink/30"
+                className="inline-flex items-center justify-center gap-2 sm:gap-3 bg-pink hover:bg-pink-dark text-white font-bold text-[10px] sm:text-xs tracking-widest uppercase px-6 sm:px-8 py-3.5 sm:py-5 rounded-full transition-all duration-300 hover:scale-105 font-sans shadow-lg shadow-pink/30"
               >
                 Ver productos
-                <ArrowRight className="w-4 h-4" />
+                <ArrowRight className="w-3.5 h-3.5 sm:w-4 sm:h-4" />
               </a>
               <Link
                 href="https://wa.me/51999999999"
                 target="_blank"
                 rel="noopener noreferrer"
-                className="inline-flex items-center gap-3 bg-cream/10 hover:bg-cream/20 text-cream border border-cream/20 text-xs font-bold tracking-widest uppercase px-8 py-5 rounded-full transition-all duration-300 font-sans backdrop-blur-sm"
+                className="inline-flex items-center justify-center gap-2 sm:gap-3 bg-cream/10 hover:bg-cream/20 text-cream border border-cream/20 text-[10px] sm:text-xs font-bold tracking-widest uppercase px-6 sm:px-8 py-3.5 sm:py-5 rounded-full transition-all duration-300 font-sans backdrop-blur-sm"
               >
                 Consultar
               </Link>
@@ -156,7 +156,7 @@ export default function TiendaPage() {
         <div className="max-w-[1400px] mx-auto px-4 sm:px-6 lg:px-8 relative z-10">
 
           {/* Section header */}
-          <div className="text-center mb-12 md:mb-16">
+          <div className="text-center mb-8 sm:mb-12 md:mb-16">
             <div className="inline-flex items-center gap-3 bg-olive-dark/5 backdrop-blur-sm border border-olive/10 rounded-full px-5 py-2 mb-6">
               <Sparkles className="w-4 h-4 text-pink" />
               <span className="text-olive-dark text-xs font-bold tracking-[0.3em] uppercase font-sans">
@@ -164,7 +164,7 @@ export default function TiendaPage() {
               </span>
             </div>
             <h2
-              className="text-4xl md:text-5xl lg:text-6xl font-bold text-olive-dark leading-tight"
+              className="text-3xl sm:text-4xl md:text-5xl lg:text-6xl font-bold text-olive-dark leading-tight"
               style={{ fontFamily: "var(--font-cormorant), 'Cormorant Garamond', serif" }}
             >
               Recursos para{" "}

@@ -97,14 +97,14 @@ export function SeccionBoletin() {
           </div>
 
           <h2
-            className="text-5xl sm:text-6xl md:text-7xl lg:text-8xl font-bold text-olive-dark leading-[0.9] tracking-tight"
+            className="text-3xl xs:text-4xl sm:text-5xl md:text-6xl lg:text-7xl xl:text-8xl font-bold text-olive-dark leading-[0.9] tracking-tight"
             style={{ fontFamily: "var(--font-cormorant), 'Cormorant Garamond', serif" }}
           >
             Ponte en{" "}
             <span className="relative inline-block">
               <span className="relative z-10 text-pink">Contacto</span>
               <svg
-                className="absolute -bottom-2 left-0 w-full h-4 text-pink/30"
+                className="absolute -bottom-1 sm:-bottom-2 left-0 w-full h-3 sm:h-4 text-pink/30"
                 viewBox="0 0 200 12"
                 fill="currentColor"
                 preserveAspectRatio="none"
@@ -114,14 +114,14 @@ export function SeccionBoletin() {
             </span>
           </h2>
 
-          <p className="mt-5 text-olive/80 text-base md:text-lg font-sans max-w-xl mx-auto leading-relaxed">
+          <p className="mt-4 sm:mt-5 text-olive/80 text-sm sm:text-base md:text-lg font-sans max-w-xl mx-auto leading-relaxed px-2 sm:px-0">
             Ya sea para una clase, una presentación especial o simplemente para conversar sobre música, estoy aquí.
           </p>
         </div>
 
 
         {/* ── Row 2: Community card + Contact info ── */}
-        <div className="grid lg:grid-cols-12 gap-5 md:gap-6">
+        <div className="grid lg:grid-cols-12 gap-4 sm:gap-5 md:gap-6">
 
           {/* WhatsApp Community Card */}
           <div className="lg:col-span-7">
@@ -132,7 +132,7 @@ export function SeccionBoletin() {
               <div className="absolute top-0 right-0 w-48 h-48 border border-pink/20 rounded-full -translate-y-1/4 translate-x-1/4 pointer-events-none" />
               <div className="absolute bottom-0 left-0 w-56 h-56 bg-pink/10 rounded-full translate-y-1/2 -translate-x-1/4 blur-2xl pointer-events-none" />
 
-              <div className="relative z-10 p-8 md:p-10 flex flex-col h-full">
+              <div className="relative z-10 p-5 sm:p-8 md:p-10 flex flex-col h-full">
 
                 {/* Live badge */}
                 <div className="inline-flex items-center gap-2 bg-pink/20 border border-pink/30 rounded-full px-4 py-1.5 mb-6 self-start">
@@ -146,7 +146,7 @@ export function SeccionBoletin() {
                 </div>
 
                 <h3
-                  className="text-3xl md:text-4xl lg:text-5xl font-bold text-cream leading-[1.1] mb-3"
+                  className="text-2xl sm:text-3xl md:text-4xl lg:text-5xl font-bold text-cream leading-[1.1] mb-3"
                   style={{ fontFamily: "var(--font-cormorant), 'Cormorant Garamond', serif" }}
                 >
                   Pedro Olivos y sus{" "}
@@ -158,32 +158,32 @@ export function SeccionBoletin() {
                 </p>
 
                 {/* Benefits chips */}
-                <div className="flex flex-wrap gap-2 mb-8">
+                <div className="flex flex-wrap gap-1.5 sm:gap-2 mb-6 sm:mb-8">
                   {["Partituras semanales", "Tips de práctica", "Acceso anticipado", "Comunidad activa"].map((b) => (
                     <span
                       key={b}
-                      className="inline-flex items-center gap-2 text-[11px] font-semibold text-cream bg-cream/10 border border-cream/10 px-3 py-1.5 rounded-full font-sans"
+                      className="inline-flex items-center gap-1.5 sm:gap-2 text-[10px] sm:text-[11px] font-semibold text-cream bg-cream/10 border border-cream/10 px-2 sm:px-3 py-1 sm:py-1.5 rounded-full font-sans"
                     >
-                      <span className="w-1.5 h-1.5 rounded-full bg-pink shrink-0" />
+                      <span className="w-1 h-1 sm:w-1.5 sm:h-1.5 rounded-full bg-pink shrink-0" />
                       {b}
                     </span>
                   ))}
                 </div>
 
                 {/* CTA — "Unirme ahora" links to /#subscribe on homepage */}
-                <div className="flex flex-col sm:flex-row gap-3 mt-auto">
+                <div className="flex flex-col sm:flex-row gap-2 sm:gap-3 mt-auto">
                   <Link
                     href="/#subscribe"
-                    className="inline-flex items-center justify-center gap-3 bg-pink hover:bg-pink-dark text-white font-bold text-xs tracking-widest uppercase px-8 py-4 rounded-full transition-all duration-300 hover:scale-105 font-sans shadow-lg shadow-pink/30"
+                    className="inline-flex items-center justify-center gap-2 sm:gap-3 bg-pink hover:bg-pink-dark text-white font-bold text-[10px] sm:text-xs tracking-widest uppercase px-6 sm:px-8 py-3 sm:py-4 rounded-full transition-all duration-300 hover:scale-105 font-sans shadow-lg shadow-pink/30"
                   >
-                    <WhatsAppIcon className="w-5 h-5" />
+                    <WhatsAppIcon className="w-4 h-4 sm:w-5 sm:h-5" />
                     Unirme ahora
                   </Link>
                   <Link
                     href="mailto:contacto@pedrolivos.com"
-                    className="inline-flex items-center justify-center gap-3 bg-cream/10 hover:bg-cream/20 text-cream border border-cream/20 text-xs font-bold tracking-widest uppercase px-8 py-4 rounded-full transition-all duration-300 font-sans"
+                    className="inline-flex items-center justify-center gap-2 sm:gap-3 bg-cream/10 hover:bg-cream/20 text-cream border border-cream/20 text-[10px] sm:text-xs font-bold tracking-widest uppercase px-6 sm:px-8 py-3 sm:py-4 rounded-full transition-all duration-300 font-sans"
                   >
-                    <Mail className="w-4 h-4" />
+                    <Mail className="w-3.5 h-3.5 sm:w-4 sm:h-4" />
                     Enviar email
                   </Link>
                 </div>
@@ -192,10 +192,10 @@ export function SeccionBoletin() {
           </div>
 
           {/* Right column: contact + quote */}
-          <div className="lg:col-span-5 flex flex-col gap-4">
+          <div className="lg:col-span-5 flex flex-col gap-3 sm:gap-4">
 
             {/* Direct contact card */}
-            <div className="bg-white border border-olive/10 rounded-2xl p-6 md:p-7 flex-1">
+            <div className="bg-white border border-olive/10 rounded-xl sm:rounded-2xl p-4 sm:p-6 md:p-7 flex-1">
               <p className="text-[10px] text-olive/70 font-bold tracking-[0.3em] uppercase font-sans mb-5">
                 Contacto directo
               </p>
@@ -244,14 +244,14 @@ export function SeccionBoletin() {
             </div>
 
             {/* Quote card */}
-            <div className="bg-olive-dark rounded-2xl p-6 md:p-7">
+            <div className="bg-olive-dark rounded-xl sm:rounded-2xl p-4 sm:p-6 md:p-7">
               <p
-                className="text-xl md:text-2xl text-cream font-light italic leading-snug mb-3"
+                className="text-lg sm:text-xl md:text-2xl text-cream font-light italic leading-snug mb-2 sm:mb-3"
                 style={{ fontFamily: "var(--font-cormorant), 'Cormorant Garamond', serif" }}
               >
                 "La música es el viaje, el violín es mi camino."
               </p>
-              <p className="text-cream/70 text-[10px] font-bold tracking-[0.3em] uppercase font-sans">
+              <p className="text-cream/70 text-[9px] sm:text-[10px] font-bold tracking-[0.3em] uppercase font-sans">
                 — Pedro Olivos
               </p>
             </div>
@@ -259,11 +259,11 @@ export function SeccionBoletin() {
         </div>
 
         {/* ── Row 1: Social networks (Moved below) ── */}
-        <div className="mt-8 md:mt-10">
-          <p className="text-[11px] text-olive/60 font-bold tracking-[0.3em] uppercase font-sans mb-4">
+        <div className="mt-6 sm:mt-8 md:mt-10">
+          <p className="text-[10px] sm:text-[11px] text-olive/60 font-bold tracking-[0.3em] uppercase font-sans mb-3 sm:mb-4">
             Sígueme en redes sociales
           </p>
-          <div className="grid grid-cols-2 lg:grid-cols-4 gap-4">
+          <div className="grid grid-cols-2 lg:grid-cols-4 gap-3 sm:gap-4">
             {socialLinks.map((social) => (
               <Link
                 key={social.name}
@@ -275,22 +275,22 @@ export function SeccionBoletin() {
                 {/* Colored top accent strip */}
                 <div className={`h-1.5 w-full ${social.bg} transition-all duration-300 group-hover:h-2`} />
 
-                <div className="p-5 md:p-6">
-                  <div className={`w-12 h-12 rounded-xl ${social.bg} flex items-center justify-center mb-4 transition-transform duration-300 group-hover:scale-110`}>
-                    <social.icon className="w-5 h-5 text-cream" />
+                <div className="p-4 sm:p-5 md:p-6">
+                  <div className={`w-10 h-10 sm:w-12 sm:h-12 rounded-lg sm:rounded-xl ${social.bg} flex items-center justify-center mb-3 sm:mb-4 transition-transform duration-300 group-hover:scale-110`}>
+                    <social.icon className="w-4 h-4 sm:w-5 sm:h-5 text-cream" />
                   </div>
 
-                  <p className="text-olive-dark font-bold text-base font-sans leading-none mb-1">
+                  <p className="text-olive-dark font-bold text-sm sm:text-base font-sans leading-none mb-1">
                     {social.name}
                   </p>
-                  <p className="text-olive/70 text-xs font-sans mb-2">{social.handle}</p>
-                  <p className="text-olive/80 text-xs font-sans leading-relaxed">{social.description}</p>
+                  <p className="text-olive/70 text-[10px] sm:text-xs font-sans mb-1 sm:mb-2 truncate">{social.handle}</p>
+                  <p className="text-olive/80 text-[10px] sm:text-xs font-sans leading-relaxed line-clamp-2">{social.description}</p>
 
-                  <div className="flex items-center gap-1 mt-4">
-                    <span className="text-[10px] font-bold tracking-widest uppercase text-olive/60 font-sans group-hover:text-pink transition-colors duration-300">
+                  <div className="flex items-center gap-1 mt-3 sm:mt-4">
+                    <span className="text-[9px] sm:text-[10px] font-bold tracking-widest uppercase text-olive/60 font-sans group-hover:text-pink transition-colors duration-300">
                       Seguir
                     </span>
-                    <ExternalLink className="w-3 h-3 text-olive/30 group-hover:text-pink transition-colors duration-300" />
+                    <ExternalLink className="w-2.5 h-2.5 sm:w-3 sm:h-3 text-olive/30 group-hover:text-pink transition-colors duration-300" />
                   </div>
                 </div>
               </Link>
@@ -304,41 +304,41 @@ export function SeccionBoletin() {
 
 export function SeccionMembresia() {
   return (
-    <section id="servicios" className="bg-olive-dark py-16 md:py-24">
+    <section id="servicios" className="bg-olive-dark py-10 sm:py-16 md:py-24">
       <div className="max-w-[1200px] mx-auto px-4 sm:px-6 lg:px-8">
         <div className="max-w-2xl mx-auto">
-          <div className="bg-cream rounded-3xl p-8 md:p-12 shadow-xl">
-            <div className="text-center space-y-8">
+          <div className="bg-cream rounded-2xl sm:rounded-3xl p-6 sm:p-8 md:p-12 shadow-xl">
+            <div className="text-center space-y-6 sm:space-y-8">
               <div className="flex items-center justify-center gap-3">
-                <div className="w-14 h-14 bg-[#25D366] rounded-full flex items-center justify-center shadow-lg">
-                  <WhatsAppIcon className="w-7 h-7 text-white" />
+                <div className="w-12 h-12 sm:w-14 sm:h-14 bg-[#25D366] rounded-full flex items-center justify-center shadow-lg">
+                  <WhatsAppIcon className="w-6 h-6 sm:w-7 sm:h-7 text-white" />
                 </div>
               </div>
               <div className="space-y-2">
-                <h3 className="text-2xl md:text-3xl font-black text-olive-dark font-sans">
+                <h3 className="text-xl sm:text-2xl md:text-3xl font-black text-olive-dark font-sans">
                   Grupo VIP de Partituras
                 </h3>
-                <p className="text-olive-dark/80 font-medium text-sm font-sans">Grupo exclusivo de WhatsApp</p>
+                <p className="text-olive-dark/80 font-medium text-xs sm:text-sm font-sans">Grupo exclusivo de WhatsApp</p>
               </div>
-              <ul className="space-y-4 text-left max-w-md mx-auto">
-                <li className="flex items-start gap-3 text-olive-dark/90 text-lg">
-                  <span className="w-2 h-2 rounded-full bg-pink mt-2 shrink-0" />
+              <ul className="space-y-3 sm:space-y-4 text-left max-w-md mx-auto">
+                <li className="flex items-start gap-2 sm:gap-3 text-olive-dark/90 text-sm sm:text-base md:text-lg">
+                  <span className="w-1.5 h-1.5 sm:w-2 sm:h-2 rounded-full bg-pink mt-2 shrink-0" />
                   <span>Partituras exclusivas cada semana.</span>
                 </li>
-                <li className="flex items-start gap-3 text-olive-dark/90 text-lg">
-                  <span className="w-2 h-2 rounded-full bg-pink mt-2 shrink-0" />
+                <li className="flex items-start gap-2 sm:gap-3 text-olive-dark/90 text-sm sm:text-base md:text-lg">
+                  <span className="w-1.5 h-1.5 sm:w-2 sm:h-2 rounded-full bg-pink mt-2 shrink-0" />
                   <span>Tutoriales y tips para mejorar tu técnica.</span>
                 </li>
-                <li className="flex items-start gap-3 text-olive-dark/90 text-lg">
-                  <span className="w-2 h-2 rounded-full bg-pink mt-2 shrink-0" />
+                <li className="flex items-start gap-2 sm:gap-3 text-olive-dark/90 text-sm sm:text-base md:text-lg">
+                  <span className="w-1.5 h-1.5 sm:w-2 sm:h-2 rounded-full bg-pink mt-2 shrink-0" />
                   <span>Contenido exclusivo detrás de cámaras.</span>
                 </li>
-                <li className="flex items-start gap-3 text-olive-dark/90 text-lg">
-                  <span className="w-2 h-2 rounded-full bg-pink mt-2 shrink-0" />
+                <li className="flex items-start gap-2 sm:gap-3 text-olive-dark/90 text-sm sm:text-base md:text-lg">
+                  <span className="w-1.5 h-1.5 sm:w-2 sm:h-2 rounded-full bg-pink mt-2 shrink-0" />
                   <span>Acceso anticipado a nuevos covers y arreglos.</span>
                 </li>
-                <li className="flex items-start gap-3 text-olive-dark/90 text-lg">
-                  <span className="w-2 h-2 rounded-full bg-pink mt-2 shrink-0" />
+                <li className="flex items-start gap-2 sm:gap-3 text-olive-dark/90 text-sm sm:text-base md:text-lg">
+                  <span className="w-1.5 h-1.5 sm:w-2 sm:h-2 rounded-full bg-pink mt-2 shrink-0" />
                   <span>Comunidad de violinistas apasionados.</span>
                 </li>
               </ul>
@@ -346,12 +346,12 @@ export function SeccionMembresia() {
                 href="https://chat.whatsapp.com/TULINK"
                 target="_blank"
                 rel="noopener noreferrer"
-                className="inline-flex items-center gap-3 bg-[#25D366] hover:bg-[#1da851] text-white font-bold text-lg px-10 py-4 rounded-full shadow-lg transition-all duration-300 hover:scale-105"
+                className="inline-flex items-center gap-2 sm:gap-3 bg-[#25D366] hover:bg-[#1da851] text-white font-bold text-sm sm:text-base md:text-lg px-6 sm:px-8 md:px-10 py-3 sm:py-4 rounded-full shadow-lg transition-all duration-300 hover:scale-105"
               >
-                <WhatsAppIcon className="w-6 h-6" />
+                <WhatsAppIcon className="w-5 h-5 sm:w-6 sm:h-6" />
                 UNIRME AL GRUPO
               </Link>
-              <p className="text-olive-dark/70 font-medium text-xs font-sans">
+              <p className="text-olive-dark/70 font-medium text-[10px] sm:text-xs font-sans">
                 Es gratis. Solo haz clic y únete al grupo.
               </p>
             </div>
@@ -364,21 +364,21 @@ export function SeccionMembresia() {
 
 export function SeccionBoletinmain() {
   return (
-    <section id="subscribe" className="bg-pink py-16 md:py-20">
+    <section id="subscribe" className="bg-pink py-10 sm:py-16 md:py-20">
       <div className="max-w-[1200px] mx-auto px-4 sm:px-6 lg:px-8">
-        <div className="max-w-lg mx-auto text-center space-y-8">
-          <div className="flex items-center justify-center gap-3">
-            <div className="w-8 h-px bg-olive-dark/40" />
-            <span className="text-olive-dark text-xs font-bold tracking-[0.3em] uppercase font-sans">
+        <div className="max-w-lg mx-auto text-center space-y-6 sm:space-y-8">
+          <div className="flex items-center justify-center gap-2 sm:gap-3">
+            <div className="w-6 sm:w-8 h-px bg-olive-dark/40" />
+            <span className="text-olive-dark text-[10px] sm:text-xs font-bold tracking-[0.3em] uppercase font-sans">
               Comunidad
             </span>
-            <div className="w-8 h-px bg-olive-dark/40" />
+            <div className="w-6 sm:w-8 h-px bg-olive-dark/40" />
           </div>
-          <div className="space-y-3">
-            <h2 className="text-2xl md:text-3xl font-black text-olive-dark font-sans text-balance">
+          <div className="space-y-2 sm:space-y-3">
+            <h2 className="text-xl sm:text-2xl md:text-3xl font-black text-olive-dark font-sans text-balance">
               Pedro Olivos y sus Violinistas
             </h2>
-            <p className="text-olive-dark/90 font-medium font-sans text-sm leading-relaxed">
+            <p className="text-olive-dark/90 font-medium font-sans text-xs sm:text-sm leading-relaxed px-2 sm:px-0">
               Una comunidad amigable para músicos aficionados y amantes de la música.
             </p>
           </div>
@@ -386,9 +386,9 @@ export function SeccionBoletinmain() {
             href="https://chat.whatsapp.com/TULINK"
             target="_blank"
             rel="noopener noreferrer"
-            className="inline-flex items-center gap-3 bg-olive-dark hover:bg-olive text-cream font-bold text-xs tracking-widest uppercase px-8 py-4 rounded-full transition-all duration-300 hover:scale-105 font-sans shadow-lg"
+            className="inline-flex items-center gap-2 sm:gap-3 bg-olive-dark hover:bg-olive text-cream font-bold text-[10px] sm:text-xs tracking-widest uppercase px-6 sm:px-8 py-3 sm:py-4 rounded-full transition-all duration-300 hover:scale-105 font-sans shadow-lg"
           >
-            <WhatsAppIcon className="w-5 h-5" />
+            <WhatsAppIcon className="w-4 h-4 sm:w-5 sm:h-5" />
             Unirme gratis
           </Link>
         </div>

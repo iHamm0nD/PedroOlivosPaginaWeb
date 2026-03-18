@@ -127,7 +127,7 @@ export function TarjetaProducto({
 
       {/* MODAL DE DETALLES */}
       {mounted && isModalOpen && createPortal(
-        <div className="fixed inset-0 z-[100] flex items-center justify-center p-4 sm:p-6">
+        <div className="fixed inset-0 z-[100] flex items-end sm:items-center justify-center p-0 sm:p-4 md:p-6">
           {/* Overlay oscuro */}
           <div 
             className="absolute inset-0 bg-olive-dark/80 transition-opacity"
@@ -135,14 +135,14 @@ export function TarjetaProducto({
           />
           
           {/* Contenedor del Modal */}
-          <div className="relative bg-cream w-full max-w-4xl max-h-[90vh] rounded-3xl shadow-xl overflow-hidden flex flex-col md:flex-row transition-all duration-300">
+          <div className="relative bg-cream w-full sm:max-w-xl md:max-w-4xl max-h-[85vh] sm:max-h-[90vh] rounded-t-2xl sm:rounded-2xl md:rounded-3xl shadow-xl overflow-hidden flex flex-col md:flex-row transition-all duration-300">
             
             {/* Botón Cerrar (Mobile flotante) */}
             <button 
               onClick={() => setIsModalOpen(false)}
-              className="md:hidden absolute top-4 right-4 z-10 bg-white/80 p-2 rounded-full text-olive-dark hover:bg-white transition-colors"
+              className="md:hidden absolute top-3 right-3 sm:top-4 sm:right-4 z-10 bg-white/90 p-1.5 sm:p-2 rounded-full text-olive-dark hover:bg-white transition-colors shadow-md"
             >
-              <X className="w-5 h-5" />
+              <X className="w-4 h-4 sm:w-5 sm:h-5" />
             </button>
 
             {/* Mitad Imagen */}
@@ -156,17 +156,17 @@ export function TarjetaProducto({
             </div>
 
             {/* Mitad Contenido (Scrollable) */}
-            <div className="w-full md:w-3/5 flex flex-col h-full max-h-[90vh]">
+            <div className="w-full md:w-3/5 flex flex-col h-full max-h-[85vh] sm:max-h-[90vh]">
               {/* Header fijo */}
-              <div className="flex items-start justify-between p-6 md:p-8 border-b border-olive/10 bg-white/50">
-                <div>
+              <div className="flex items-start justify-between p-4 sm:p-6 md:p-8 border-b border-olive/10 bg-white/50">
+                <div className="flex-1 pr-8 sm:pr-0">
                   {badge && (
-                    <span className="inline-block bg-pink/10 text-pink text-xs font-bold font-sans tracking-widest uppercase px-3 py-1 rounded-full mb-3">
+                    <span className="inline-block bg-pink/10 text-pink text-[10px] sm:text-xs font-bold font-sans tracking-widest uppercase px-2 sm:px-3 py-1 rounded-full mb-2 sm:mb-3">
                       {badge}
                     </span>
                   )}
                   <h2 
-                    className="text-2xl md:text-3xl font-bold text-olive-dark leading-tight"
+                    className="text-xl sm:text-2xl md:text-3xl font-bold text-olive-dark leading-tight"
                     style={{ fontFamily: "var(--font-cormorant), 'Cormorant Garamond', serif" }}
                   >
                     {title}
@@ -182,7 +182,7 @@ export function TarjetaProducto({
               </div>
 
               {/* Área de scroll de texto */}
-              <div className="p-6 md:p-8 overflow-y-auto flex-grow bg-white custom-scrollbar">
+              <div className="p-4 sm:p-6 md:p-8 overflow-y-auto flex-grow bg-white custom-scrollbar">
                 
                 {description && (
                   <div className="prose prose-sm md:prose-base prose-olive max-w-none">
@@ -208,11 +208,11 @@ export function TarjetaProducto({
               </div>
 
               {/* Botonera fija inferior */}
-              <div className="p-6 md:p-8 border-t border-olive/10 bg-cream/50 flex flex-col sm:flex-row items-center justify-between gap-4">
+              <div className="p-4 sm:p-6 md:p-8 border-t border-olive/10 bg-cream/50 flex flex-col sm:flex-row items-center justify-between gap-3 sm:gap-4">
                 <div className="text-center sm:text-left">
-                  <span className="text-xs text-olive/50 font-bold uppercase tracking-widest font-sans block mb-1">Inversión</span>
+                  <span className="text-[10px] sm:text-xs text-olive/50 font-bold uppercase tracking-widest font-sans block mb-1">Inversión</span>
                   <p 
-                    className="text-4xl font-bold text-olive-dark"
+                    className="text-2xl sm:text-3xl md:text-4xl font-bold text-olive-dark"
                     style={{ fontFamily: "var(--font-cormorant), 'Cormorant Garamond', serif" }}
                   >
                     {price || "Disponible"}
@@ -220,10 +220,10 @@ export function TarjetaProducto({
                 </div>
                 <Link
                   href={href}
-                  className="w-full sm:w-auto inline-flex items-center justify-center gap-3 bg-pink hover:bg-pink-dark text-white font-bold text-sm tracking-widest uppercase px-10 py-4 rounded-full transition-all duration-300 hover:scale-105 font-sans shadow-lg shadow-pink/30"
+                  className="w-full sm:w-auto inline-flex items-center justify-center gap-2 sm:gap-3 bg-pink hover:bg-pink-dark text-white font-bold text-xs sm:text-sm tracking-widest uppercase px-6 sm:px-10 py-3 sm:py-4 rounded-full transition-all duration-300 hover:scale-105 font-sans shadow-lg shadow-pink/30"
                 >
                   Obtener ahora
-                  <ArrowRight className="w-4 h-4" />
+                  <ArrowRight className="w-3.5 h-3.5 sm:w-4 sm:h-4" />
                 </Link>
               </div>
             </div>
