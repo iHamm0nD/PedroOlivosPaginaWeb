@@ -18,16 +18,20 @@ async function getLatestVideo(channelId: string): Promise<VideoData | null> {
 
     const xml = await res.text()
 
-    // Extraer todos los <entry> y filtrar Shorts (su link contiene /shorts/)
+    // Extraer todos los <entry> y quedarse solo con videos largos (link watch?v=)
     const entries = [...xml.matchAll(/<entry>([\s\S]*?)<\/entry>/g)].map(m => m[1])
 
     for (const entry of entries) {
       const linkMatch = entry.match(/<link rel="alternate" href="(.*?)"/)
-      // Ignorar Shorts
-      if (linkMatch && linkMatch[1].includes("/shorts/")) continue
+      const href = linkMatch?.[1] ?? ""
+
+      // Solo aceptar videos normales — descartar Shorts y cualquier otro formato
+      if (!href.includes("watch?v=")) continue
 
       const videoIdMatch = entry.match(/<yt:videoId>(.*?)<\/yt:videoId>/)
-      const titleMatch = entry.match(/<title>(.*?)<\/title>/)
+      // Preferir media:title sobre title para evitar entidades mal escapadas
+      const mediaTitleMatch = entry.match(/<media:title>(.*?)<\/media:title>/)
+      const titleMatch = mediaTitleMatch ?? entry.match(/<title>(.*?)<\/title>/)
       const publishedMatch = entry.match(/<published>(.*?)<\/published>/)
 
       if (!videoIdMatch || !titleMatch) continue
