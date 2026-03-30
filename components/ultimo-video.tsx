@@ -71,8 +71,18 @@ export async function UltimoVideo() {
     publishedAt: "",
   }
 
-  const thumbnailUrlMaxRes = `https://img.youtube.com/vi/${video.videoId}/maxresdefault.jpg`
-  const thumbnailUrlHq = `https://img.youtube.com/vi/${video.videoId}/hqdefault.jpg`
+  const maxResUrl = `https://img.youtube.com/vi/${video.videoId}/maxresdefault.jpg`
+  const hqUrl     = `https://img.youtube.com/vi/${video.videoId}/hqdefault.jpg`
+
+  // maxresdefault no existe siempre; verificamos antes de usarla
+  let thumbnailUrl = hqUrl
+  try {
+    const check = await fetch(maxResUrl, { method: "HEAD", next: { revalidate: 3600 } })
+    if (check.ok) thumbnailUrl = maxResUrl
+  } catch {
+    // silencioso — queda hqdefault
+  }
+
   const videoUrl = `https://www.youtube.com/watch?v=${video.videoId}`
   const date = formatDate(video.publishedAt)
 
@@ -84,18 +94,15 @@ export async function UltimoVideo() {
         rel="noopener noreferrer"
         className="group relative flex flex-col h-full rounded-3xl overflow-hidden shadow-xl hover:shadow-2xl transition-all duration-400 hover:-translate-y-2 border-2 border-pink/40 bg-gradient-to-br from-white to-cream"
       >
-        {/* Thumbnail — crece para llenar el espacio disponible */}
+        {/* Thumbnail */}
         <div className="relative flex-1 min-h-0 overflow-hidden">
-          <picture>
-            <source srcSet={thumbnailUrlMaxRes} type="image/jpeg" />
-            <Image
-              src={thumbnailUrlHq}
-              alt={video.title}
-              fill
-              className="object-cover transition-transform duration-500 group-hover:scale-105"
-              unoptimized
-            />
-          </picture>
+          <Image
+            src={thumbnailUrl}
+            alt={video.title}
+            fill
+            className="object-cover transition-transform duration-500 group-hover:scale-105"
+            unoptimized
+          />
           {/* Gradient overlay */}
           <div className="absolute inset-0 bg-gradient-to-t from-pink-dark/80 via-pink-dark/30 to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-300" />
 
