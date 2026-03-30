@@ -1,4 +1,4 @@
-import Image from "next/image"
+
 import Link from "next/link"
 import { Play } from "lucide-react"
 
@@ -98,14 +98,13 @@ export async function UltimoVideo() {
         rel="noopener noreferrer"
         className="group relative flex flex-col h-full rounded-3xl overflow-hidden shadow-xl hover:shadow-2xl transition-all duration-400 hover:-translate-y-2 border-2 border-pink/40 bg-gradient-to-br from-white to-cream"
       >
-        {/* Thumbnail */}
-        <div className="relative flex-1 min-h-0 overflow-hidden">
-          <Image
+        {/* Thumbnail — aspect-video garantiza altura en mobile */}
+        <div className="relative w-full aspect-video overflow-hidden">
+          {/* eslint-disable-next-line @next/next/no-img-element */}
+          <img
             src={thumbnailUrl}
             alt={video.title}
-            fill
-            className="object-cover transition-transform duration-500 group-hover:scale-105"
-            unoptimized
+            className="w-full h-full object-cover transition-transform duration-500 group-hover:scale-105"
           />
           {/* Gradient overlay */}
           <div className="absolute inset-0 bg-gradient-to-t from-pink-dark/80 via-pink-dark/30 to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-300" />
