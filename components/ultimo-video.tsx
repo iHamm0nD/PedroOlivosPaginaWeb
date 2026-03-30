@@ -12,29 +12,34 @@ async function getLatestVideo(channelId: string): Promise<VideoData | null> {
   try {
     const rssUrl = `https://www.youtube.com/feeds/videos.xml?channel_id=${channelId}`
     const res = await fetch(rssUrl, {
-      next: { revalidate: 1800 }, // actualizar cada 30 min
+      next: { revalidate: 300 }, // actualizar cada 5 min
     })
     if (!res.ok) return null
 
     const xml = await res.text()
 
-    // Extraer el primer <entry> (el más reciente)
-    const entryMatch = xml.match(/<entry>([\s\S]*?)<\/entry>/)
-    if (!entryMatch) return null
+    // Extraer todos los <entry> y filtrar Shorts (su link contiene /shorts/)
+    const entries = [...xml.matchAll(/<entry>([\s\S]*?)<\/entry>/g)].map(m => m[1])
 
-    const entry = entryMatch[1]
+    for (const entry of entries) {
+      const linkMatch = entry.match(/<link rel="alternate" href="(.*?)"/)
+      // Ignorar Shorts
+      if (linkMatch && linkMatch[1].includes("/shorts/")) continue
 
-    const videoIdMatch = entry.match(/<yt:videoId>(.*?)<\/yt:videoId>/)
-    const titleMatch = entry.match(/<title>(.*?)<\/title>/)
-    const publishedMatch = entry.match(/<published>(.*?)<\/published>/)
+      const videoIdMatch = entry.match(/<yt:videoId>(.*?)<\/yt:videoId>/)
+      const titleMatch = entry.match(/<title>(.*?)<\/title>/)
+      const publishedMatch = entry.match(/<published>(.*?)<\/published>/)
 
-    if (!videoIdMatch || !titleMatch) return null
+      if (!videoIdMatch || !titleMatch) continue
 
-    return {
-      videoId: videoIdMatch[1],
-      title: titleMatch[1].replace(/&amp;/g, "&").replace(/&lt;/g, "<").replace(/&gt;/g, ">").replace(/&quot;/g, '"'),
-      publishedAt: publishedMatch ? publishedMatch[1] : "",
+      return {
+        videoId: videoIdMatch[1],
+        title: titleMatch[1].replace(/&amp;/g, "&").replace(/&lt;/g, "<").replace(/&gt;/g, ">").replace(/&quot;/g, '"'),
+        publishedAt: publishedMatch ? publishedMatch[1] : "",
+      }
     }
+
+    return null
   } catch {
     return null
   }
@@ -54,7 +59,7 @@ function formatDate(iso: string): string {
 }
 
 // Channel ID de Pedro Olivos Música
-const CHANNEL_ID = "UCmBnbGTuQslnr2YfzJ3sPyQ"
+const CHANNEL_ID = "UCIez6YIXmcGIP8Q0-2udHjQ"
 
 export async function UltimoVideo() {
   const latest = await getLatestVideo(CHANNEL_ID)

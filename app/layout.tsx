@@ -1,4 +1,4 @@
-import type { Metadata } from 'next'
+import type { Metadata, Viewport } from 'next'
 import { Nunito, Quicksand, Playfair_Display, Great_Vibes, Cormorant_Garamond } from 'next/font/google'
 import { Analytics } from '@vercel/analytics/next'
 import './globals.css'
@@ -38,11 +38,12 @@ const cormorant = Cormorant_Garamond({
 export const metadata: Metadata = {
   title: 'Pedro Olivos | Oficial Web Site',
   description: 'Aprende a tocar violin con Pedro Olivos',
-  viewport: {
-    width: 'device-width',
-    initialScale: 1,
-    maximumScale: 1,
-  },
+}
+
+export const viewport: Viewport = {
+  width: 'device-width',
+  initialScale: 1,
+  maximumScale: 1,
 }
 
 export default function RootLayout({
