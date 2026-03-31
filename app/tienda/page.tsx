@@ -168,7 +168,7 @@ export default function TiendaPage() {
                 <ArrowRight className="w-3.5 h-3.5 sm:w-4 sm:h-4" />
               </a>
               <Link
-                href="https://wa.me/51999999999"
+                href="https://wa.me/51972393059"
                 target="_blank"
                 rel="noopener noreferrer"
                 className="inline-flex items-center justify-center gap-2 sm:gap-3 bg-cream/10 hover:bg-cream/20 text-cream border border-cream/20 text-[10px] sm:text-xs font-bold tracking-widest uppercase px-6 sm:px-8 py-3.5 sm:py-5 rounded-full transition-all duration-300 font-sans backdrop-blur-sm"

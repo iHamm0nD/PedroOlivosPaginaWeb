@@ -30,7 +30,7 @@ const services = [
     title: "Presentaciones",
     subtitle: "Eventos & Serenatas",
     description:
-      "Contrata a Pedro para amenizar tu evento especial: bodas, aniversarios, reuniones corporativas o momentos íntimos.",
+      "Contrata a Pedro para acompañar tu evento especial: bodas, aniversarios, reuniones corporativas o momentos íntimos.",
     cta: "Consultar",
     href: "https://wa.link/qnsfij",
     highlight: null,
