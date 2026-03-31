@@ -1,1 +1,0 @@
-﻿components/05-seccion-boletin.tsx(234,78): error TS2339: Property 'followers' does not exist on type '{ name: string; icon: ({ className }: { className?: string | undefined; }) => Element; href: string; }'.

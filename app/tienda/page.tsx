@@ -1,7 +1,6 @@
 import { Navegacion } from "@/components/01-navegacion"
 import { TarjetaProducto } from "@/components/tarjeta-producto"
 import { PieDePagina } from "@/components/06-pie-de-pagina"
-import Link from "next/link"
 import { ArrowRight, Sparkles, ShoppingBag } from "lucide-react"
 
 const products = [
@@ -245,20 +244,7 @@ export default function TiendaPage() {
         </div>
       </section>
 
-      {/* Custom partituras CTA */}
-      <section className="bg-olive-dark relative overflow-hidden">
 
-        {/* Decorative elements */}
-        <div className="absolute inset-0">
-          <div className="absolute top-0 left-0 w-[500px] h-[500px] bg-pink/20 rounded-full blur-[120px] -translate-y-1/2 -translate-x-1/3" />
-        </div>
-
-        {/* Pattern */}
-        <div className="absolute inset-0 opacity-5">
-          <div className="absolute top-10 right-10 w-48 h-48 border border-cream rounded-full" />
-          <div className="absolute bottom-10 left-10 w-32 h-32 border border-pink rounded-full" />
-        </div>
-      </section>
       <PieDePagina />
     </main>
   )

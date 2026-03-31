@@ -1,8 +1,0 @@
-﻿app/mis-videos/page.tsx(4,1): error TS6133: 'SeccionBoletin' is declared but its value is never read.
-app/mis-videos/page.tsx(8,10): error TS6133: 'Play' is declared but its value is never read.
-app/mis-videos/page.tsx(11,7): error TS6133: 'CHANNEL_ID' is declared but its value is never read.
-components/04-seccion-servicios.tsx(55,10): error TS6133: 'hoveredIndex' is declared but its value is never read.
-components/05-seccion-boletin.tsx(4,1): error TS6133: 'Image' is declared but its value is never read.
-components/tarjeta-video.tsx(11,48): error TS6133: 'index' is declared but its value is never read.
-components/theme-provider.tsx(3,1): error TS6133: 'React' is declared but its value is never read.
-components/ultimo-video.tsx(3,16): error TS6133: 'Youtube' is declared but its value is never read.
