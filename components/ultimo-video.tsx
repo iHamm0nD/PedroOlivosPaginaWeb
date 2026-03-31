@@ -12,7 +12,7 @@ async function getLatestVideo(channelId: string): Promise<VideoData | null> {
   try {
     const rssUrl = `https://www.youtube.com/feeds/videos.xml?channel_id=${channelId}`
     const res = await fetch(rssUrl, {
-      next: { revalidate: 300 }, // actualizar cada 5 min
+      cache: "no-store", // siempre datos frescos
     })
     if (!res.ok) return null
 
@@ -81,7 +81,7 @@ export async function UltimoVideo() {
   // maxresdefault no existe siempre; verificamos antes de usarla
   let thumbnailUrl = hqUrl
   try {
-    const check = await fetch(maxResUrl, { method: "HEAD", next: { revalidate: 3600 } })
+    const check = await fetch(maxResUrl, { method: "HEAD", cache: "no-store" })
     if (check.ok) thumbnailUrl = maxResUrl
   } catch {
     // silencioso — queda hqdefault
