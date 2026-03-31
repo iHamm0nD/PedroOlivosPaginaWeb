@@ -70,7 +70,7 @@ export function SeccionPrincipal() {
                   href="/servicios"
                   className="inline-flex items-center justify-center gap-2 border border-cream/50 text-cream font-bold text-xs tracking-widest uppercase px-5 sm:px-6 py-3 rounded-full hover:bg-cream/10 transition-colors duration-300 font-sans"
                 >
-                  Contactame
+                  Servicios
                 </Link>
               </div>
             </div>
