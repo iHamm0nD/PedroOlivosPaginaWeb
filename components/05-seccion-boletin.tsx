@@ -180,7 +180,7 @@ export function SeccionBoletin() {
                     Unirme ahora
                   </Link>
                   <Link
-                    href="mailto:contacto@pedrolivos.com"
+                    href="mailto:pedro.olivos14@gmail.com"
                     className="inline-flex items-center justify-center gap-2 sm:gap-3 bg-cream/10 hover:bg-cream/20 text-cream border border-cream/20 text-[10px] sm:text-xs font-bold tracking-widest uppercase px-6 sm:px-8 py-3 sm:py-4 rounded-full transition-all duration-300 font-sans"
                   >
                     <Mail className="w-3.5 h-3.5 sm:w-4 sm:h-4" />
