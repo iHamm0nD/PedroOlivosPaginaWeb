@@ -193,7 +193,7 @@ export function TarjetaProducto({
                 {features && features.length > 0 && (
                   <div className="mt-8 space-y-4">
                     <h4 className="text-sm font-bold tracking-widest uppercase text-olive font-sans">
-                      ¿Qué lograrás?
+                      Ventajas
                     </h4>
                     <ul className="space-y-3">
                       {features.map((feat, idx) => (

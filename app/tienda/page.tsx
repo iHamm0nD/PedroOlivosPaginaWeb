@@ -9,7 +9,6 @@ const products = [
     image: "/images/hotmart1.png",
     title: "Empieza Bien en el Violín: Rutinas de Práctica para Principiantes",
     price: "S/ 37.00",
-    badge: "Nuevo",
     badgeColor: "pink",
     href: "https://pay.hotmart.com/D104500426K?sck=HOTMART_PRODUCT_PAGE&off=lq0kdrk8&hotfeature=32&bid=1773452234704",
     description: (
@@ -23,7 +22,15 @@ const products = [
         <p className="mb-4">Ideal para violinistas principiantes que desean construir una base sólida desde el inicio.</p>
         <p className="mb-4 mt-6 italic">✨ Pequeñas prácticas constantes generan grandes avances.</p>
       </>
-    )
+    ),
+    features: [
+      "🎻 Aprendes desde cero – No necesitas experiencia previa con el violín.",
+      "📚 Métodos paso a paso – Cada lección está organizada para avanzar de forma clara y progresiva.",
+      "⏱  Rutinas de práctica efectivas – Ejercicios diseñados para mejorar tu técnica rápidamente.",
+      "🎶 Explicaciones simples y claras – Conceptos fáciles de entender",
+      "🇵🇪  Enfoque musical cercano – Incluye una mirada pedagógica y musical accesible para todos",
+      "💻 Acceso inmediato – Puedes aprender a tu ritmo desde cualquier lugar"
+    ]
   },
   {
     image: "/images/hotmart2.png",
@@ -72,6 +79,41 @@ const products = [
       "Interpretar melodías y repertorio andino adaptado al violín"
     ]
   },
+  {
+    image: "/images/hotmart3.png",
+    title: "Avanza Bien en el Violín – Rutinas de práctica para nivel intermedio",
+    price: "S/ 45.00",
+    badge: "Nuevo",
+    badgeColor: "pink",
+    href: "https://pay.hotmart.com/V105141783X?sck=HOTMART_PRODUCT_PAGE&off=7kldq0nd&hotfeature=32&bid=1774926981658",
+    description: (
+      <>
+        <p className="mb-4"><strong>🎻 Avanza Bien en el Violín – Rutinas de práctica para nivel intermedio</strong></p>
+        <p className="mb-4">Este eBook ofrece una guía práctica con rutinas progresivas diseñadas para mejorar tu técnica, afinación, control del sonido y musicalidad en el violín mediante sesiones breves y efectivas de estudio.</p>
+        <p className="mb-4"><strong>Incluye trabajo específico en:</strong></p>
+        <ul className="list-none pl-2 mb-6 space-y-2 text-olive/80">
+          <li>🎵 Sonido y control del arco</li>
+          <li>🎵 Afinación consciente (uso de drone)</li>
+          <li>🎵 Desarrollo de la mano izquierda</li>
+          <li>🎵 Ritmo y precisión</li>
+          <li>🎵 Dinámicas y control expresivo</li>
+          <li>🎵 Introducción al vibrato</li>
+          <li>🎵 Cambios de posición (1ª a 3ª posición)</li>
+        </ul>
+        <p className="mb-4 mt-6 italic">✨ Ideal para estudiantes de nivel intermedio que desean practicar con mayor claridad, estructura y resultados reales.</p>
+      </>
+    ),
+    features: [
+      "Mejora la estabilidad y calidad del sonido",
+      "Desarrolla una afinación más precisa con uso de drone",
+      "Fortalece la coordinación y control de la mano izquierda",
+      "Introduce el vibrato de forma progresiva y controlada",
+      "Facilita cambios de posición entre 1ª y 3ª posición",
+      "Mejora el control dinámico y la expresividad musical",
+      "Organiza tu práctica con rutinas claras de 10–15 minutos",
+      "Reduce la tensión corporal mediante técnica consciente"
+    ]
+  }
 ]
 
 

@@ -212,7 +212,7 @@ export function SeccionBoletin() {
                   </div>
                   <div className="flex-1 min-w-0">
                     <p className="text-[10px] text-olive/70 font-bold tracking-widest uppercase font-sans">WhatsApp</p>
-                    <p className="text-olive-dark font-bold font-sans text-sm truncate">+51 999 999 999</p>
+                    <p className="text-olive-dark font-bold font-sans text-sm truncate">+51 972 393 059</p>
                   </div>
                   <ArrowRight className="w-4 h-4 text-olive/20 group-hover:text-pink group-hover:translate-x-1 transition-all duration-300 shrink-0" />
                 </Link>
@@ -226,7 +226,7 @@ export function SeccionBoletin() {
                   </div>
                   <div className="flex-1 min-w-0">
                     <p className="text-[10px] text-olive/70 font-bold tracking-widest uppercase font-sans">Email</p>
-                    <p className="text-olive-dark font-bold font-sans text-sm truncate">contacto@pedrolivos.com</p>
+                    <p className="text-olive-dark font-bold font-sans text-sm truncate">pedro.olivos14@gmail.com</p>
                   </div>
                   <ArrowRight className="w-4 h-4 text-olive/20 group-hover:text-olive group-hover:translate-x-1 transition-all duration-300 shrink-0" />
                 </Link>
@@ -237,7 +237,7 @@ export function SeccionBoletin() {
                   </div>
                   <div className="flex-1 min-w-0">
                     <p className="text-[10px] text-olive/70 font-bold tracking-widest uppercase font-sans">Ubicación</p>
-                    <p className="text-olive-dark font-bold font-sans text-sm">Huánuco, Perú</p>
+                    <p className="text-olive-dark font-bold font-sans text-sm">Lima, Perú</p>
                   </div>
                 </div>
               </div>
@@ -343,7 +343,7 @@ export function SeccionMembresia() {
                 </li>
               </ul>
               <Link
-                href="https://chat.whatsapp.com/TULINK"
+                href="https://wa.link/cqxqkb"
                 target="_blank"
                 rel="noopener noreferrer"
                 className="inline-flex items-center gap-2 sm:gap-3 bg-[#25D366] hover:bg-[#1da851] text-white font-bold text-sm sm:text-base md:text-lg px-6 sm:px-8 md:px-10 py-3 sm:py-4 rounded-full shadow-lg transition-all duration-300 hover:scale-105"
@@ -383,7 +383,7 @@ export function SeccionBoletinmain() {
             </p>
           </div>
           <Link
-            href="https://chat.whatsapp.com/TULINK"
+            href="https://chat.whatsapp.com/GDWLX2rdAAw16enHI5t4hv"
             target="_blank"
             rel="noopener noreferrer"
             className="inline-flex items-center gap-2 sm:gap-3 bg-olive-dark hover:bg-olive text-cream font-bold text-[10px] sm:text-xs tracking-widest uppercase px-6 sm:px-8 py-3 sm:py-4 rounded-full transition-all duration-300 hover:scale-105 font-sans shadow-lg"

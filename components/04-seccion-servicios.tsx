@@ -10,7 +10,7 @@ const services = [
     description:
       "Aprende a tocar el violín desde cero o perfecciona tu técnica con clases personalizadas adaptadas a tu nivel y ritmo.",
     cta: "Agendar clase",
-    href: "https://wa.me/51999999999",
+    href: "https://wa.link/3qvyuw",
     highlight: "Popular",
     color: "pink",
   },
@@ -19,9 +19,9 @@ const services = [
     title: "Partituras Exclusivas",
     subtitle: "Arreglos propios",
     description:
-      "Accede a un catálogo de partituras para violín arregladas y editadas por Pedro, desde piezas clásicas hasta covers.",
+      "Accede a un catálogo de partituras con diversas piezas musicales para diferentes instrumentos, transcritas y editadas por Pedro Olivos. Incluye desde piezas clásicas hasta covers actuales, ideales para estudiar, practicar o ampliar tu repertorio.",
     cta: "Ver catálogo",
-    href: "/tienda",
+    href: "https://docs.google.com/spreadsheets/d/1jyCFPd-xX-2U0zbDo4m3eMhzNcTCzVvwWMONSqURAPk/edit?gid=0#gid=0",
     highlight: null,
     color: "olive",
   },
@@ -32,7 +32,7 @@ const services = [
     description:
       "Contrata a Pedro para amenizar tu evento especial: bodas, aniversarios, reuniones corporativas o momentos íntimos.",
     cta: "Consultar",
-    href: "https://wa.me/51999999999",
+    href: "https://wa.link/qnsfij",
     highlight: null,
     color: "pink",
   },
@@ -92,8 +92,8 @@ export function SeccionServicios() {
               index === 0
                 ? "lg:col-span-7"
                 : index === 1
-                ? "lg:col-span-5"
-                : "lg:col-span-12"
+                  ? "lg:col-span-5"
+                  : "lg:col-span-12"
 
             return (
               <Link
@@ -104,11 +104,10 @@ export function SeccionServicios() {
                 className={`group relative overflow-hidden rounded-2xl ${colSpan}`}
               >
                 {/* Card Background */}
-                <div className={`absolute inset-0 transition-transform duration-700 group-hover:scale-105 ${
-                  service.color === "pink"
-                    ? "bg-gradient-to-br from-pink via-pink-dark to-olive-dark"
-                    : "bg-gradient-to-br from-olive via-olive-dark to-olive-dark"
-                }`} />
+                <div className={`absolute inset-0 transition-transform duration-700 group-hover:scale-105 ${service.color === "pink"
+                  ? "bg-gradient-to-br from-pink via-pink-dark to-olive-dark"
+                  : "bg-gradient-to-br from-olive via-olive-dark to-olive-dark"
+                  }`} />
 
                 {/* Decorative Pattern */}
                 <div className="absolute inset-0 opacity-10">
@@ -117,13 +116,12 @@ export function SeccionServicios() {
                 </div>
 
                 {/* Content Container */}
-                <div className={`relative z-10 p-6 sm:p-8 md:p-10 flex flex-col ${
-                  index === 2
-                    ? "min-h-[240px] sm:min-h-[260px] md:min-h-[280px] xl:flex-row xl:items-center xl:gap-16"
-                    : index === 0
+                <div className={`relative z-10 p-6 sm:p-8 md:p-10 flex flex-col ${index === 2
+                  ? "min-h-[240px] sm:min-h-[260px] md:min-h-[280px] xl:flex-row xl:items-center xl:gap-16"
+                  : index === 0
                     ? "min-h-[320px] sm:min-h-[380px] md:min-h-[420px]"
                     : "min-h-[280px] sm:min-h-[320px] md:min-h-[360px]"
-                }`}>
+                  }`}>
 
                   {/* Top Row: Icon & Badge */}
                   <div className={`flex items-start justify-between ${index === 2 ? "xl:flex-col xl:justify-start xl:gap-6 xl:shrink-0" : "mb-auto"}`}>
@@ -143,16 +141,14 @@ export function SeccionServicios() {
                       {service.subtitle}
                     </p>
                     <h3
-                      className={`font-bold text-cream leading-[1.1] mb-3 sm:mb-4 ${
-                        index === 0 ? "text-2xl sm:text-3xl md:text-4xl lg:text-5xl" : "text-xl sm:text-2xl md:text-3xl"
-                      }`}
+                      className={`font-bold text-cream leading-[1.1] mb-3 sm:mb-4 ${index === 0 ? "text-2xl sm:text-3xl md:text-4xl lg:text-5xl" : "text-xl sm:text-2xl md:text-3xl"
+                        }`}
                       style={{ fontFamily: "var(--font-cormorant), 'Cormorant Garamond', serif" }}
                     >
                       {service.title}
                     </h3>
-                    <p className={`text-cream/70 leading-relaxed font-sans mb-4 sm:mb-6 ${
-                      index === 0 ? "text-xs sm:text-sm md:text-base max-w-md" : "text-xs sm:text-sm"
-                    } ${index === 2 ? "xl:max-w-xl" : ""}`}>
+                    <p className={`text-cream/70 leading-relaxed font-sans mb-4 sm:mb-6 ${index === 0 ? "text-xs sm:text-sm md:text-base max-w-md" : "text-xs sm:text-sm"
+                      } ${index === 2 ? "xl:max-w-xl" : ""}`}>
                       {service.description}
                     </p>
                     <div className="flex items-center gap-4">
