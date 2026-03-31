@@ -17,7 +17,7 @@ const services = [
   {
     icon: BookOpen,
     title: "Partituras Exclusivas",
-    subtitle: "Arreglos propios",
+    subtitle: "Melodías transcritas",
     description:
       "Accede a un catálogo de partituras con diversas piezas musicales para diferentes instrumentos, transcritas y editadas por Pedro Olivos. Incluye desde piezas clásicas hasta covers actuales, ideales para estudiar, practicar o ampliar tu repertorio.",
     cta: "Ver catálogo",
