@@ -1,6 +1,7 @@
 import type { Metadata, Viewport } from 'next'
 import { Nunito, Quicksand, Playfair_Display, Great_Vibes, Cormorant_Garamond } from 'next/font/google'
 import { Analytics } from '@vercel/analytics/next'
+import { SpeedInsights } from '@vercel/speed-insights/next'
 import './globals.css'
 
 const nunito = Nunito({
@@ -56,6 +57,7 @@ export default function RootLayout({
         <body className={`${nunito.variable} ${quicksand.variable} ${playfair.variable} ${greatVibes.variable} ${cormorant.variable} font-sans antialiased`}>
         {children}
         <Analytics />
+        <SpeedInsights />
       </body>
     </html>
   )
