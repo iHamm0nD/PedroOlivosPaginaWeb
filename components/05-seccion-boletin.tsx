@@ -202,7 +202,7 @@ export function SeccionBoletin() {
 
               <div className="space-y-3">
                 <Link
-                  href="https://wa.me/51999999999"
+                  href="https://wa.link/guqquw"
                   target="_blank"
                   rel="noopener noreferrer"
                   className="group flex items-center gap-4 p-4 rounded-xl border border-olive/8 hover:border-pink/30 hover:bg-pink/5 transition-all duration-300"
@@ -212,7 +212,7 @@ export function SeccionBoletin() {
                   </div>
                   <div className="flex-1 min-w-0">
                     <p className="text-[10px] text-olive/70 font-bold tracking-widest uppercase font-sans">WhatsApp</p>
-                    <p className="text-olive-dark font-bold font-sans text-sm truncate">+51 972 393 059</p>
+                    <p className="text-olive-dark font-bold font-sans text-sm truncate">+51 918 643 279</p>
                   </div>
                   <ArrowRight className="w-4 h-4 text-olive/20 group-hover:text-pink group-hover:translate-x-1 transition-all duration-300 shrink-0" />
                 </Link>
