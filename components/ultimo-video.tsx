@@ -25,8 +25,8 @@ async function getLatestVideo(channelId: string): Promise<VideoData | null> {
       const linkMatch = entry.match(/<link rel="alternate" href="(.*?)"/)
       const href = linkMatch?.[1] ?? ""
 
-      // Solo aceptar videos normales — descartar Shorts y cualquier otro formato
-      if (!href.includes("watch?v=")) continue
+      // Ahora aceptamos cualquier video (incluyendo Shorts)
+      // if (!href.includes("watch?v=")) continue
 
       const videoIdMatch = entry.match(/<yt:videoId>(.*?)<\/yt:videoId>/)
       // Preferir media:title sobre title para evitar entidades mal escapadas

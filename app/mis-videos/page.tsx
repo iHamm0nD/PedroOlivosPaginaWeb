@@ -6,8 +6,8 @@ import Image from "next/image"
 import Link from "next/link"
 import { Youtube } from "lucide-react"
 
-// ─── IDs de videos largos ────────────────────────────────────────────────────
-const videoIds = [
+// ─── Fallback de videos (por si falla el RSS) ───────────────────────────────
+const fallbackVideoIds = [
   "65h_d1UCmY4",
   "S7u0P-arDwM",
   "tx4lPQONTjw",
@@ -20,6 +20,8 @@ const videoIds = [
   "fWgNdHd8gcI",
   "nniv3GLYcqg",
 ]
+
+const CHANNEL_ID = "UCIez6YIXmcGIP8Q0-2udHjQ"
 
 async function getVideoTitle(videoId: string): Promise<string> {
   try {
@@ -35,13 +37,51 @@ async function getVideoTitle(videoId: string): Promise<string> {
   }
 }
 
+async function getRecentVideos(channelId: string) {
+  try {
+    const rssUrl = `https://www.youtube.com/feeds/videos.xml?channel_id=${channelId}`
+    const res = await fetch(rssUrl, { cache: "no-store" })
+    if (!res.ok) return []
+    const xml = await res.text()
+    
+    const entries = [...xml.matchAll(/<entry>([\s\S]*?)<\/entry>/g)].map(m => m[1])
+    const videos = []
+    
+    for (const entry of entries) {
+      const videoIdMatch = entry.match(/<yt:videoId>(.*?)<\/yt:videoId>/)
+      const mediaTitleMatch = entry.match(/<media:title>(.*?)<\/media:title>/)
+      const titleMatch = mediaTitleMatch ?? entry.match(/<title>(.*?)<\/title>/)
+      
+      if (videoIdMatch && titleMatch) {
+        videos.push({
+          videoId: videoIdMatch[1],
+          title: titleMatch[1].replace(/&amp;/g, "&").replace(/&lt;/g, "<").replace(/&gt;/g, ">").replace(/&quot;/g, '"'),
+        })
+      }
+    }
+    return videos
+  } catch {
+    return []
+  }
+}
+
 export default async function MisVideosPage() {
-  const videos = await Promise.all(
-    videoIds.map(async (id) => ({
-      videoId: id,
-      title: await getVideoTitle(id),
-    }))
-  )
+  const recentVideos = await getRecentVideos(CHANNEL_ID)
+  
+  let videos = []
+  
+  if (recentVideos.length > 1) {
+    // Saltamos el primer video porque se muestra en <UltimoVideo />
+    videos = recentVideos.slice(1)
+  } else {
+    // Fallback a los videos estáticos
+    videos = await Promise.all(
+      fallbackVideoIds.map(async (id) => ({
+        videoId: id,
+        title: await getVideoTitle(id),
+      }))
+    )
+  }
 
   return (
     <main className="min-h-screen bg-cream">
