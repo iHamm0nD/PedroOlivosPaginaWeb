@@ -22,10 +22,9 @@ async function getLatestVideo(channelId: string): Promise<VideoData | null> {
     const entries = [...xml.matchAll(/<entry>([\s\S]*?)<\/entry>/g)].map(m => m[1])
 
     for (const entry of entries) {
-      const linkMatch = entry.match(/<link rel="alternate" href="(.*?)"/)
-      const href = linkMatch?.[1] ?? ""
-
-      // Ahora aceptamos cualquier video (incluyendo Shorts)
+      // Ya no necesitamos extraer 'href' porque ahora aceptamos cualquier video (incluyendo Shorts)
+      // const linkMatch = entry.match(/<link rel="alternate" href="(.*?)"/)
+      // const href = linkMatch?.[1] ?? ""
       // if (!href.includes("watch?v=")) continue
 
       const videoIdMatch = entry.match(/<yt:videoId>(.*?)<\/yt:videoId>/)
